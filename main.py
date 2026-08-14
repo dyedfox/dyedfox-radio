@@ -22,6 +22,7 @@ from player.backend import GStreamerBackend
 from player.mpris import setup_mpris
 from api.radio_browser import RadioBrowserClient, shutdown as _shutdown_workers
 from data.favourites import FavouritesManager, RecentManager
+from data.listening_stats import ListeningStatsManager
 from data.settings import Settings
 from tray.tray_icon import SystemTrayIcon
 from ui.main_window import MainWindow
@@ -86,10 +87,11 @@ def main():
 
     favourites = FavouritesManager()
     recent = RecentManager()
+    listening_stats = ListeningStatsManager()
     backend = GStreamerBackend()
     api = RadioBrowserClient()
 
-    window = MainWindow(backend, api, favourites, recent, settings)
+    window = MainWindow(backend, api, favourites, recent, settings, listening_stats)
 
     tray = SystemTrayIcon(window, backend)
     QTimer.singleShot(0, tray.show)
@@ -113,6 +115,7 @@ def main():
     server.newConnection.connect(_on_new_connection)
 
     def _on_quit():
+        listening_stats.stop()
         backend.shutdown()
         _shutdown_workers()
         window._station_list.cancel_pending_favicons()

@@ -25,8 +25,11 @@ from ui.add_station_dialog import AddStationDialog
 from player.backend import GStreamerBackend
 from api.radio_browser import RadioBrowserClient
 from data.favourites import FavouritesManager, RecentManager, new_cache, trending_cache, random_cache, now_listening_cache
+from data.listening_stats import ListeningStatsManager
 from data.settings import Settings, DEFAULTS
 from data.custom_stations import CustomStationsManager
+
+_STATS_FLUSH_INTERVAL_MS = 30000  # periodic checkpoint; app quits via os._exit(), skipping normal shutdown
 
 
 class MainWindow(QMainWindow):
@@ -37,6 +40,7 @@ class MainWindow(QMainWindow):
         favourites: FavouritesManager,
         recent: RecentManager,
         settings: Settings,
+        listening_stats: ListeningStatsManager,
     ):
         super().__init__()
         self._backend = backend
@@ -44,6 +48,7 @@ class MainWindow(QMainWindow):
         self._favourites = favourites
         self._recent = recent
         self._settings = settings
+        self._listening_stats = listening_stats
         self._custom = CustomStationsManager()
         self._current_station: dict | None = None
         self._current_view = "all"
@@ -97,6 +102,14 @@ class MainWindow(QMainWindow):
         self._sidebar_save_timer.setInterval(500)
         self._sidebar_save_timer.timeout.connect(self._save_sidebar_width)
 
+        # Periodically checkpoints the in-progress listening-time segment to
+        # disk; a no-op when nothing is playing. Guards against losing a long
+        # session's time since the app quits via os._exit() (see main.py).
+        self._stats_flush_timer = QTimer(self)
+        self._stats_flush_timer.setInterval(_STATS_FLUSH_INTERVAL_MS)
+        self._stats_flush_timer.timeout.connect(self._on_stats_flush_tick)
+        self._stats_flush_timer.start()
+
         self._restore_window_size()
         self._setup_ui()
         self._connect_signals()
@@ -136,7 +149,7 @@ class MainWindow(QMainWindow):
 
         content_layout.addWidget(self._sep(vertical=True))
 
-        self._station_list = StationListWidget(self._favourites, self._settings)
+        self._station_list = StationListWidget(self._favourites, self._settings, self._listening_stats)
         content_layout.addWidget(self._station_list, 1)
 
         content_layout.addWidget(self._sep(vertical=True))
@@ -562,6 +575,9 @@ class MainWindow(QMainWindow):
         url = station.get("url_resolved", "")
         if not url:
             return
+        # Switching stations doesn't emit playback_stopped for the outgoing one
+        # (see backend.play()), so fold its segment into the totals here.
+        self._listening_stats.stop()
         self._current_station = station
         self._last_title = ""
         self._art_token += 1  # invalidate any in-flight artwork from the previous station
@@ -570,6 +586,7 @@ class MainWindow(QMainWindow):
         self._now_playing.set_station(station.get("name", "").strip())
         self._now_playing.clear_song()
         self._info_panel.set_station(station, self._favourites.is_favourite(station.get("stationuuid", "")))
+        self._update_listening_time_display()
         self._station_list.mark_playing(station.get("stationuuid", ""))
         self._recent.add(station.get("stationuuid", ""))
 
@@ -719,17 +736,25 @@ class MainWindow(QMainWindow):
         self._controls.set_muted(muted)
 
     def _on_stopped(self):
+        self._listening_stats.stop()
+        self._update_listening_time_display()
         self._controls.set_playing(False)
         self._station_list.mark_stopped()
         if self._mpris:
             self._mpris.update_playback_status()
 
     def _on_reconnecting(self, attempt: int):
+        # No audio flows during the reconnect gap, so pause accrual.
+        self._listening_stats.stop()
+        self._update_listening_time_display()
         self._now_playing.set_reconnecting(attempt)
         self._controls.set_playing(False)
         self._station_list.mark_stopped()
 
     def _on_started(self):
+        if self._current_station:
+            self._listening_stats.start(self._current_station.get("stationuuid", ""))
+        self._update_listening_time_display()
         self._controls.set_playing(True)
         self._station_list.mark_resumed()
         # After an auto-reconnect the strip shows "Reconnecting…"; restore the
@@ -738,6 +763,14 @@ class MainWindow(QMainWindow):
             self._now_playing.set_station(self._current_station.get("name", "").strip())
         if self._mpris:
             self._mpris.update_playback_status()
+
+    def _on_stats_flush_tick(self):
+        self._listening_stats.flush()
+        self._update_listening_time_display()
+
+    def _update_listening_time_display(self):
+        uuid = self._current_station.get("stationuuid", "") if self._current_station else ""
+        self._info_panel.set_listening_time(self._listening_stats.total_seconds(uuid) if uuid else 0)
 
     def _flush_notification(self, token: int, icon_path: str | None = None):
         """Fire the queued notification if it still belongs to the given song."""
