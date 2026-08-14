@@ -10,6 +10,7 @@ Inspired by [Shortwave](https://github.com/maunalinux/shortwave), with a native 
 - [Features](#features)
 - [Keyboard Shortcuts](#keyboard-shortcuts)
 - [Install on Arch Linux (AUR)](#install-on-arch-linux-aur)
+- [Install on NixOS](#install-on-nixos)
 - [Build from source (PKGBUILD)](#build-from-source-pkgbuild)
 - [Install on other Linux distros](#install-on-other-linux-distros)
 - [Manual installation](#manual-installation)
@@ -17,6 +18,7 @@ Inspired by [Shortwave](https://github.com/maunalinux/shortwave), with a native 
 - [Localization](#localization)
 - [Paths](#paths)
 - [Dependencies](#dependencies)
+- [Acknowledgements](#acknowledgements)
 
 ## Screenshots
 
@@ -67,6 +69,58 @@ Or manually:
 git clone https://aur.archlinux.org/dyedfox-radio.git
 cd dyedfox-radio
 makepkg -si
+```
+
+## Install on NixOS
+
+### Channels
+
+You can import the package using [`flake-compat`](https://github.com/edolstra/flake-compat) in your `configuration.nix`:
+
+```nix
+let
+  flakeCompat = import (builtins.fetchTarball {
+    url = "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
+    # sha256 = "..."; # Optional: obtain with `nix-prefetch-url --unpack <url>`
+  });
+  dyedfoxRadio = flakeCompat {
+    src = builtins.fetchTarball {
+      url = "https://github.com/dyedfox/dyedfox-radio/archive/main.tar.gz";
+      # sha256 = "..."; # Optional: obtain with `nix-prefetch-url --unpack <url>`
+    };
+  };
+in {
+  environment.systemPackages = [
+    dyedfoxRadio.defaultNix.packages.${pkgs.system}.default
+  ];
+}
+```
+
+### Flakes
+
+Add `dyedfox-radio` to your `flake.nix` inputs:
+
+```nix
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    dyedfox-radio.url = "github:dyedfox/dyedfox-radio";
+  };
+
+  outputs = { self, nixpkgs, dyedfox-radio, ... }@inputs: {
+    nixosConfigurations.<your-hostname> = nixpkgs.lib.nixosSystem {
+      # ...
+      modules = [
+        ./configuration.nix
+        {
+          environment.systemPackages = [
+            dyedfox-radio.packages.${pkgs.system}.default
+          ];
+        }
+      ];
+    };
+  };
+}
 ```
 
 ## Build from source (PKGBUILD)
@@ -207,3 +261,9 @@ After installation the following files are placed automatically:
 | `gst-plugins-good` | Common codec support |
 | `gst-plugins-bad` *(optional)* | Additional codec support |
 | `gst-libav` *(optional)* | AAC and other codecs |
+
+## Acknowledgements
+
+- [netean](https://github.com/netean) - the Labels idea for organizing favourites
+- [jkotran](https://github.com/jkotran) - native NixOS support (Nix flake)
+- Translators - see [Localization](#localization)
