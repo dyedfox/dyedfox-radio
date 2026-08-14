@@ -18,6 +18,7 @@ Inspired by [Shortwave](https://github.com/maunalinux/shortwave), with a native 
 - [Localization](#localization)
 - [Paths](#paths)
 - [Dependencies](#dependencies)
+- [Acknowledgements](#acknowledgements)
 
 ## Screenshots
 
@@ -259,3 +260,9 @@ After installation the following files are placed automatically:
 | `gst-plugins-good` | Common codec support |
 | `gst-plugins-bad` *(optional)* | Additional codec support |
 | `gst-libav` *(optional)* | AAC and other codecs |
+
+## Acknowledgements
+
+- [netean](https://github.com/netean) - the Labels idea for organizing favourites
+- [jkotran](https://github.com/jkotran) - native NixOS support (Nix flake)
+- Translators - see [Localization](#localization)
