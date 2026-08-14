@@ -114,39 +114,44 @@ Darbojas ar radio-browser.info.</translation>
 </context><context>
     <name>InfoPanel</name>
     <message>
-        <location filename="../ui/info_panel.py" line="154" />
+        <location filename="../ui/info_panel.py" line="156" />
         <source>Click to enlarge (right-click the image to save)</source>
         <translation>Noklikšķiniet, lai palielinātu (ar labo peles pogu noklikšķiniet uz attēla, lai to saglabātu)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="177" />
+        <location filename="../ui/info_panel.py" line="179" />
         <source>Copy station name</source>
         <translation>Kopēt stacijas nosaukumu</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="194" />
+        <location filename="../ui/info_panel.py" line="196" />
         <source>Open station website</source>
         <translation>Atvērt stacijas tīmekļa vietni</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="208" />
+        <location filename="../ui/info_panel.py" line="210" />
         <source>Open on radio-browser.info</source>
         <translation>Atvērt vietnē radio-browser.info</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="243" />
+        <location filename="../ui/info_panel.py" line="245" />
         <source>Copy song info</source>
         <translation>Kopēt dziesmas informāciju</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="367" />
+        <location filename="../ui/info_panel.py" line="376" />
         <source>Show station logo</source>
         <translation>Rādīt stacijas logotipu</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="372" />
+        <location filename="../ui/info_panel.py" line="381" />
         <source>Show album art</source>
         <translation>Rādīt albuma vāku</translation>
+    </message>
+    <message>
+        <location filename="../ui/info_panel.py" line="413" />
+        <source>Listened: {0}</source>
+        <translation>Klausīts: {0}</translation>
     </message>
     <message>
         <source>Click to enlarge</source>
@@ -155,118 +160,118 @@ Darbojas ar radio-browser.info.</translation>
 </context><context>
     <name>MainWindow</name>
     <message>
-        <location filename="../ui/main_window.py" line="201" />
+        <location filename="../ui/main_window.py" line="214" />
         <source>LIBRARY</source>
         <translation>BIBLIOTĒKA</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="202" />
+        <location filename="../ui/main_window.py" line="215" />
         <source>All stations</source>
         <translation>Visas stacijas</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="210" />
+        <location filename="../ui/main_window.py" line="223" />
         <source>Favourites</source>
         <translation>Izlase</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="228" />
+        <location filename="../ui/main_window.py" line="241" />
         <source>Custom</source>
         <translation>Pielāgotās</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="229" />
+        <location filename="../ui/main_window.py" line="242" />
         <source>History</source>
         <translation>Vēsture</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="232" />
+        <location filename="../ui/main_window.py" line="245" />
         <source>DISCOVER</source>
         <translation>ATKLĀT</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="233" />
+        <location filename="../ui/main_window.py" line="246" />
         <source>New</source>
         <translation>Jaunās</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="234" />
+        <location filename="../ui/main_window.py" line="247" />
         <source>Random</source>
         <translation>Nejaušas</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="235" />
+        <location filename="../ui/main_window.py" line="248" />
         <source>Trending</source>
         <translation>Populārākās</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="236" />
+        <location filename="../ui/main_window.py" line="249" />
         <source>Now Listening</source>
         <translation>Šobrīd klausās</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="257" />
+        <location filename="../ui/main_window.py" line="270" />
         <source>Settings</source>
         <translation>Iestatījumi</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="266" />
+        <location filename="../ui/main_window.py" line="279" />
         <source>About</source>
         <translation>Par</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="307" />
+        <location filename="../ui/main_window.py" line="320" />
         <source>Hide labels</source>
         <translation>Slēpt etiķetes</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="307" />
+        <location filename="../ui/main_window.py" line="320" />
         <source>Show labels</source>
         <translation>Rādīt etiķetes</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="505" />
-        <location filename="../ui/main_window.py" line="383" />
+        <location filename="../ui/main_window.py" line="518" />
+        <location filename="../ui/main_window.py" line="396" />
         <source>Could not load stations — check your connection</source>
         <translation>Neizdevās ielādēt stacijas — pārbaudiet savienojumu</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="451" />
+        <location filename="../ui/main_window.py" line="464" />
         <source>Could not load favourites — check your connection</source>
         <translation>Neizdevās ielādēt izlasi — pārbaudiet savienojumu</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="471" />
+        <location filename="../ui/main_window.py" line="484" />
         <source>Could not load history — check your connection</source>
         <translation>Neizdevās ielādēt vēsturi — pārbaudiet savienojumu</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="489" />
+        <location filename="../ui/main_window.py" line="502" />
         <source>Could not load new stations — check your connection</source>
         <translation>Neizdevās ielādēt jaunās stacijas — pārbaudiet savienojumu</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="521" />
+        <location filename="../ui/main_window.py" line="534" />
         <source>Could not load trending stations — check your connection</source>
         <translation>Neizdevās ielādēt populārākās stacijas — pārbaudiet savienojumu</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="537" />
+        <location filename="../ui/main_window.py" line="550" />
         <source>Could not load now listening stations — check your connection</source>
         <translation>Neizdevās ielādēt šobrīd klausītās stacijas — pārbaudiet savienojumu</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="694" />
+        <location filename="../ui/main_window.py" line="711" />
         <source>Could not connect to {0}. The stream may be down or unavailable.</source>
         <translation>Neizdevās izveidot savienojumu ar {0}. Straume var būt nepieejama.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="881" />
+        <location filename="../ui/main_window.py" line="914" />
         <source>Delete station</source>
         <translation>Dzēst staciju</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="882" />
+        <location filename="../ui/main_window.py" line="915" />
         <source>Delete “{0}” from your custom stations?</source>
         <translation>Vai dzēst “{0}” no jūsu pielāgotajām stacijām?</translation>
     </message>
@@ -425,134 +430,139 @@ Lai lietotu izmaiņas, restartējiet lietotni.</translation>
 </context><context>
     <name>StationListWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="428" />
+        <location filename="../ui/station_list.py" line="432" />
         <source>Search stations…</source>
         <translation>Meklēt stacijas…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="445" />
+        <location filename="../ui/station_list.py" line="449" />
         <source>Clear history</source>
         <translation>Notīrīt vēsturi</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="446" />
+        <location filename="../ui/station_list.py" line="450" />
         <source>Remove all stations from history</source>
         <translation>Noņemt visas stacijas no vēstures</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="455" />
+        <location filename="../ui/station_list.py" line="459" />
         <source>+ Add station</source>
         <translation>+ Pievienot staciju</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="456" />
+        <location filename="../ui/station_list.py" line="460" />
         <source>Add a custom station</source>
         <translation>Pievienot pielāgoto staciju</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="473" />
+        <location filename="../ui/station_list.py" line="477" />
         <source>Name</source>
         <translation>Nosaukums</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="474" />
+        <location filename="../ui/station_list.py" line="478" />
         <source>Country</source>
         <translation>Valsts</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="475" />
+        <location filename="../ui/station_list.py" line="479" />
         <source>Bitrate</source>
         <translation>Bitu pārraides ātrums</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="476" />
+        <location filename="../ui/station_list.py" line="480" />
         <source>Votes</source>
         <translation>Balsi</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="477" />
+        <location filename="../ui/station_list.py" line="481" />
         <source>Language</source>
         <translation>Valoda</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="478" />
+        <location filename="../ui/station_list.py" line="482" />
         <source>Codec</source>
         <translation>Kodeks</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="483" />
+        <location filename="../ui/station_list.py" line="487" />
         <source>Country…</source>
         <translation>Valsts…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="487" />
+        <location filename="../ui/station_list.py" line="491" />
         <source>Genre / tag…</source>
         <translation>Žanrs / tags…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="491" />
+        <location filename="../ui/station_list.py" line="495" />
         <source>Language…</source>
         <translation>Valoda…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="498" />
+        <location filename="../ui/station_list.py" line="502" />
         <source>Toggle sort direction</source>
         <translation>Pārslēgt kārtošanas virzienu</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="514" />
+        <location filename="../ui/station_list.py" line="518" />
         <source>Result limit reached · narrow your search to see more</source>
         <translation>Sasniegts rezultātu ierobežojums · sašauriniet meklēšanu, lai redzētu vairāk</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="529" />
+        <location filename="../ui/station_list.py" line="533" />
         <source>This may be a temporary server-side issue.</source>
         <translation>Tā var būt īslaicīga servera puses problēma.</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="535" />
+        <location filename="../ui/station_list.py" line="539" />
         <source>Retry</source>
         <translation>Mēģināt vēlreiz</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="894" />
+        <location filename="../ui/station_list.py" line="902" />
         <source>{0} stations</source>
         <translation>{0} stacijas</translation>
     </message>
 </context><context>
     <name>StationRowWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="245" />
+        <location filename="../ui/station_list.py" line="218" />
+        <source>{0} listened</source>
+        <translation>{0} klausīts</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="248" />
         <source>Delete station</source>
         <translation>Dzēst staciju</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="274" />
+        <location filename="../ui/station_list.py" line="277" />
         <source>Remove from history</source>
         <translation>Noņemt no vēstures</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="330" />
+        <location filename="../ui/station_list.py" line="333" />
         <source>Favourite this station to add labels</source>
         <translation>Pievienojiet šo staciju izlasei, lai pievienotu etiķetes</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="338" />
+        <location filename="../ui/station_list.py" line="341" />
         <source>No labels yet</source>
         <translation>Vēl nav neviena etiķete</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="346" />
+        <location filename="../ui/station_list.py" line="349" />
         <source>New label…</source>
         <translation>Jauna etiķete…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="351" />
+        <location filename="../ui/station_list.py" line="354" />
         <source>New label</source>
         <translation>Jauna etiķete</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="351" />
+        <location filename="../ui/station_list.py" line="354" />
         <source>Label name:</source>
         <translation>Etiķetes nosaukums:</translation>
     </message>
@@ -587,23 +597,23 @@ Lai lietotu izmaiņas, restartējiet lietotni.</translation>
 </context><context>
     <name>_ImagePopup</name>
     <message>
-        <location filename="../ui/info_panel.py" line="86" />
+        <location filename="../ui/info_panel.py" line="88" />
         <source>Save image as…</source>
         <translation>Saglabāt attēlu kā…</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="107" />
-        <location filename="../ui/info_panel.py" line="95" />
+        <location filename="../ui/info_panel.py" line="109" />
+        <location filename="../ui/info_panel.py" line="97" />
         <source>Save image</source>
         <translation>Saglabāt attēlu</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="96" />
+        <location filename="../ui/info_panel.py" line="98" />
         <source>PNG image (*.png);;JPEG image (*.jpg *.jpeg)</source>
         <translation>PNG attēls (*.png);;JPEG attēls (*.jpg *.jpeg)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="107" />
+        <location filename="../ui/info_panel.py" line="109" />
         <source>Could not save the image.</source>
         <translation>Neizdevās saglabāt attēlu.</translation>
     </message>

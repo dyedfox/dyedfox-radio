@@ -114,39 +114,44 @@ Con tecnología de radio-browser.info.</translation>
 </context><context>
     <name>InfoPanel</name>
     <message>
-        <location filename="../ui/info_panel.py" line="154" />
+        <location filename="../ui/info_panel.py" line="156" />
         <source>Click to enlarge (right-click the image to save)</source>
         <translation>Haz clic para ampliar (haz clic derecho en la imagen para guardarla)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="177" />
+        <location filename="../ui/info_panel.py" line="179" />
         <source>Copy station name</source>
         <translation>Copiar nombre de la emisora</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="194" />
+        <location filename="../ui/info_panel.py" line="196" />
         <source>Open station website</source>
         <translation>Abrir sitio web de la emisora</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="208" />
+        <location filename="../ui/info_panel.py" line="210" />
         <source>Open on radio-browser.info</source>
         <translation>Abrir en radio-browser.info</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="243" />
+        <location filename="../ui/info_panel.py" line="245" />
         <source>Copy song info</source>
         <translation>Copiar información de la canción</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="367" />
+        <location filename="../ui/info_panel.py" line="376" />
         <source>Show station logo</source>
         <translation>Mostrar logotipo de la emisora</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="372" />
+        <location filename="../ui/info_panel.py" line="381" />
         <source>Show album art</source>
         <translation>Mostrar carátula del álbum</translation>
+    </message>
+    <message>
+        <location filename="../ui/info_panel.py" line="413" />
+        <source>Listened: {0}</source>
+        <translation>Escuchado: {0}</translation>
     </message>
     <message>
         <source>Click to enlarge</source>
@@ -155,118 +160,118 @@ Con tecnología de radio-browser.info.</translation>
 </context><context>
     <name>MainWindow</name>
     <message>
-        <location filename="../ui/main_window.py" line="201" />
+        <location filename="../ui/main_window.py" line="214" />
         <source>LIBRARY</source>
         <translation>BIBLIOTECA</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="202" />
+        <location filename="../ui/main_window.py" line="215" />
         <source>All stations</source>
         <translation>Todas las emisoras</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="210" />
+        <location filename="../ui/main_window.py" line="223" />
         <source>Favourites</source>
         <translation>Favoritas</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="228" />
+        <location filename="../ui/main_window.py" line="241" />
         <source>Custom</source>
         <translation>Personalizadas</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="229" />
+        <location filename="../ui/main_window.py" line="242" />
         <source>History</source>
         <translation>Historial</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="232" />
+        <location filename="../ui/main_window.py" line="245" />
         <source>DISCOVER</source>
         <translation>DESCUBRIR</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="233" />
+        <location filename="../ui/main_window.py" line="246" />
         <source>New</source>
         <translation>Nuevas</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="234" />
+        <location filename="../ui/main_window.py" line="247" />
         <source>Random</source>
         <translation>Aleatorias</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="235" />
+        <location filename="../ui/main_window.py" line="248" />
         <source>Trending</source>
         <translation>Tendencias</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="236" />
+        <location filename="../ui/main_window.py" line="249" />
         <source>Now Listening</source>
         <translation>Escuchando ahora</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="257" />
+        <location filename="../ui/main_window.py" line="270" />
         <source>Settings</source>
         <translation>Configuración</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="266" />
+        <location filename="../ui/main_window.py" line="279" />
         <source>About</source>
         <translation>Acerca de</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="307" />
+        <location filename="../ui/main_window.py" line="320" />
         <source>Hide labels</source>
         <translation>Ocultar etiquetas</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="307" />
+        <location filename="../ui/main_window.py" line="320" />
         <source>Show labels</source>
         <translation>Mostrar etiquetas</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="505" />
-        <location filename="../ui/main_window.py" line="383" />
+        <location filename="../ui/main_window.py" line="518" />
+        <location filename="../ui/main_window.py" line="396" />
         <source>Could not load stations — check your connection</source>
         <translation>No se pudieron cargar las emisoras — comprueba tu conexión</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="451" />
+        <location filename="../ui/main_window.py" line="464" />
         <source>Could not load favourites — check your connection</source>
         <translation>No se pudieron cargar las favoritas — comprueba tu conexión</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="471" />
+        <location filename="../ui/main_window.py" line="484" />
         <source>Could not load history — check your connection</source>
         <translation>No se pudo cargar el historial — comprueba tu conexión</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="489" />
+        <location filename="../ui/main_window.py" line="502" />
         <source>Could not load new stations — check your connection</source>
         <translation>No se pudieron cargar las nuevas emisoras — comprueba tu conexión</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="521" />
+        <location filename="../ui/main_window.py" line="534" />
         <source>Could not load trending stations — check your connection</source>
         <translation>No se pudieron cargar las emisoras en tendencia — comprueba tu conexión</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="537" />
+        <location filename="../ui/main_window.py" line="550" />
         <source>Could not load now listening stations — check your connection</source>
         <translation>No se pudieron cargar las emisoras que se escuchan ahora — comprueba tu conexión</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="694" />
+        <location filename="../ui/main_window.py" line="711" />
         <source>Could not connect to {0}. The stream may be down or unavailable.</source>
         <translation>No se pudo conectar con {0}. Puede que el stream esté caído o no disponible.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="881" />
+        <location filename="../ui/main_window.py" line="914" />
         <source>Delete station</source>
         <translation>Eliminar emisora</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="882" />
+        <location filename="../ui/main_window.py" line="915" />
         <source>Delete “{0}” from your custom stations?</source>
         <translation>¿Eliminar «{0}» de tus emisoras personalizadas?</translation>
     </message>
@@ -425,134 +430,139 @@ Reinicia la aplicación para aplicar los cambios.</translation>
 </context><context>
     <name>StationListWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="428" />
+        <location filename="../ui/station_list.py" line="432" />
         <source>Search stations…</source>
         <translation>Buscar emisoras…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="445" />
+        <location filename="../ui/station_list.py" line="449" />
         <source>Clear history</source>
         <translation>Borrar historial</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="446" />
+        <location filename="../ui/station_list.py" line="450" />
         <source>Remove all stations from history</source>
         <translation>Eliminar todas las emisoras del historial</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="455" />
+        <location filename="../ui/station_list.py" line="459" />
         <source>+ Add station</source>
         <translation>+ Añadir emisora</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="456" />
+        <location filename="../ui/station_list.py" line="460" />
         <source>Add a custom station</source>
         <translation>Añadir una emisora personalizada</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="473" />
+        <location filename="../ui/station_list.py" line="477" />
         <source>Name</source>
         <translation>Nombre</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="474" />
+        <location filename="../ui/station_list.py" line="478" />
         <source>Country</source>
         <translation>País</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="475" />
+        <location filename="../ui/station_list.py" line="479" />
         <source>Bitrate</source>
         <translation>Tasa de bits</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="476" />
+        <location filename="../ui/station_list.py" line="480" />
         <source>Votes</source>
         <translation>Votos</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="477" />
+        <location filename="../ui/station_list.py" line="481" />
         <source>Language</source>
         <translation>Idioma</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="478" />
+        <location filename="../ui/station_list.py" line="482" />
         <source>Codec</source>
         <translation>Códec</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="483" />
+        <location filename="../ui/station_list.py" line="487" />
         <source>Country…</source>
         <translation>País…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="487" />
+        <location filename="../ui/station_list.py" line="491" />
         <source>Genre / tag…</source>
         <translation>Género / etiqueta…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="491" />
+        <location filename="../ui/station_list.py" line="495" />
         <source>Language…</source>
         <translation>Idioma…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="498" />
+        <location filename="../ui/station_list.py" line="502" />
         <source>Toggle sort direction</source>
         <translation>Cambiar el orden de clasificación</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="514" />
+        <location filename="../ui/station_list.py" line="518" />
         <source>Result limit reached · narrow your search to see more</source>
         <translation>Límite de resultados alcanzado · acota tu búsqueda para ver más</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="529" />
+        <location filename="../ui/station_list.py" line="533" />
         <source>This may be a temporary server-side issue.</source>
         <translation>Puede tratarse de un problema temporal del servidor.</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="535" />
+        <location filename="../ui/station_list.py" line="539" />
         <source>Retry</source>
         <translation>Reintentar</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="894" />
+        <location filename="../ui/station_list.py" line="902" />
         <source>{0} stations</source>
         <translation>{0} emisoras</translation>
     </message>
 </context><context>
     <name>StationRowWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="245" />
+        <location filename="../ui/station_list.py" line="218" />
+        <source>{0} listened</source>
+        <translation>{0} escuchado</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="248" />
         <source>Delete station</source>
         <translation>Eliminar emisora</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="274" />
+        <location filename="../ui/station_list.py" line="277" />
         <source>Remove from history</source>
         <translation>Eliminar del historial</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="330" />
+        <location filename="../ui/station_list.py" line="333" />
         <source>Favourite this station to add labels</source>
         <translation>Marca esta emisora como favorita para añadir etiquetas</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="338" />
+        <location filename="../ui/station_list.py" line="341" />
         <source>No labels yet</source>
         <translation>Aún no hay etiquetas</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="346" />
+        <location filename="../ui/station_list.py" line="349" />
         <source>New label…</source>
         <translation>Nueva etiqueta…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="351" />
+        <location filename="../ui/station_list.py" line="354" />
         <source>New label</source>
         <translation>Nueva etiqueta</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="351" />
+        <location filename="../ui/station_list.py" line="354" />
         <source>Label name:</source>
         <translation>Nombre de la etiqueta:</translation>
     </message>
@@ -587,23 +597,23 @@ Reinicia la aplicación para aplicar los cambios.</translation>
 </context><context>
     <name>_ImagePopup</name>
     <message>
-        <location filename="../ui/info_panel.py" line="86" />
+        <location filename="../ui/info_panel.py" line="88" />
         <source>Save image as…</source>
         <translation>Guardar imagen como…</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="107" />
-        <location filename="../ui/info_panel.py" line="95" />
+        <location filename="../ui/info_panel.py" line="109" />
+        <location filename="../ui/info_panel.py" line="97" />
         <source>Save image</source>
         <translation>Guardar imagen</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="96" />
+        <location filename="../ui/info_panel.py" line="98" />
         <source>PNG image (*.png);;JPEG image (*.jpg *.jpeg)</source>
         <translation>Imagen PNG (*.png);;Imagen JPEG (*.jpg *.jpeg)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="107" />
+        <location filename="../ui/info_panel.py" line="109" />
         <source>Could not save the image.</source>
         <translation>No se pudo guardar la imagen.</translation>
     </message>
