@@ -348,6 +348,7 @@ class MainWindow(QMainWindow):
         self._station_list.station_delete_requested.connect(self._on_custom_delete)
         self._station_list.station_edit_requested.connect(self._on_custom_edit)
         self._station_list.station_remove_requested.connect(self._on_remove_recent)
+        self._station_list.reset_listening_requested.connect(self._on_reset_listening)
         self._station_list.clear_history_requested.connect(self._on_clear_recent)
         self._station_list.add_station_requested.connect(self._on_add_custom_station)
 
@@ -405,7 +406,8 @@ class MainWindow(QMainWindow):
         self._mpris = mpris
 
     def _open_settings(self):
-        dlg = SettingsDialog(self._settings, self)
+        dlg = SettingsDialog(self._settings, self._listening_stats, self)
+        dlg.listening_cleared.connect(self._on_listening_cleared)
         dlg.exec()
         enabled = self._settings["show_album_art"]
         self._info_panel.set_album_art_enabled(enabled)
@@ -771,6 +773,10 @@ class MainWindow(QMainWindow):
     def _update_listening_time_display(self):
         uuid = self._current_station.get("stationuuid", "") if self._current_station else ""
         self._info_panel.set_listening_time(self._listening_stats.total_seconds(uuid) if uuid else 0)
+        # Keep the playing station's list row in sync with the info panel (its
+        # figure otherwise only reflects the total captured when the row was built).
+        if uuid:
+            self._station_list.update_listening_time(uuid)
 
     def _flush_notification(self, token: int, icon_path: str | None = None):
         """Fire the queued notification if it still belongs to the given song."""
@@ -823,6 +829,22 @@ class MainWindow(QMainWindow):
         # set_view re-filters the existing rows against the updated history, so the
         # removed station disappears without a network round-trip.
         self._station_list.set_view("recent", self._favourites.uuids(), self._recent.uuids())
+
+    def _on_reset_listening(self, uuid: str):
+        self._listening_stats.remove(uuid)
+        # remove() drops the in-progress segment if this station is playing;
+        # resume it so the ongoing session keeps counting from zero.
+        if (self._backend.is_playing and self._current_station
+                and self._current_station.get("stationuuid", "") == uuid):
+            self._listening_stats.start(uuid)
+        self._update_listening_time_display()
+        self._station_list.update_listening_time(uuid)
+
+    def _on_listening_cleared(self):
+        if self._backend.is_playing and self._current_station:
+            self._listening_stats.start(self._current_station.get("stationuuid", ""))
+        self._update_listening_time_display()
+        self._station_list.update_listening_time()
 
     def _on_favourite_toggled(self, uuid: str, is_fav: bool):
         self._favourites.set(uuid, is_fav)

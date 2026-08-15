@@ -38,7 +38,7 @@ Inspired by [Shortwave](https://github.com/maunalinux/shortwave), with a native 
 - Favourites, History, and custom stations (add any stream by URL)
 - Organize favourite stations with custom labels
 - Editable History — remove single stations or clear the whole list
-- Listening time tracked per station, shown in the info panel and History
+- Listening time tracked per station — shown on station rows and in the info panel, resettable per station or cleared entirely from Settings
 - Station info panel with logo, codec, bitrate, and tags
 - Per-song album art for the current track (looked up from Deezer, falls back to the station logo) — click the artwork to enlarge, or toggle between cover art and station logo
 - Animated equalizer indicator on the playing station
@@ -264,6 +264,6 @@ After installation the following files are placed automatically:
 
 ## Acknowledgements
 
-- [netean](https://github.com/netean) - the Labels idea for organizing favourites
+- [netean](https://github.com/netean) - the Labels idea for organizing favourites, and per-station listening-time tracking
 - [jkotran](https://github.com/jkotran) - native NixOS support (Nix flake)
 - Translators - see [Localization](#localization)

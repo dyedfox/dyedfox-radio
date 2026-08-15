@@ -5,7 +5,11 @@ from pathlib import Path
 from datetime import datetime
 
 _CONFIG = Path.home() / ".config" / "dyedfox-radio"
-_FILES = ["favourites.json", "favourites_cache.json", "recent.json", "settings.json", "custom_stations.json"]
+_FILES = [
+    "favourites.json", "favourites_cache.json", "favourite_labels.json",
+    "recent.json", "recent_cache.json", "settings.json",
+    "custom_stations.json", "listening_time.json",
+]
 
 
 def export_backup(path: Path):

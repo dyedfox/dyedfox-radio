@@ -230,48 +230,48 @@ Leveret af radio-browser.info.</translation>
         <translation>Vis mærkater</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="518" />
-        <location filename="../ui/main_window.py" line="396" />
+        <location filename="../ui/main_window.py" line="520" />
+        <location filename="../ui/main_window.py" line="397" />
         <source>Could not load stations — check your connection</source>
         <translation>Kunne ikke indlæse stationer — tjek din forbindelse</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="464" />
+        <location filename="../ui/main_window.py" line="466" />
         <source>Could not load favourites — check your connection</source>
         <translation>Kunne ikke indlæse favoritter — tjek din forbindelse</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="484" />
+        <location filename="../ui/main_window.py" line="486" />
         <source>Could not load history — check your connection</source>
         <translation>Kunne ikke indlæse historik — tjek din forbindelse</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="502" />
+        <location filename="../ui/main_window.py" line="504" />
         <source>Could not load new stations — check your connection</source>
         <translation>Kunne ikke indlæse nye stationer — tjek din forbindelse</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="534" />
+        <location filename="../ui/main_window.py" line="536" />
         <source>Could not load trending stations — check your connection</source>
         <translation>Kunne ikke indlæse populære stationer — tjek din forbindelse</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="550" />
+        <location filename="../ui/main_window.py" line="552" />
         <source>Could not load now listening stations — check your connection</source>
         <translation>Kunne ikke indlæse stationer, der lyttes til nu — tjek din forbindelse</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="711" />
+        <location filename="../ui/main_window.py" line="713" />
         <source>Could not connect to {0}. The stream may be down or unavailable.</source>
         <translation>Kunne ikke oprette forbindelse til {0}. Streamen er muligvis utilgængelig.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="914" />
+        <location filename="../ui/main_window.py" line="929" />
         <source>Delete station</source>
         <translation>Slet station</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="915" />
+        <location filename="../ui/main_window.py" line="930" />
         <source>Delete “{0}” from your custom stations?</source>
         <translation>Slet “{0}” fra dine tilpassede stationer?</translation>
     </message>
@@ -296,273 +296,319 @@ Leveret af radio-browser.info.</translation>
 </context><context>
     <name>SettingsDialog</name>
     <message>
-        <location filename="../ui/settings_dialog.py" line="16" />
+        <location filename="../ui/settings_dialog.py" line="20" />
         <source>Settings</source>
         <translation>Indstillinger</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="24" />
+        <location filename="../ui/settings_dialog.py" line="28" />
         <source>Startup</source>
         <translation>Opstart</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="27" />
+        <location filename="../ui/settings_dialog.py" line="31" />
         <source>Start minimized to tray</source>
         <translation>Start minimeret i statusfeltet</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="31" />
+        <location filename="../ui/settings_dialog.py" line="35" />
         <source>Autoplay last station</source>
         <translation>Afspil automatisk seneste station</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="35" />
+        <location filename="../ui/settings_dialog.py" line="39" />
         <source>Startup options take effect on next launch.</source>
         <translation>Opstartsindstillinger træder i kraft ved næste start.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="42" />
+        <location filename="../ui/settings_dialog.py" line="46" />
         <source>Stations</source>
         <translation>Stationer</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="48" />
+        <location filename="../ui/settings_dialog.py" line="52" />
         <source>{0} stations</source>
         <translation>{0} stationer</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="51" />
+        <location filename="../ui/settings_dialog.py" line="55" />
         <source>Top stations to load:</source>
         <translation>Antal topstationer, der skal indlæses:</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="53" />
+        <location filename="../ui/settings_dialog.py" line="57" />
         <source>Higher values slow down initial load and search. Prefer using search and filters over increasing this limit.</source>
         <translation>Højere værdier gør den indledende indlæsning og søgning langsommere. Brug hellere søgning og filtre end at hæve denne grænse.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="61" />
+        <location filename="../ui/settings_dialog.py" line="65" />
         <source>Notifications</source>
         <translation>Notifikationer</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="64" />
+        <location filename="../ui/settings_dialog.py" line="68" />
         <source>Show song change notifications</source>
         <translation>Vis notifikationer ved sangskift</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="71" />
+        <location filename="../ui/settings_dialog.py" line="75" />
         <source>Now playing</source>
         <translation>Afspiller nu</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="74" />
+        <location filename="../ui/settings_dialog.py" line="78" />
         <source>Show album art for the current song</source>
         <translation>Vis albumcover for den aktuelle sang</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="78" />
+        <location filename="../ui/settings_dialog.py" line="82" />
         <source>Cover art is looked up from Deezer using the song title. Falls back to the station logo when no match is found.</source>
         <translation>Coveret slås op på Deezer ud fra sangtitlen. Hvis der ikke findes et match, vises stationslogoet.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="170" />
-        <location filename="../ui/settings_dialog.py" line="166" />
-        <location filename="../ui/settings_dialog.py" line="151" />
-        <location filename="../ui/settings_dialog.py" line="149" />
-        <location filename="../ui/settings_dialog.py" line="87" />
+        <location filename="../ui/settings_dialog.py" line="171" />
+        <location filename="../ui/settings_dialog.py" line="91" />
+        <source>Listening time</source>
+        <translation>Lyttetid</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="94" />
+        <source>Time listened is tracked per station and shown in the info panel and History.</source>
+        <translation>Lyttetiden registreres pr. station og vises i infopanelet og i historikken.</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="100" />
+        <source>Clear all listening time…</source>
+        <translation>Ryd al lyttetid…</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="206" />
+        <location filename="../ui/settings_dialog.py" line="202" />
+        <location filename="../ui/settings_dialog.py" line="187" />
+        <location filename="../ui/settings_dialog.py" line="185" />
+        <location filename="../ui/settings_dialog.py" line="109" />
         <source>Backup</source>
         <translation>Sikkerhedskopi</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="90" />
-        <source>Back up and restore your favourites, custom stations, history, and settings.</source>
-        <translation>Sikkerhedskopiér og gendan dine favoritter, tilpassede stationer, historik og indstillinger.</translation>
+        <location filename="../ui/settings_dialog.py" line="112" />
+        <source>Back up and restore your favourites, labels, custom stations, history, listening time, and settings.</source>
+        <translation>Sikkerhedskopiér og gendan dine favoritter, mærkater, tilpassede stationer, historik, lyttetid og indstillinger.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="96" />
+        <location filename="../ui/settings_dialog.py" line="118" />
         <source>Export…</source>
         <translation>Eksportér…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="98" />
+        <location filename="../ui/settings_dialog.py" line="120" />
         <source>Import…</source>
         <translation>Importér…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="141" />
+        <location filename="../ui/settings_dialog.py" line="163" />
+        <source>Clear all listening time</source>
+        <translation>Ryd al lyttetid</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="164" />
+        <source>Clear all listening time? This cannot be undone.</source>
+        <translation>Ryd al lyttetid? Dette kan ikke fortrydes.</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="171" />
+        <source>All listening time cleared.</source>
+        <translation>Al lyttetid er ryddet.</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="177" />
         <source>Export backup</source>
         <translation>Eksportér sikkerhedskopi</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="158" />
-        <location filename="../ui/settings_dialog.py" line="143" />
+        <location filename="../ui/settings_dialog.py" line="194" />
+        <location filename="../ui/settings_dialog.py" line="179" />
         <source>Zip files (*.zip)</source>
         <translation>ZIP-filer (*.zip)</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="149" />
+        <location filename="../ui/settings_dialog.py" line="185" />
         <source>Backup exported successfully.</source>
         <translation>Sikkerhedskopi blev eksporteret.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="151" />
+        <location filename="../ui/settings_dialog.py" line="187" />
         <source>Export failed: {0}</source>
         <translation>Eksport mislykkedes: {0}</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="156" />
+        <location filename="../ui/settings_dialog.py" line="192" />
         <source>Import backup</source>
         <translation>Importér sikkerhedskopi</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="167" />
+        <location filename="../ui/settings_dialog.py" line="203" />
         <source>Restored: {0}.
 Restart the app to apply changes.</source>
         <translation>Gendannet: {0}.
 Genstart appen for at anvende ændringerne.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="170" />
+        <location filename="../ui/settings_dialog.py" line="206" />
         <source>Import failed: {0}</source>
         <translation>Import mislykkedes: {0}</translation>
+    </message>
+    <message>
+        <source>Back up and restore your favourites, custom stations, history, and settings.</source>
+        <translation type="vanished">Sikkerhedskopiér og gendan dine favoritter, tilpassede stationer, historik og indstillinger.</translation>
     </message>
 </context><context>
     <name>StationListWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="432" />
+        <location filename="../ui/station_list.py" line="486" />
         <source>Search stations…</source>
         <translation>Søg efter stationer…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="449" />
+        <location filename="../ui/station_list.py" line="503" />
         <source>Clear history</source>
         <translation>Ryd historik</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="450" />
+        <location filename="../ui/station_list.py" line="504" />
         <source>Remove all stations from history</source>
         <translation>Fjern alle stationer fra historikken</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="459" />
+        <location filename="../ui/station_list.py" line="513" />
         <source>+ Add station</source>
         <translation>+ Tilføj station</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="460" />
+        <location filename="../ui/station_list.py" line="514" />
         <source>Add a custom station</source>
         <translation>Tilføj en tilpasset station</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="477" />
+        <location filename="../ui/station_list.py" line="531" />
         <source>Name</source>
         <translation>Navn</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="478" />
+        <location filename="../ui/station_list.py" line="532" />
         <source>Country</source>
         <translation>Land</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="479" />
+        <location filename="../ui/station_list.py" line="533" />
         <source>Bitrate</source>
         <translation>Bithastighed</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="480" />
+        <location filename="../ui/station_list.py" line="534" />
         <source>Votes</source>
         <translation>Stemmer</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="481" />
+        <location filename="../ui/station_list.py" line="535" />
         <source>Language</source>
         <translation>Sprog</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="482" />
+        <location filename="../ui/station_list.py" line="536" />
         <source>Codec</source>
         <translation>Codec</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="487" />
+        <location filename="../ui/station_list.py" line="541" />
         <source>Country…</source>
         <translation>Land…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="491" />
+        <location filename="../ui/station_list.py" line="545" />
         <source>Genre / tag…</source>
         <translation>Genre / tag…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="495" />
+        <location filename="../ui/station_list.py" line="549" />
         <source>Language…</source>
         <translation>Sprog…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="502" />
+        <location filename="../ui/station_list.py" line="556" />
         <source>Toggle sort direction</source>
         <translation>Skift sorteringsretning</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="518" />
+        <location filename="../ui/station_list.py" line="572" />
         <source>Result limit reached · narrow your search to see more</source>
         <translation>Resultatgrænse nået · indsnævr din søgning for at se flere</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="533" />
+        <location filename="../ui/station_list.py" line="587" />
         <source>This may be a temporary server-side issue.</source>
         <translation>Det kan være et midlertidigt problem på serversiden.</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="539" />
+        <location filename="../ui/station_list.py" line="593" />
         <source>Retry</source>
         <translation>Prøv igen</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="902" />
+        <location filename="../ui/station_list.py" line="957" />
         <source>{0} stations</source>
         <translation>{0} stationer</translation>
     </message>
 </context><context>
     <name>StationRowWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="218" />
+        <location filename="../ui/station_list.py" line="235" />
         <source>{0} listened</source>
         <translation>{0} lyttet</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="248" />
+        <location filename="../ui/station_list.py" line="274" />
         <source>Delete station</source>
         <translation>Slet station</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="277" />
+        <location filename="../ui/station_list.py" line="299" />
         <source>Remove from history</source>
         <translation>Fjern fra historik</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="333" />
+        <location filename="../ui/station_list.py" line="372" />
         <source>Favourite this station to add labels</source>
         <translation>Føj denne station til favoritter for at tilføje mærkater</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="341" />
+        <location filename="../ui/station_list.py" line="378" />
         <source>No labels yet</source>
         <translation>Ingen mærkater endnu</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="349" />
+        <location filename="../ui/station_list.py" line="385" />
         <source>New label…</source>
         <translation>Nyt mærkat…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="354" />
+        <location filename="../ui/station_list.py" line="400" />
+        <location filename="../ui/station_list.py" line="389" />
+        <source>Reset time listened</source>
+        <translation>Nulstil lyttetid</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="401" />
+        <source>Reset the listening time for “{0}”?</source>
+        <translation>Nulstil lyttetiden for “{0}”?</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="407" />
         <source>New label</source>
         <translation>Nyt mærkat</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="354" />
+        <location filename="../ui/station_list.py" line="407" />
         <source>Label name:</source>
         <translation>Mærkatnavn:</translation>
     </message>

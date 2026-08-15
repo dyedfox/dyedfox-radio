@@ -64,6 +64,27 @@ class ListeningStatsManager:
             total += time.monotonic() - self._segment_start
         return total
 
+    def has_any(self) -> bool:
+        """True if there is any recorded time to clear — either saved totals or
+        an in-progress segment currently accruing."""
+        return bool(self._totals) or self._active_uuid is not None
+
+    def remove(self, uuid: str):
+        """Forget the accumulated time for one station. Drops the in-progress
+        segment too if it belongs to that station, so it can't be folded back in."""
+        if uuid == self._active_uuid:
+            self._active_uuid = None
+            self._segment_start = None
+        if self._totals.pop(uuid, None) is not None:
+            self._save()
+
+    def clear(self):
+        """Forget all accumulated time and any in-progress segment."""
+        self._active_uuid = None
+        self._segment_start = None
+        self._totals = {}
+        self._save()
+
     def _load(self) -> dict:
         try:
             return json.loads(_STATS_FILE.read_text())
