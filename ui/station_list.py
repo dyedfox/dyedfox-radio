@@ -5,12 +5,13 @@ import requests
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QListWidget, QListWidgetItem,
     QLineEdit, QPushButton, QLabel, QSizePolicy, QApplication, QComboBox,
-    QStyle, QStyleOption, QMenu, QInputDialog,
+    QStyle, QStyleOption, QMenu, QInputDialog, QMessageBox,
 )
 from PyQt6.QtCore import Qt, QSize, QTimer, QRunnable, QObject, pyqtSignal, QThreadPool, QEvent
 from PyQt6.QtGui import QIcon, QPalette, QPixmap, QPainter, QColor, QBrush
 
 from data.favourites import FavouritesManager
+from data.listening_stats import ListeningStatsManager, format_duration
 from data.settings import Settings
 
 _NO_LOGO_PATH = str(Path(__file__).parent.parent / "assets" / "icons" / "no_logo-256x256.png")
@@ -111,11 +112,16 @@ class _WaveWidget(QWidget):
 
 
 class _ElidedLabel(QLabel):
-    """QLabel that truncates text with … instead of forcing the widget wider."""
+    """QLabel that truncates text with … instead of forcing the widget wider.
+    Emits elision_changed whenever it starts or stops being truncated, so a
+    parent can surface the full text (e.g. as a tooltip) only when it's clipped."""
+
+    elision_changed = pyqtSignal()
 
     def __init__(self, text="", parent=None):
         super().__init__(parent)
         self._full_text = text
+        self._is_elided = False
         self.setSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Preferred)
         super().setText(text)
 
@@ -127,12 +133,21 @@ class _ElidedLabel(QLabel):
         super().resizeEvent(event)
         self._elide()
 
+    def is_elided(self) -> bool:
+        return self._is_elided
+
     def _elide(self):
         w = self.width()
         if w <= 0:
             super().setText(self._full_text)
-            return
-        super().setText(self.fontMetrics().elidedText(self._full_text, Qt.TextElideMode.ElideRight, w))
+            elided = False
+        else:
+            shown = self.fontMetrics().elidedText(self._full_text, Qt.TextElideMode.ElideRight, w)
+            super().setText(shown)
+            elided = shown != self._full_text
+        if elided != self._is_elided:
+            self._is_elided = elided
+            self.elision_changed.emit()
 
 
 class _FaviconSignals(QObject):
@@ -173,11 +188,13 @@ class StationRowWidget(QWidget):
     play_requested = pyqtSignal(dict)
     favourite_toggled = pyqtSignal(str, bool)  # uuid, new state
     label_toggled = pyqtSignal(str, str, bool)  # uuid, label, new state
+    reset_listening_requested = pyqtSignal(str)  # uuid
 
-    def __init__(self, station: dict, favourites: FavouritesManager, parent=None, on_delete=None, on_edit=None, on_remove=None):
+    def __init__(self, station: dict, favourites: FavouritesManager, parent=None, on_delete=None, on_edit=None, on_remove=None, listening_seconds: float = 0, listening_stats: ListeningStatsManager | None = None):
         super().__init__(parent)
         self._station = station
         self._favourites = favourites
+        self._listening_stats = listening_stats
         uuid = station.get("stationuuid", "")
 
         layout = QHBoxLayout(self)
@@ -206,6 +223,7 @@ class StationRowWidget(QWidget):
         name_label.setFont(f)
         name_label.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
         text_layout.addWidget(name_label)
+        self._name_label = name_label
 
         tags = [t.strip() for t in station.get("tags", "").split(",") if t.strip()]
         first_tag = tags[0] if tags else ""
@@ -214,15 +232,24 @@ class StationRowWidget(QWidget):
         bitrate = station.get("bitrate", 0)
         votes = station.get("votes", 0)
         votes_str = f"{votes // 1000}k ♥" if votes >= 1000 else (f"{votes} ♥" if votes else "")
-        meta_parts = [p for p in [
-            country, first_tag, codec,
-            f"{bitrate} kbps" if bitrate else "",
-            votes_str,
-        ] if p]
-        meta_label = _ElidedLabel("  ·  ".join(meta_parts))
+        # Everything except the listening figure is fixed for the row; keep the
+        # base parts so the "X listened" tail can be refreshed in place (e.g.
+        # after a reset) without rebuilding the whole row.
+        self._meta_base = [country, first_tag, codec, f"{bitrate} kbps" if bitrate else "", votes_str]
+        meta_label = _ElidedLabel("")
         meta_label.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
         meta_label.setStyleSheet("color: palette(placeholder-text);")
         text_layout.addWidget(meta_label)
+        self._meta_label = meta_label
+
+        # The labels are transparent to the mouse (clicks fall through to the row
+        # to start playback), so hover tooltips must live on the row itself. Show
+        # the full text only for whichever line is actually truncated, re-checked
+        # whenever either label re-elides on resize.
+        name_label.elision_changed.connect(self._update_overflow_tooltip)
+        meta_label.elision_changed.connect(self._update_overflow_tooltip)
+        self.set_listening_seconds(listening_seconds)
+        self._update_overflow_tooltip()
 
         layout.addWidget(text, 1)
 
@@ -261,10 +288,6 @@ class StationRowWidget(QWidget):
             self._heart_btn.toggled.connect(lambda checked, u=uuid: self._on_heart(u, checked))
             layout.addWidget(self._heart_btn)
 
-            # Right-click any favouritable row to manage its labels.
-            self.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
-            self.customContextMenuRequested.connect(self._show_label_menu)
-
             # History rows keep the heart but add a remove-from-history button
             # to the right of it (these are real stations, unlike Custom rows).
             if on_remove is not None:
@@ -279,6 +302,29 @@ class StationRowWidget(QWidget):
                     remove_btn.setIcon(rm_icon)
                 remove_btn.clicked.connect(lambda: on_remove(uuid))
                 layout.addWidget(remove_btn)
+
+        # Right-click any row for its context menu: label management on
+        # favouritable rows (Custom stations can't be labelled) plus a
+        # "Reset time listened" entry available on every station.
+        self._can_label = on_delete is None
+        self.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self.customContextMenuRequested.connect(self._show_context_menu)
+
+    def set_listening_seconds(self, seconds: float):
+        listened = self.tr("{0} listened").format(format_duration(seconds)) if seconds else ""
+        parts = [p for p in self._meta_base + [listened] if p]
+        self._meta_label.setText("  ·  ".join(parts))
+        # The meta content changed; refresh the tooltip even if the elided/not
+        # state didn't flip (elision_changed wouldn't fire in that case).
+        self._update_overflow_tooltip()
+
+    def _update_overflow_tooltip(self):
+        parts = []
+        if self._name_label.is_elided():
+            parts.append(self._name_label._full_text)
+        if self._meta_label.is_elided():
+            parts.append(self._meta_label._full_text)
+        self.setToolTip("\n".join(parts))
 
     def set_favicon(self, data: bytes):
         pix = QPixmap()
@@ -323,29 +369,45 @@ class StationRowWidget(QWidget):
         self._update_heart(checked)
         self.favourite_toggled.emit(uuid, checked)
 
-    def _show_label_menu(self, pos):
+    def _show_context_menu(self, pos):
         uuid = self._station.get("stationuuid", "")
         menu = QMenu(self)
-        if not self._favourites.is_favourite(uuid):
-            action = menu.addAction(self.tr("Favourite this station to add labels"))
-            action.setEnabled(False)
-            menu.exec(self.mapToGlobal(pos))
-            return
 
-        current = set(self._favourites.labels_for(uuid))
-        all_labels = self._favourites.all_labels()
-        if not all_labels:
-            action = menu.addAction(self.tr("No labels yet"))
-            action.setEnabled(False)
-        for label in all_labels:
-            action = menu.addAction(label)
-            action.setCheckable(True)
-            action.setChecked(label in current)
-            action.toggled.connect(lambda checked, l=label: self.label_toggled.emit(uuid, l, checked))
-        menu.addSeparator()
-        new_action = menu.addAction(self.tr("New label…"))
-        new_action.triggered.connect(lambda: self._create_label(uuid))
+        if self._can_label:
+            if not self._favourites.is_favourite(uuid):
+                action = menu.addAction(self.tr("Favourite this station to add labels"))
+                action.setEnabled(False)
+            else:
+                current = set(self._favourites.labels_for(uuid))
+                all_labels = self._favourites.all_labels()
+                if not all_labels:
+                    action = menu.addAction(self.tr("No labels yet"))
+                    action.setEnabled(False)
+                for label in all_labels:
+                    action = menu.addAction(label)
+                    action.setCheckable(True)
+                    action.setChecked(label in current)
+                    action.toggled.connect(lambda checked, l=label: self.label_toggled.emit(uuid, l, checked))
+                new_action = menu.addAction(self.tr("New label…"))
+                new_action.triggered.connect(lambda: self._create_label(uuid))
+            menu.addSeparator()
+
+        reset_action = menu.addAction(self.tr("Reset time listened"))
+        has_time = self._listening_stats is not None and self._listening_stats.total_seconds(uuid) > 0
+        reset_action.setEnabled(has_time)
+        reset_action.triggered.connect(lambda: self._reset_listening(uuid))
+
         menu.exec(self.mapToGlobal(pos))
+
+    def _reset_listening(self, uuid: str):
+        name = self._station.get("name", "").strip()
+        confirm = QMessageBox.question(
+            self,
+            self.tr("Reset time listened"),
+            self.tr("Reset the listening time for “{0}”?").format(name),
+        )
+        if confirm == QMessageBox.StandardButton.Yes:
+            self.reset_listening_requested.emit(uuid)
 
     def _create_label(self, uuid: str):
         text, ok = QInputDialog.getText(self, self.tr("New label"), self.tr("Label name:"))
@@ -387,14 +449,16 @@ class StationListWidget(QWidget):
     station_delete_requested = pyqtSignal(str)
     station_edit_requested = pyqtSignal(str)
     station_remove_requested = pyqtSignal(str)  # remove a single station from history
+    reset_listening_requested = pyqtSignal(str)  # forget listening time for one station
     clear_history_requested = pyqtSignal()
     add_station_requested = pyqtSignal()
     playing_visibility_changed = pyqtSignal(bool)
 
-    def __init__(self, favourites: FavouritesManager, settings: Settings, parent=None):
+    def __init__(self, favourites: FavouritesManager, settings: Settings, listening_stats: ListeningStatsManager, parent=None):
         super().__init__(parent)
         self._favourites = favourites
         self._settings = settings
+        self._listening_stats = listening_stats
         self._current_view = "all"
         self._stations_raw: list[dict] = []
         self._deletable: bool = False
@@ -652,12 +716,17 @@ class StationListWidget(QWidget):
         on_delete = (lambda u: self.station_delete_requested.emit(u)) if self._deletable else None
         on_edit = (lambda u: self.station_edit_requested.emit(u)) if self._deletable else None
         on_remove = (lambda u: self.station_remove_requested.emit(u)) if self._current_view == "recent" else None
-        row = StationRowWidget(station, self._favourites, on_delete=on_delete, on_edit=on_edit, on_remove=on_remove)
+        listening_seconds = self._listening_stats.total_seconds(uuid)
+        row = StationRowWidget(
+            station, self._favourites, on_delete=on_delete, on_edit=on_edit, on_remove=on_remove,
+            listening_seconds=listening_seconds, listening_stats=self._listening_stats,
+        )
         self._list.setItemWidget(item, row)
         self._row_widgets[uuid] = row
         self._item_map[uuid] = item
 
         row.play_requested.connect(lambda s=station, i=item: self._on_row_play(s, i))
+        row.reset_listening_requested.connect(self.reset_listening_requested)
         if not self._deletable:
             row.favourite_toggled.connect(self.favourite_toggled)
             row.label_toggled.connect(self.label_toggled)
@@ -785,6 +854,16 @@ class StationListWidget(QWidget):
             w.clear()
             w.blockSignals(False)
         self._apply_filter()
+
+    def update_listening_time(self, uuid: str | None = None):
+        """Refresh the "X listened" figure on existing rows in place, in any
+        view. Pass a uuid to update one row, or nothing to update all (e.g.
+        after clearing)."""
+        targets = [uuid] if uuid else list(self._row_widgets.keys())
+        for u in targets:
+            row = self._row_widgets.get(u)
+            if row is not None:
+                row.set_listening_seconds(self._listening_stats.total_seconds(u))
 
     def mark_playing(self, uuid: str):
         if self._playing_uuid:

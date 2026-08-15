@@ -53,8 +53,10 @@ if check_cmd apt-get; then
     fi
 elif check_cmd dnf; then
     PKG_MANAGER="dnf"
+elif check_cmd pacman; then
+    PKG_MANAGER="pacman"
 else
-    die "No supported package manager found (apt-get or dnf). Install dependencies manually and re-run."
+    die "No supported package manager found (apt-get, dnf, or pacman). Install dependencies manually and re-run."
 fi
 
 # --- system dependencies -----------------------------------------------------
@@ -77,6 +79,28 @@ elif [[ "$PKG_MANAGER" == "dnf" ]]; then
         python3-gobject \
         gstreamer1-plugins-base \
         gstreamer1-plugins-good
+elif [[ "$PKG_MANAGER" == "pacman" ]]; then
+    sudo pacman -S --needed --noconfirm \
+        python \
+        python-pyqt6 \
+        python-requests \
+        python-dbus \
+        python-gobject \
+        gstreamer \
+        gst-plugins-base \
+        gst-plugins-good
+fi
+
+# --- stop a running instance --------------------------------------------------
+
+# The app is single-instance: launching it again just raises the already-running
+# window instead of restarting, so a running instance would keep serving the old
+# code in memory even after the files below are replaced. Stop it so the next
+# launch picks up what we're about to install.
+if pgrep -f "[/ ]$APP/main\.py" >/dev/null 2>&1; then
+    info "Stopping running instance..."
+    pkill -f "[/ ]$APP/main\.py" || true
+    sleep 1
 fi
 
 # --- copy files --------------------------------------------------------------
@@ -117,3 +141,4 @@ check_cmd update-desktop-database && sudo update-desktop-database /usr/share/app
 check_cmd gtk-update-icon-cache   && sudo gtk-update-icon-cache -f /usr/share/icons/hicolor 2>/dev/null || true
 
 echo "Done. Run '$APP' to start."
+echo "(If it was already running, it was stopped above — this launch starts the new build.)"

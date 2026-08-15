@@ -2,17 +2,21 @@ from PyQt6.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QFormLayout, QCheckBox, QComboBox,
     QDialogButtonBox, QGroupBox, QLabel, QPushButton, QFileDialog, QMessageBox,
 )
-from PyQt6.QtCore import QEvent
+from PyQt6.QtCore import QEvent, pyqtSignal
 from pathlib import Path
 
 from data.settings import Settings
+from data.listening_stats import ListeningStatsManager
 from data import backup as _backup
 
 
 class SettingsDialog(QDialog):
-    def __init__(self, settings: Settings, parent=None):
+    listening_cleared = pyqtSignal()
+
+    def __init__(self, settings: Settings, listening_stats: ListeningStatsManager, parent=None):
         super().__init__(parent)
         self._settings = settings
+        self._listening_stats = listening_stats
         self.setWindowTitle(self.tr("Settings"))
         self.setFixedWidth(600)
         self.setModal(True)
@@ -83,11 +87,30 @@ class SettingsDialog(QDialog):
 
         layout.addWidget(nowplaying)
 
+        # --- Listening time ---
+        listening = QGroupBox(self.tr("Listening time"))
+        listening_layout = QVBoxLayout(listening)
+
+        listening_note = QLabel(self.tr("Time listened is tracked per station and shown in the info panel and History."))
+        listening_note.setEnabled(False)
+        listening_note.setWordWrap(True)
+        listening_layout.addWidget(listening_note)
+
+        clear_row = QHBoxLayout()
+        clear_listening_btn = QPushButton(self.tr("Clear all listening time…"))
+        clear_listening_btn.setEnabled(listening_stats.has_any())
+        clear_listening_btn.clicked.connect(self._on_clear_listening)
+        clear_row.addWidget(clear_listening_btn)
+        clear_row.addStretch()
+        listening_layout.addLayout(clear_row)
+
+        layout.addWidget(listening)
+
         # --- Backup / Restore ---
         backup_group = QGroupBox(self.tr("Backup"))
         backup_layout = QVBoxLayout(backup_group)
 
-        backup_note = QLabel(self.tr("Back up and restore your favourites, custom stations, history, and settings."))
+        backup_note = QLabel(self.tr("Back up and restore your favourites, labels, custom stations, history, listening time, and settings."))
         backup_note.setEnabled(False)
         backup_note.setWordWrap(True)
         backup_layout.addWidget(backup_note)
@@ -134,6 +157,20 @@ class SettingsDialog(QDialog):
         self._settings["show_album_art"] = self._show_album_art.isChecked()
         self._settings.save()
         self.accept()
+
+    def _on_clear_listening(self):
+        confirm = QMessageBox.question(
+            self,
+            self.tr("Clear all listening time"),
+            self.tr("Clear all listening time? This cannot be undone."),
+        )
+        if confirm != QMessageBox.StandardButton.Yes:
+            return
+        self._listening_stats.clear()
+        self.listening_cleared.emit()
+        QMessageBox.information(
+            self, self.tr("Listening time"), self.tr("All listening time cleared.")
+        )
 
     def _on_export(self):
         path, _ = QFileDialog.getSaveFileName(
