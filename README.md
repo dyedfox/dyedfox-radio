@@ -38,6 +38,7 @@ Inspired by [Shortwave](https://github.com/maunalinux/shortwave), with a native 
 - Favourites, History, and custom stations (add any stream by URL)
 - Organize favourite stations with custom labels
 - Editable History — remove single stations or clear the whole list
+- Listening time tracked per station, shown in the info panel and History
 - Station info panel with logo, codec, bitrate, and tags
 - Per-song album art for the current track (looked up from Deezer, falls back to the station logo) — click the artwork to enlarge, or toggle between cover art and station logo
 - Animated equalizer indicator on the playing station

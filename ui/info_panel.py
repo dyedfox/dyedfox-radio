@@ -7,6 +7,8 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtCore import Qt, QUrl, pyqtSignal
 from PyQt6.QtGui import QIcon, QPalette, QPixmap, QDesktopServices
 
+from data.listening_stats import format_duration
+
 _NO_LOGO_PATH = str(Path(__file__).parent.parent / "assets" / "icons" / "no_logo-256x256.png")
 _default_logo: QPixmap | None = None
 
@@ -261,6 +263,9 @@ class InfoPanel(QWidget):
         self._votes = self._muted_label()
         layout.addWidget(self._votes)
 
+        self._listening_time = self._muted_label()
+        layout.addWidget(self._listening_time)
+
         layout.addStretch()
 
     def set_station(self, station: dict, is_favourite: bool = False):
@@ -298,6 +303,10 @@ class InfoPanel(QWidget):
         self._now_playing_row.hide()
         self._now_playing.clear()
         self._now_playing_text = ""
+
+        # Set by the caller right after via set_listening_time(); this just
+        # clears the previous station's figure so it doesn't flash stale data.
+        self._listening_time.clear()
 
         # Reset artwork state for the new station; art (if any) arrives later.
         self._favicon_pix = None
@@ -398,6 +407,11 @@ class InfoPanel(QWidget):
         else:
             self._now_playing_row.hide()
             self._now_playing_text = ""
+
+    def set_listening_time(self, seconds: float):
+        self._listening_time.setText(
+            self.tr("Listened: {0}").format(format_duration(seconds)) if seconds else ""
+        )
 
     def set_favourite(self, is_fav: bool):
         self._fav_btn.blockSignals(True)

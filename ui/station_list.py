@@ -11,6 +11,7 @@ from PyQt6.QtCore import Qt, QSize, QTimer, QRunnable, QObject, pyqtSignal, QThr
 from PyQt6.QtGui import QIcon, QPalette, QPixmap, QPainter, QColor, QBrush
 
 from data.favourites import FavouritesManager
+from data.listening_stats import ListeningStatsManager, format_duration
 from data.settings import Settings
 
 _NO_LOGO_PATH = str(Path(__file__).parent.parent / "assets" / "icons" / "no_logo-256x256.png")
@@ -174,7 +175,7 @@ class StationRowWidget(QWidget):
     favourite_toggled = pyqtSignal(str, bool)  # uuid, new state
     label_toggled = pyqtSignal(str, str, bool)  # uuid, label, new state
 
-    def __init__(self, station: dict, favourites: FavouritesManager, parent=None, on_delete=None, on_edit=None, on_remove=None):
+    def __init__(self, station: dict, favourites: FavouritesManager, parent=None, on_delete=None, on_edit=None, on_remove=None, listening_seconds: float = 0):
         super().__init__(parent)
         self._station = station
         self._favourites = favourites
@@ -214,10 +215,12 @@ class StationRowWidget(QWidget):
         bitrate = station.get("bitrate", 0)
         votes = station.get("votes", 0)
         votes_str = f"{votes // 1000}k ♥" if votes >= 1000 else (f"{votes} ♥" if votes else "")
+        listened_str = self.tr("{0} listened").format(format_duration(listening_seconds)) if listening_seconds else ""
         meta_parts = [p for p in [
             country, first_tag, codec,
             f"{bitrate} kbps" if bitrate else "",
             votes_str,
+            listened_str,
         ] if p]
         meta_label = _ElidedLabel("  ·  ".join(meta_parts))
         meta_label.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
@@ -391,10 +394,11 @@ class StationListWidget(QWidget):
     add_station_requested = pyqtSignal()
     playing_visibility_changed = pyqtSignal(bool)
 
-    def __init__(self, favourites: FavouritesManager, settings: Settings, parent=None):
+    def __init__(self, favourites: FavouritesManager, settings: Settings, listening_stats: ListeningStatsManager, parent=None):
         super().__init__(parent)
         self._favourites = favourites
         self._settings = settings
+        self._listening_stats = listening_stats
         self._current_view = "all"
         self._stations_raw: list[dict] = []
         self._deletable: bool = False
@@ -652,7 +656,11 @@ class StationListWidget(QWidget):
         on_delete = (lambda u: self.station_delete_requested.emit(u)) if self._deletable else None
         on_edit = (lambda u: self.station_edit_requested.emit(u)) if self._deletable else None
         on_remove = (lambda u: self.station_remove_requested.emit(u)) if self._current_view == "recent" else None
-        row = StationRowWidget(station, self._favourites, on_delete=on_delete, on_edit=on_edit, on_remove=on_remove)
+        listening_seconds = self._listening_stats.total_seconds(uuid) if self._current_view == "recent" else 0
+        row = StationRowWidget(
+            station, self._favourites, on_delete=on_delete, on_edit=on_edit, on_remove=on_remove,
+            listening_seconds=listening_seconds,
+        )
         self._list.setItemWidget(item, row)
         self._row_widgets[uuid] = row
         self._item_map[uuid] = item
