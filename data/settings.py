@@ -19,6 +19,7 @@ DEFAULTS: dict = {
         "all":        {"field": "votes", "ascending": False},
         "favourites": {"field": "name",  "ascending": True},
         "custom":     {"field": "name",  "ascending": True},
+        "recent":     {"field": "last_listened", "ascending": False},
     },
 }
 
