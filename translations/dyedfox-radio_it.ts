@@ -266,12 +266,12 @@ Basato su radio-browser.info.</translation>
         <translation>Impossibile connettersi a {0}. Lo stream potrebbe essere non disponibile.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="929" />
+        <location filename="../ui/main_window.py" line="936" />
         <source>Delete station</source>
         <translation>Elimina stazione</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="930" />
+        <location filename="../ui/main_window.py" line="937" />
         <source>Delete “{0}” from your custom stations?</source>
         <translation>Eliminare «{0}» dalle tue stazioni personalizzate?</translation>
     </message>
@@ -366,7 +366,7 @@ Basato su radio-browser.info.</translation>
         <translation>La copertina viene cercata su Deezer usando il titolo del brano. Se non viene trovata alcuna corrispondenza, viene mostrato il logo della stazione.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="171" />
+        <location filename="../ui/settings_dialog.py" line="172" />
         <location filename="../ui/settings_dialog.py" line="91" />
         <source>Listening time</source>
         <translation>Tempo di ascolto</translation>
@@ -382,79 +382,79 @@ Basato su radio-browser.info.</translation>
         <translation>Cancella tutto il tempo di ascolto…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="206" />
-        <location filename="../ui/settings_dialog.py" line="202" />
-        <location filename="../ui/settings_dialog.py" line="187" />
-        <location filename="../ui/settings_dialog.py" line="185" />
-        <location filename="../ui/settings_dialog.py" line="109" />
+        <location filename="../ui/settings_dialog.py" line="207" />
+        <location filename="../ui/settings_dialog.py" line="203" />
+        <location filename="../ui/settings_dialog.py" line="188" />
+        <location filename="../ui/settings_dialog.py" line="186" />
+        <location filename="../ui/settings_dialog.py" line="110" />
         <source>Backup</source>
         <translation>Backup</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="112" />
+        <location filename="../ui/settings_dialog.py" line="113" />
         <source>Back up and restore your favourites, labels, custom stations, history, listening time, and settings.</source>
         <translation>Esegui il backup e ripristina i tuoi preferiti, le etichette, le stazioni personalizzate, la cronologia, il tempo di ascolto e le impostazioni.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="118" />
+        <location filename="../ui/settings_dialog.py" line="119" />
         <source>Export…</source>
         <translation>Esporta…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="120" />
+        <location filename="../ui/settings_dialog.py" line="121" />
         <source>Import…</source>
         <translation>Importa…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="163" />
+        <location filename="../ui/settings_dialog.py" line="164" />
         <source>Clear all listening time</source>
         <translation>Cancella tutto il tempo di ascolto</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="164" />
+        <location filename="../ui/settings_dialog.py" line="165" />
         <source>Clear all listening time? This cannot be undone.</source>
         <translation>Cancellare tutto il tempo di ascolto? L’operazione non può essere annullata.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="171" />
+        <location filename="../ui/settings_dialog.py" line="172" />
         <source>All listening time cleared.</source>
         <translation>Tutto il tempo di ascolto è stato cancellato.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="177" />
+        <location filename="../ui/settings_dialog.py" line="178" />
         <source>Export backup</source>
         <translation>Esporta backup</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="194" />
-        <location filename="../ui/settings_dialog.py" line="179" />
+        <location filename="../ui/settings_dialog.py" line="195" />
+        <location filename="../ui/settings_dialog.py" line="180" />
         <source>Zip files (*.zip)</source>
         <translation>File ZIP (*.zip)</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="185" />
+        <location filename="../ui/settings_dialog.py" line="186" />
         <source>Backup exported successfully.</source>
         <translation>Backup esportato correttamente.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="187" />
+        <location filename="../ui/settings_dialog.py" line="188" />
         <source>Export failed: {0}</source>
         <translation>Esportazione non riuscita: {0}</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="192" />
+        <location filename="../ui/settings_dialog.py" line="193" />
         <source>Import backup</source>
         <translation>Importa backup</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="203" />
+        <location filename="../ui/settings_dialog.py" line="204" />
         <source>Restored: {0}.
 Restart the app to apply changes.</source>
         <translation>Ripristinato: {0}.
 Riavvia l’app per applicare le modifiche.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="206" />
+        <location filename="../ui/settings_dialog.py" line="207" />
         <source>Import failed: {0}</source>
         <translation>Importazione non riuscita: {0}</translation>
     </message>
@@ -465,150 +465,171 @@ Riavvia l’app per applicare le modifiche.</translation>
 </context><context>
     <name>StationListWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="486" />
+        <location filename="../ui/station_list.py" line="492" />
         <source>Search stations…</source>
         <translation>Cerca stazioni…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="503" />
+        <location filename="../ui/station_list.py" line="509" />
         <source>Clear history</source>
         <translation>Cancella cronologia</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="504" />
+        <location filename="../ui/station_list.py" line="510" />
         <source>Remove all stations from history</source>
         <translation>Rimuovi tutte le stazioni dalla cronologia</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="513" />
+        <location filename="../ui/station_list.py" line="519" />
         <source>+ Add station</source>
         <translation>+ Aggiungi stazione</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="514" />
+        <location filename="../ui/station_list.py" line="520" />
         <source>Add a custom station</source>
         <translation>Aggiungi una stazione personalizzata</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="531" />
-        <source>Name</source>
-        <translation>Nome</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="532" />
-        <source>Country</source>
-        <translation>Paese</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="533" />
-        <source>Bitrate</source>
-        <translation>Bitrate</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="534" />
-        <source>Votes</source>
-        <translation>Voti</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="535" />
-        <source>Language</source>
-        <translation>Lingua</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="536" />
-        <source>Codec</source>
-        <translation>Codec</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="541" />
+        <location filename="../ui/station_list.py" line="538" />
         <source>Country…</source>
         <translation>Paese…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="545" />
+        <location filename="../ui/station_list.py" line="542" />
         <source>Genre / tag…</source>
         <translation>Genere / tag…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="549" />
+        <location filename="../ui/station_list.py" line="546" />
         <source>Language…</source>
         <translation>Lingua…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="556" />
+        <location filename="../ui/station_list.py" line="553" />
         <source>Toggle sort direction</source>
         <translation>Inverti l’ordinamento</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="572" />
+        <location filename="../ui/station_list.py" line="569" />
         <source>Result limit reached · narrow your search to see more</source>
         <translation>Limite di risultati raggiunto · restringi la ricerca per vederne altri</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="587" />
+        <location filename="../ui/station_list.py" line="584" />
         <source>This may be a temporary server-side issue.</source>
         <translation>Potrebbe trattarsi di un problema temporaneo lato server.</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="593" />
+        <location filename="../ui/station_list.py" line="590" />
         <source>Retry</source>
         <translation>Riprova</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="957" />
+        <location filename="../ui/station_list.py" line="784" />
+        <location filename="../ui/station_list.py" line="777" />
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="778" />
+        <source>Stream type</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="779" />
+        <source>Sample rate</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="780" />
+        <source>Last listened</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="781" />
+        <source>Time listened</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="785" />
+        <source>Country</source>
+        <translation>Paese</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="786" />
+        <source>Bitrate</source>
+        <translation>Bitrate</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="787" />
+        <source>Votes</source>
+        <translation>Voti</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="788" />
+        <source>Language</source>
+        <translation>Lingua</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="789" />
+        <source>Codec</source>
+        <translation>Codec</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="1007" />
         <source>{0} stations</source>
         <translation>{0} stazioni</translation>
     </message>
 </context><context>
     <name>StationRowWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="235" />
-        <source>{0} listened</source>
-        <translation>{0} ascoltato</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="274" />
+        <location filename="../ui/station_list.py" line="272" />
         <source>Delete station</source>
         <translation>Elimina stazione</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="299" />
+        <location filename="../ui/station_list.py" line="297" />
         <source>Remove from history</source>
         <translation>Rimuovi dalla cronologia</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="372" />
+        <location filename="../ui/station_list.py" line="314" />
+        <source>{0} listened</source>
+        <translation>{0} ascoltato</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="378" />
         <source>Favourite this station to add labels</source>
         <translation>Aggiungi questa stazione ai preferiti per aggiungere etichette</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="378" />
+        <location filename="../ui/station_list.py" line="384" />
         <source>No labels yet</source>
         <translation>Nessuna etichetta ancora</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="385" />
+        <location filename="../ui/station_list.py" line="391" />
         <source>New label…</source>
         <translation>Nuova etichetta…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="400" />
-        <location filename="../ui/station_list.py" line="389" />
+        <location filename="../ui/station_list.py" line="406" />
+        <location filename="../ui/station_list.py" line="395" />
         <source>Reset time listened</source>
         <translation>Reimposta il tempo di ascolto</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="401" />
+        <location filename="../ui/station_list.py" line="407" />
         <source>Reset the listening time for “{0}”?</source>
         <translation>Reimpostare il tempo di ascolto per «{0}»?</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="407" />
+        <location filename="../ui/station_list.py" line="413" />
         <source>New label</source>
         <translation>Nuova etichetta</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="407" />
+        <location filename="../ui/station_list.py" line="413" />
         <source>Label name:</source>
         <translation>Nome etichetta:</translation>
     </message>
