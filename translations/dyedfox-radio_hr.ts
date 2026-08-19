@@ -490,93 +490,87 @@ Ponovno pokrenite aplikaciju da biste primijenili promjene.</translation>
         <translation>Dodaj prilagođenu stanicu</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="538" />
+        <location filename="../ui/station_list.py" line="541" />
         <source>Country…</source>
         <translation>Država…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="542" />
+        <location filename="../ui/station_list.py" line="545" />
         <source>Genre / tag…</source>
         <translation>Žanr / oznaka…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="546" />
+        <location filename="../ui/station_list.py" line="549" />
         <source>Language…</source>
         <translation>Jezik…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="553" />
+        <location filename="../ui/station_list.py" line="556" />
         <source>Toggle sort direction</source>
         <translation>Promijeni smjer sortiranja</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="569" />
+        <location filename="../ui/station_list.py" line="572" />
         <source>Result limit reached · narrow your search to see more</source>
         <translation>Dosegnuto ograničenje rezultata · suzite pretragu za više rezultata</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="584" />
+        <location filename="../ui/station_list.py" line="587" />
         <source>This may be a temporary server-side issue.</source>
         <translation>Možda je riječ o privremenom problemu na poslužitelju.</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="590" />
+        <location filename="../ui/station_list.py" line="593" />
         <source>Retry</source>
         <translation>Pokušaj ponovno</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="784" />
-        <location filename="../ui/station_list.py" line="777" />
+        <location filename="../ui/station_list.py" line="789" />
+        <location filename="../ui/station_list.py" line="782" />
         <source>Name</source>
         <translation>Naziv</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="778" />
-        <source>Stream type</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="779" />
-        <source>Sample rate</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="780" />
-        <source>Last listened</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="781" />
-        <source>Time listened</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="785" />
-        <source>Country</source>
-        <translation>Država</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="786" />
-        <source>Bitrate</source>
-        <translation>Brzina prijenosa</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="787" />
-        <source>Votes</source>
-        <translation>Glasovi</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="788" />
-        <source>Language</source>
-        <translation>Jezik</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="789" />
+        <location filename="../ui/station_list.py" line="794" />
+        <location filename="../ui/station_list.py" line="783" />
         <source>Codec</source>
         <translation>Kodek</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="1007" />
+        <location filename="../ui/station_list.py" line="791" />
+        <location filename="../ui/station_list.py" line="784" />
+        <source>Bitrate</source>
+        <translation>Brzina prijenosa</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="795" />
+        <location filename="../ui/station_list.py" line="785" />
+        <source>Last listened</source>
+        <translation>Posljednje slušanje</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="796" />
+        <location filename="../ui/station_list.py" line="786" />
+        <source>Time listened</source>
+        <translation>Vrijeme slušanja</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="790" />
+        <source>Country</source>
+        <translation>Država</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="792" />
+        <source>Votes</source>
+        <translation>Glasovi</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="793" />
+        <source>Language</source>
+        <translation>Jezik</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="1014" />
         <source>{0} stations</source>
         <translation>{0} stanica</translation>
     </message>

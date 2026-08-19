@@ -533,6 +533,9 @@ class StationListWidget(QWidget):
         sort_layout.setSpacing(6)
 
         self._sort_field = QComboBox()
+        # Re-fit the popup/box width whenever the field list changes per view, so
+        # the longer "Last listened" / "Time listened" labels aren't clipped.
+        self._sort_field.setSizeAdjustPolicy(QComboBox.SizeAdjustPolicy.AdjustToContents)
 
         self._country_input = QLineEdit()
         self._country_input.setPlaceholderText(self.tr("Country…"))
@@ -769,24 +772,28 @@ class StationListWidget(QWidget):
         return sorted(self._stations_raw, key=sort_key, reverse=not ascending)
 
     def _sort_field_items(self, view: str) -> list[tuple[str, str]]:
-        # History surfaces recency/listened-time instead of the catalogue-search
+        # "Last listened" / "Time listened" are offered in every sorted view —
+        # the listened-time figure is shown on every row, so sorting by it is
+        # meaningful anywhere. History additionally drops the catalogue-search
         # fields (country/votes/language) that don't mean much for a personal,
         # already-curated list.
         if view == "recent":
             return [
                 (self.tr("Name"),          "name"),
-                (self.tr("Stream type"),   "codec"),
-                (self.tr("Sample rate"),   "bitrate"),
+                (self.tr("Codec"),         "codec"),
+                (self.tr("Bitrate"),       "bitrate"),
                 (self.tr("Last listened"), "last_listened"),
                 (self.tr("Time listened"), "time_listened"),
             ]
         return [
-            (self.tr("Name"),     "name"),
-            (self.tr("Country"),  "country"),
-            (self.tr("Bitrate"),  "bitrate"),
-            (self.tr("Votes"),    "votes"),
-            (self.tr("Language"), "language"),
-            (self.tr("Codec"),    "codec"),
+            (self.tr("Name"),          "name"),
+            (self.tr("Country"),       "country"),
+            (self.tr("Bitrate"),       "bitrate"),
+            (self.tr("Votes"),         "votes"),
+            (self.tr("Language"),      "language"),
+            (self.tr("Codec"),         "codec"),
+            (self.tr("Last listened"), "last_listened"),
+            (self.tr("Time listened"), "time_listened"),
         ]
 
     @staticmethod

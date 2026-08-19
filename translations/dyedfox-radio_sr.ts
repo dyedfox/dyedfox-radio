@@ -490,93 +490,87 @@ Restart the app to apply changes.</source>
         <translation>Додај прилагођену станицу</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="538" />
+        <location filename="../ui/station_list.py" line="541" />
         <source>Country…</source>
         <translation>Држава…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="542" />
+        <location filename="../ui/station_list.py" line="545" />
         <source>Genre / tag…</source>
         <translation>Жанр / ознака…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="546" />
+        <location filename="../ui/station_list.py" line="549" />
         <source>Language…</source>
         <translation>Језик…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="553" />
+        <location filename="../ui/station_list.py" line="556" />
         <source>Toggle sort direction</source>
         <translation>Промени смер сортирања</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="569" />
+        <location filename="../ui/station_list.py" line="572" />
         <source>Result limit reached · narrow your search to see more</source>
         <translation>Достигнуто ограничење резултата · сузите претрагу да видите више</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="584" />
+        <location filename="../ui/station_list.py" line="587" />
         <source>This may be a temporary server-side issue.</source>
         <translation>Можда је реч о привременом проблему на страни сервера.</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="590" />
+        <location filename="../ui/station_list.py" line="593" />
         <source>Retry</source>
         <translation>Покушај поново</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="784" />
-        <location filename="../ui/station_list.py" line="777" />
+        <location filename="../ui/station_list.py" line="789" />
+        <location filename="../ui/station_list.py" line="782" />
         <source>Name</source>
         <translation>Назив</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="778" />
-        <source>Stream type</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="779" />
-        <source>Sample rate</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="780" />
-        <source>Last listened</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="781" />
-        <source>Time listened</source>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="785" />
-        <source>Country</source>
-        <translation>Држава</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="786" />
-        <source>Bitrate</source>
-        <translation>Брзина протока</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="787" />
-        <source>Votes</source>
-        <translation>Гласови</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="788" />
-        <source>Language</source>
-        <translation>Језик</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="789" />
+        <location filename="../ui/station_list.py" line="794" />
+        <location filename="../ui/station_list.py" line="783" />
         <source>Codec</source>
         <translation>Кодек</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="1007" />
+        <location filename="../ui/station_list.py" line="791" />
+        <location filename="../ui/station_list.py" line="784" />
+        <source>Bitrate</source>
+        <translation>Брзина протока</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="795" />
+        <location filename="../ui/station_list.py" line="785" />
+        <source>Last listened</source>
+        <translation>Последње слушано</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="796" />
+        <location filename="../ui/station_list.py" line="786" />
+        <source>Time listened</source>
+        <translation>Време слушања</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="790" />
+        <source>Country</source>
+        <translation>Држава</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="792" />
+        <source>Votes</source>
+        <translation>Гласови</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="793" />
+        <source>Language</source>
+        <translation>Језик</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="1014" />
         <source>{0} stations</source>
         <translation>{0} станица</translation>
     </message>
