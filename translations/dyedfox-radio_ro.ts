@@ -266,12 +266,12 @@ Funcționează cu radio-browser.info.</translation>
         <translation>Conectarea la {0} a eșuat. Fluxul ar putea fi indisponibil.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="929" />
+        <location filename="../ui/main_window.py" line="936" />
         <source>Delete station</source>
         <translation>Șterge postul</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="930" />
+        <location filename="../ui/main_window.py" line="937" />
         <source>Delete “{0}” from your custom stations?</source>
         <translation>Ștergi „{0}” din posturile tale personalizate?</translation>
     </message>
@@ -366,7 +366,7 @@ Funcționează cu radio-browser.info.</translation>
         <translation>Coperta este căutată pe Deezer după titlul melodiei. Dacă nu se găsește nicio potrivire, se afișează sigla postului.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="171" />
+        <location filename="../ui/settings_dialog.py" line="172" />
         <location filename="../ui/settings_dialog.py" line="91" />
         <source>Listening time</source>
         <translation>Timp de ascultare</translation>
@@ -382,79 +382,79 @@ Funcționează cu radio-browser.info.</translation>
         <translation>Șterge tot timpul de ascultare…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="206" />
-        <location filename="../ui/settings_dialog.py" line="202" />
-        <location filename="../ui/settings_dialog.py" line="187" />
-        <location filename="../ui/settings_dialog.py" line="185" />
-        <location filename="../ui/settings_dialog.py" line="109" />
+        <location filename="../ui/settings_dialog.py" line="207" />
+        <location filename="../ui/settings_dialog.py" line="203" />
+        <location filename="../ui/settings_dialog.py" line="188" />
+        <location filename="../ui/settings_dialog.py" line="186" />
+        <location filename="../ui/settings_dialog.py" line="110" />
         <source>Backup</source>
         <translation>Copie de rezervă</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="112" />
+        <location filename="../ui/settings_dialog.py" line="113" />
         <source>Back up and restore your favourites, labels, custom stations, history, listening time, and settings.</source>
         <translation>Creează copii de rezervă și restaurează favoritele, etichetele, posturile personalizate, istoricul, timpul de ascultare și setările.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="118" />
+        <location filename="../ui/settings_dialog.py" line="119" />
         <source>Export…</source>
         <translation>Exportă…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="120" />
+        <location filename="../ui/settings_dialog.py" line="121" />
         <source>Import…</source>
         <translation>Importă…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="163" />
+        <location filename="../ui/settings_dialog.py" line="164" />
         <source>Clear all listening time</source>
         <translation>Șterge tot timpul de ascultare</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="164" />
+        <location filename="../ui/settings_dialog.py" line="165" />
         <source>Clear all listening time? This cannot be undone.</source>
         <translation>Ștergeți tot timpul de ascultare? Această acțiune nu poate fi anulată.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="171" />
+        <location filename="../ui/settings_dialog.py" line="172" />
         <source>All listening time cleared.</source>
         <translation>Tot timpul de ascultare a fost șters.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="177" />
+        <location filename="../ui/settings_dialog.py" line="178" />
         <source>Export backup</source>
         <translation>Exportă copia de rezervă</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="194" />
-        <location filename="../ui/settings_dialog.py" line="179" />
+        <location filename="../ui/settings_dialog.py" line="195" />
+        <location filename="../ui/settings_dialog.py" line="180" />
         <source>Zip files (*.zip)</source>
         <translation>Fișiere ZIP (*.zip)</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="185" />
+        <location filename="../ui/settings_dialog.py" line="186" />
         <source>Backup exported successfully.</source>
         <translation>Copia de rezervă a fost exportată cu succes.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="187" />
+        <location filename="../ui/settings_dialog.py" line="188" />
         <source>Export failed: {0}</source>
         <translation>Exportul a eșuat: {0}</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="192" />
+        <location filename="../ui/settings_dialog.py" line="193" />
         <source>Import backup</source>
         <translation>Importă copia de rezervă</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="203" />
+        <location filename="../ui/settings_dialog.py" line="204" />
         <source>Restored: {0}.
 Restart the app to apply changes.</source>
         <translation>Restaurat: {0}.
 Reporneşte aplicația pentru a aplica modificările.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="206" />
+        <location filename="../ui/settings_dialog.py" line="207" />
         <source>Import failed: {0}</source>
         <translation>Importul a eșuat: {0}</translation>
     </message>
@@ -465,59 +465,29 @@ Reporneşte aplicația pentru a aplica modificările.</translation>
 </context><context>
     <name>StationListWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="486" />
+        <location filename="../ui/station_list.py" line="492" />
         <source>Search stations…</source>
         <translation>Caută posturi…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="503" />
+        <location filename="../ui/station_list.py" line="509" />
         <source>Clear history</source>
         <translation>Șterge istoricul</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="504" />
+        <location filename="../ui/station_list.py" line="510" />
         <source>Remove all stations from history</source>
         <translation>Elimină toate posturile din istoric</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="513" />
+        <location filename="../ui/station_list.py" line="519" />
         <source>+ Add station</source>
         <translation>+ Adaugă post</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="514" />
+        <location filename="../ui/station_list.py" line="520" />
         <source>Add a custom station</source>
         <translation>Adaugă un post personalizat</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="531" />
-        <source>Name</source>
-        <translation>Nume</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="532" />
-        <source>Country</source>
-        <translation>Țară</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="533" />
-        <source>Bitrate</source>
-        <translation>Rată de biți</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="534" />
-        <source>Votes</source>
-        <translation>Voturi</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="535" />
-        <source>Language</source>
-        <translation>Limbă</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="536" />
-        <source>Codec</source>
-        <translation>Codec</translation>
     </message>
     <message>
         <location filename="../ui/station_list.py" line="541" />
@@ -555,60 +525,105 @@ Reporneşte aplicația pentru a aplica modificările.</translation>
         <translation>Reîncearcă</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="957" />
+        <location filename="../ui/station_list.py" line="789" />
+        <location filename="../ui/station_list.py" line="782" />
+        <source>Name</source>
+        <translation>Nume</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="794" />
+        <location filename="../ui/station_list.py" line="783" />
+        <source>Codec</source>
+        <translation>Codec</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="791" />
+        <location filename="../ui/station_list.py" line="784" />
+        <source>Bitrate</source>
+        <translation>Rată de biți</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="795" />
+        <location filename="../ui/station_list.py" line="785" />
+        <source>Last listened</source>
+        <translation>Ultima ascultare</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="796" />
+        <location filename="../ui/station_list.py" line="786" />
+        <source>Time listened</source>
+        <translation>Timp de ascultare</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="790" />
+        <source>Country</source>
+        <translation>Țară</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="792" />
+        <source>Votes</source>
+        <translation>Voturi</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="793" />
+        <source>Language</source>
+        <translation>Limbă</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="1014" />
         <source>{0} stations</source>
         <translation>{0} posturi</translation>
     </message>
 </context><context>
     <name>StationRowWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="235" />
-        <source>{0} listened</source>
-        <translation>{0} ascultat</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="274" />
+        <location filename="../ui/station_list.py" line="272" />
         <source>Delete station</source>
         <translation>Șterge postul</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="299" />
+        <location filename="../ui/station_list.py" line="297" />
         <source>Remove from history</source>
         <translation>Elimină din istoric</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="372" />
+        <location filename="../ui/station_list.py" line="314" />
+        <source>{0} listened</source>
+        <translation>{0} ascultat</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="378" />
         <source>Favourite this station to add labels</source>
         <translation>Adaugă acest post la favorite pentru a adăuga etichete</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="378" />
+        <location filename="../ui/station_list.py" line="384" />
         <source>No labels yet</source>
         <translation>Nicio etichetă încă</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="385" />
+        <location filename="../ui/station_list.py" line="391" />
         <source>New label…</source>
         <translation>Etichetă nouă…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="400" />
-        <location filename="../ui/station_list.py" line="389" />
+        <location filename="../ui/station_list.py" line="406" />
+        <location filename="../ui/station_list.py" line="395" />
         <source>Reset time listened</source>
         <translation>Resetează timpul de ascultare</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="401" />
+        <location filename="../ui/station_list.py" line="407" />
         <source>Reset the listening time for “{0}”?</source>
         <translation>Resetați timpul de ascultare pentru „{0}”?</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="407" />
+        <location filename="../ui/station_list.py" line="413" />
         <source>New label</source>
         <translation>Etichetă nouă</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="407" />
+        <location filename="../ui/station_list.py" line="413" />
         <source>Label name:</source>
         <translation>Numele etichetei:</translation>
     </message>

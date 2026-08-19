@@ -266,12 +266,12 @@ Drevet av radio-browser.info.</translation>
         <translation>Kunne ikke koble til {0}. Strømmen kan være utilgjengelig.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="929" />
+        <location filename="../ui/main_window.py" line="936" />
         <source>Delete station</source>
         <translation>Slett stasjon</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="930" />
+        <location filename="../ui/main_window.py" line="937" />
         <source>Delete “{0}” from your custom stations?</source>
         <translation>Slette «{0}» fra dine tilpassede stasjoner?</translation>
     </message>
@@ -366,7 +366,7 @@ Drevet av radio-browser.info.</translation>
         <translation>Coveret slås opp på Deezer ut fra sangtittelen. Hvis ingen treff blir funnet, vises stasjonslogoen.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="171" />
+        <location filename="../ui/settings_dialog.py" line="172" />
         <location filename="../ui/settings_dialog.py" line="91" />
         <source>Listening time</source>
         <translation>Lyttetid</translation>
@@ -382,79 +382,79 @@ Drevet av radio-browser.info.</translation>
         <translation>Tøm all lyttetid…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="206" />
-        <location filename="../ui/settings_dialog.py" line="202" />
-        <location filename="../ui/settings_dialog.py" line="187" />
-        <location filename="../ui/settings_dialog.py" line="185" />
-        <location filename="../ui/settings_dialog.py" line="109" />
+        <location filename="../ui/settings_dialog.py" line="207" />
+        <location filename="../ui/settings_dialog.py" line="203" />
+        <location filename="../ui/settings_dialog.py" line="188" />
+        <location filename="../ui/settings_dialog.py" line="186" />
+        <location filename="../ui/settings_dialog.py" line="110" />
         <source>Backup</source>
         <translation>Sikkerhetskopi</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="112" />
+        <location filename="../ui/settings_dialog.py" line="113" />
         <source>Back up and restore your favourites, labels, custom stations, history, listening time, and settings.</source>
         <translation>Sikkerhetskopier og gjenopprett favorittene dine, etiketter, tilpassede stasjoner, historikk, lyttetid og innstillinger.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="118" />
+        <location filename="../ui/settings_dialog.py" line="119" />
         <source>Export…</source>
         <translation>Eksporter…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="120" />
+        <location filename="../ui/settings_dialog.py" line="121" />
         <source>Import…</source>
         <translation>Importer…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="163" />
+        <location filename="../ui/settings_dialog.py" line="164" />
         <source>Clear all listening time</source>
         <translation>Tøm all lyttetid</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="164" />
+        <location filename="../ui/settings_dialog.py" line="165" />
         <source>Clear all listening time? This cannot be undone.</source>
         <translation>Tømme all lyttetid? Dette kan ikke angres.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="171" />
+        <location filename="../ui/settings_dialog.py" line="172" />
         <source>All listening time cleared.</source>
         <translation>All lyttetid er tømt.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="177" />
+        <location filename="../ui/settings_dialog.py" line="178" />
         <source>Export backup</source>
         <translation>Eksporter sikkerhetskopi</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="194" />
-        <location filename="../ui/settings_dialog.py" line="179" />
+        <location filename="../ui/settings_dialog.py" line="195" />
+        <location filename="../ui/settings_dialog.py" line="180" />
         <source>Zip files (*.zip)</source>
         <translation>ZIP-filer (*.zip)</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="185" />
+        <location filename="../ui/settings_dialog.py" line="186" />
         <source>Backup exported successfully.</source>
         <translation>Sikkerhetskopi eksportert.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="187" />
+        <location filename="../ui/settings_dialog.py" line="188" />
         <source>Export failed: {0}</source>
         <translation>Eksport mislyktes: {0}</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="192" />
+        <location filename="../ui/settings_dialog.py" line="193" />
         <source>Import backup</source>
         <translation>Importer sikkerhetskopi</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="203" />
+        <location filename="../ui/settings_dialog.py" line="204" />
         <source>Restored: {0}.
 Restart the app to apply changes.</source>
         <translation>Gjenopprettet: {0}.
 Start appen på nytt for å bruke endringene.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="206" />
+        <location filename="../ui/settings_dialog.py" line="207" />
         <source>Import failed: {0}</source>
         <translation>Import mislyktes: {0}</translation>
     </message>
@@ -465,59 +465,29 @@ Start appen på nytt for å bruke endringene.</translation>
 </context><context>
     <name>StationListWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="486" />
+        <location filename="../ui/station_list.py" line="492" />
         <source>Search stations…</source>
         <translation>Søk etter stasjoner…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="503" />
+        <location filename="../ui/station_list.py" line="509" />
         <source>Clear history</source>
         <translation>Tøm historikk</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="504" />
+        <location filename="../ui/station_list.py" line="510" />
         <source>Remove all stations from history</source>
         <translation>Fjern alle stasjoner fra historikken</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="513" />
+        <location filename="../ui/station_list.py" line="519" />
         <source>+ Add station</source>
         <translation>+ Legg til stasjon</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="514" />
+        <location filename="../ui/station_list.py" line="520" />
         <source>Add a custom station</source>
         <translation>Legg til en tilpasset stasjon</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="531" />
-        <source>Name</source>
-        <translation>Navn</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="532" />
-        <source>Country</source>
-        <translation>Land</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="533" />
-        <source>Bitrate</source>
-        <translation>Bitrate</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="534" />
-        <source>Votes</source>
-        <translation>Stemmer</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="535" />
-        <source>Language</source>
-        <translation>Språk</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="536" />
-        <source>Codec</source>
-        <translation>Kodek</translation>
     </message>
     <message>
         <location filename="../ui/station_list.py" line="541" />
@@ -555,60 +525,105 @@ Start appen på nytt for å bruke endringene.</translation>
         <translation>Prøv igjen</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="957" />
+        <location filename="../ui/station_list.py" line="789" />
+        <location filename="../ui/station_list.py" line="782" />
+        <source>Name</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="794" />
+        <location filename="../ui/station_list.py" line="783" />
+        <source>Codec</source>
+        <translation>Kodek</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="791" />
+        <location filename="../ui/station_list.py" line="784" />
+        <source>Bitrate</source>
+        <translation>Bitrate</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="795" />
+        <location filename="../ui/station_list.py" line="785" />
+        <source>Last listened</source>
+        <translation>Sist lyttet</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="796" />
+        <location filename="../ui/station_list.py" line="786" />
+        <source>Time listened</source>
+        <translation>Lyttetid</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="790" />
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="792" />
+        <source>Votes</source>
+        <translation>Stemmer</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="793" />
+        <source>Language</source>
+        <translation>Språk</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="1014" />
         <source>{0} stations</source>
         <translation>{0} stasjoner</translation>
     </message>
 </context><context>
     <name>StationRowWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="235" />
-        <source>{0} listened</source>
-        <translation>{0} lyttet</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="274" />
+        <location filename="../ui/station_list.py" line="272" />
         <source>Delete station</source>
         <translation>Slett stasjon</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="299" />
+        <location filename="../ui/station_list.py" line="297" />
         <source>Remove from history</source>
         <translation>Fjern fra historikken</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="372" />
+        <location filename="../ui/station_list.py" line="314" />
+        <source>{0} listened</source>
+        <translation>{0} lyttet</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="378" />
         <source>Favourite this station to add labels</source>
         <translation>Legg denne stasjonen til favoritter for å legge til etiketter</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="378" />
+        <location filename="../ui/station_list.py" line="384" />
         <source>No labels yet</source>
         <translation>Ingen etiketter ennå</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="385" />
+        <location filename="../ui/station_list.py" line="391" />
         <source>New label…</source>
         <translation>Ny etikett…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="400" />
-        <location filename="../ui/station_list.py" line="389" />
+        <location filename="../ui/station_list.py" line="406" />
+        <location filename="../ui/station_list.py" line="395" />
         <source>Reset time listened</source>
         <translation>Tilbakestill lyttetid</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="401" />
+        <location filename="../ui/station_list.py" line="407" />
         <source>Reset the listening time for “{0}”?</source>
         <translation>Tilbakestille lyttetiden for «{0}»?</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="407" />
+        <location filename="../ui/station_list.py" line="413" />
         <source>New label</source>
         <translation>Ny etikett</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="407" />
+        <location filename="../ui/station_list.py" line="413" />
         <source>Label name:</source>
         <translation>Etikettnavn:</translation>
     </message>

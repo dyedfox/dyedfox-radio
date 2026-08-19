@@ -265,12 +265,12 @@ Aangedreven door radiobrowser.info</translation>
         <translation>Er kan geen verbinding worden gemaakt met ‘{0}’. Mogelijk is de stream uit de lucht of tijdelijk niet beschikbaar.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="929" />
+        <location filename="../ui/main_window.py" line="936" />
         <source>Delete station</source>
         <translation>Radiostation verwijderen</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="930" />
+        <location filename="../ui/main_window.py" line="937" />
         <source>Delete “{0}” from your custom stations?</source>
         <translation>“{0}” uit je eigen radiostations verwijderen?</translation>
     </message>
@@ -373,7 +373,7 @@ Aangedreven door radiobrowser.info</translation>
         <translation>De albumhoes wordt op Deezer opgezocht op basis van de songtitel. Als er geen overeenkomst wordt gevonden, wordt het stationslogo getoond.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="171" />
+        <location filename="../ui/settings_dialog.py" line="172" />
         <location filename="../ui/settings_dialog.py" line="91" />
         <source>Listening time</source>
         <translation>Luistertijd</translation>
@@ -389,79 +389,79 @@ Aangedreven door radiobrowser.info</translation>
         <translation>Alle luistertijd wissen…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="206" />
-        <location filename="../ui/settings_dialog.py" line="202" />
-        <location filename="../ui/settings_dialog.py" line="187" />
-        <location filename="../ui/settings_dialog.py" line="185" />
-        <location filename="../ui/settings_dialog.py" line="109" />
+        <location filename="../ui/settings_dialog.py" line="207" />
+        <location filename="../ui/settings_dialog.py" line="203" />
+        <location filename="../ui/settings_dialog.py" line="188" />
+        <location filename="../ui/settings_dialog.py" line="186" />
+        <location filename="../ui/settings_dialog.py" line="110" />
         <source>Backup</source>
         <translation>Reservekopie</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="112" />
+        <location filename="../ui/settings_dialog.py" line="113" />
         <source>Back up and restore your favourites, labels, custom stations, history, listening time, and settings.</source>
         <translation>Maak een reservekopie van of herstel onder meer je favorieten, labels, aangepaste zenders, geschiedenis, luistertijd en instellingen.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="118" />
+        <location filename="../ui/settings_dialog.py" line="119" />
         <source>Export…</source>
         <translation>Exporteren…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="120" />
+        <location filename="../ui/settings_dialog.py" line="121" />
         <source>Import…</source>
         <translation>Importeren…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="163" />
+        <location filename="../ui/settings_dialog.py" line="164" />
         <source>Clear all listening time</source>
         <translation>Alle luistertijd wissen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="164" />
+        <location filename="../ui/settings_dialog.py" line="165" />
         <source>Clear all listening time? This cannot be undone.</source>
         <translation>Alle luistertijd wissen? Dit kan niet ongedaan worden gemaakt.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="171" />
+        <location filename="../ui/settings_dialog.py" line="172" />
         <source>All listening time cleared.</source>
         <translation>Alle luistertijd gewist.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="177" />
+        <location filename="../ui/settings_dialog.py" line="178" />
         <source>Export backup</source>
         <translation>Reservekopie exporteren</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="194" />
-        <location filename="../ui/settings_dialog.py" line="179" />
+        <location filename="../ui/settings_dialog.py" line="195" />
+        <location filename="../ui/settings_dialog.py" line="180" />
         <source>Zip files (*.zip)</source>
         <translation>Zipbestanden (*.zip)</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="185" />
+        <location filename="../ui/settings_dialog.py" line="186" />
         <source>Backup exported successfully.</source>
         <translation>De reservekopie is geëxporteerd.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="187" />
+        <location filename="../ui/settings_dialog.py" line="188" />
         <source>Export failed: {0}</source>
         <translation>Het exporteren is mislukt: {0}</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="192" />
+        <location filename="../ui/settings_dialog.py" line="193" />
         <source>Import backup</source>
         <translation>Reservekopie importeren</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="203" />
+        <location filename="../ui/settings_dialog.py" line="204" />
         <source>Restored: {0}.
 Restart the app to apply changes.</source>
         <translation>Hersteld: {0}.
 Herstart het programma om de wijzigingen toe te passen.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="206" />
+        <location filename="../ui/settings_dialog.py" line="207" />
         <source>Import failed: {0}</source>
         <translation>Het importeren is mislukt: {0}</translation>
     </message>
@@ -472,59 +472,29 @@ Herstart het programma om de wijzigingen toe te passen.</translation>
 </context><context>
     <name>StationListWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="486" />
+        <location filename="../ui/station_list.py" line="492" />
         <source>Search stations…</source>
         <translation>Zoeken naar radiostation…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="503" />
+        <location filename="../ui/station_list.py" line="509" />
         <source>Clear history</source>
         <translation>Geschiedenis wissen</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="504" />
+        <location filename="../ui/station_list.py" line="510" />
         <source>Remove all stations from history</source>
         <translation>Alle radiostations uit de geschiedenis verwijderen</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="513" />
+        <location filename="../ui/station_list.py" line="519" />
         <source>+ Add station</source>
         <translation>+ Radiostation toevoegen</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="514" />
+        <location filename="../ui/station_list.py" line="520" />
         <source>Add a custom station</source>
         <translation>Een eigen radiostation toevoegen</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="531" />
-        <source>Name</source>
-        <translation>Naam</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="532" />
-        <source>Country</source>
-        <translation>Land</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="533" />
-        <source>Bitrate</source>
-        <translation>Bitsnelheid</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="534" />
-        <source>Votes</source>
-        <translation>Aantal stemmen</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="535" />
-        <source>Language</source>
-        <translation>Taal</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="536" />
-        <source>Codec</source>
-        <translation>Codec</translation>
     </message>
     <message>
         <location filename="../ui/station_list.py" line="541" />
@@ -562,60 +532,105 @@ Herstart het programma om de wijzigingen toe te passen.</translation>
         <translation>Opnieuw proberen</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="957" />
+        <location filename="../ui/station_list.py" line="789" />
+        <location filename="../ui/station_list.py" line="782" />
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="794" />
+        <location filename="../ui/station_list.py" line="783" />
+        <source>Codec</source>
+        <translation>Codec</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="791" />
+        <location filename="../ui/station_list.py" line="784" />
+        <source>Bitrate</source>
+        <translation>Bitsnelheid</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="795" />
+        <location filename="../ui/station_list.py" line="785" />
+        <source>Last listened</source>
+        <translation>Laatst beluisterd</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="796" />
+        <location filename="../ui/station_list.py" line="786" />
+        <source>Time listened</source>
+        <translation>Luistertijd</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="790" />
+        <source>Country</source>
+        <translation>Land</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="792" />
+        <source>Votes</source>
+        <translation>Aantal stemmen</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="793" />
+        <source>Language</source>
+        <translation>Taal</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="1014" />
         <source>{0} stations</source>
         <translation>{0} radiostations</translation>
     </message>
 </context><context>
     <name>StationRowWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="235" />
-        <source>{0} listened</source>
-        <translation>{0} geluisterd</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="274" />
+        <location filename="../ui/station_list.py" line="272" />
         <source>Delete station</source>
         <translation>Radiostation verwijderen</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="299" />
+        <location filename="../ui/station_list.py" line="297" />
         <source>Remove from history</source>
         <translation>Uit geschiedenis verwijderen</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="372" />
+        <location filename="../ui/station_list.py" line="314" />
+        <source>{0} listened</source>
+        <translation>{0} geluisterd</translation>
+    </message>
+    <message>
+        <location filename="../ui/station_list.py" line="378" />
         <source>Favourite this station to add labels</source>
         <translation>Voeg dit station toe aan favorieten om labels toe te voegen</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="378" />
+        <location filename="../ui/station_list.py" line="384" />
         <source>No labels yet</source>
         <translation>Nog geen labels</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="385" />
+        <location filename="../ui/station_list.py" line="391" />
         <source>New label…</source>
         <translation>Nieuw label…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="400" />
-        <location filename="../ui/station_list.py" line="389" />
+        <location filename="../ui/station_list.py" line="406" />
+        <location filename="../ui/station_list.py" line="395" />
         <source>Reset time listened</source>
         <translation>Luistertijd opnieuw instellen</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="401" />
+        <location filename="../ui/station_list.py" line="407" />
         <source>Reset the listening time for “{0}”?</source>
         <translation>Luistertijd voor ‘{0}’ opnieuw instellen?</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="407" />
+        <location filename="../ui/station_list.py" line="413" />
         <source>New label</source>
         <translation>Nieuw label</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="407" />
+        <location filename="../ui/station_list.py" line="413" />
         <source>Label name:</source>
         <translation>Labelnaam:</translation>
     </message>

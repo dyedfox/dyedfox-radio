@@ -533,15 +533,9 @@ class StationListWidget(QWidget):
         sort_layout.setSpacing(6)
 
         self._sort_field = QComboBox()
-        for label, key in [
-            (self.tr("Name"),     "name"),
-            (self.tr("Country"),  "country"),
-            (self.tr("Bitrate"),  "bitrate"),
-            (self.tr("Votes"),    "votes"),
-            (self.tr("Language"), "language"),
-            (self.tr("Codec"),    "codec"),
-        ]:
-            self._sort_field.addItem(label, key)
+        # Re-fit the popup/box width whenever the field list changes per view, so
+        # the longer "Last listened" / "Time listened" labels aren't clipped.
+        self._sort_field.setSizeAdjustPolicy(QComboBox.SizeAdjustPolicy.AdjustToContents)
 
         self._country_input = QLineEdit()
         self._country_input.setPlaceholderText(self.tr("Country…"))
@@ -752,29 +746,76 @@ class StationListWidget(QWidget):
         self._apply_filter()
 
     def _sorted_stations(self) -> list[dict]:
-        # No-sort views arrive in a meaningful server/raw order (recency for
-        # recent & now_listening, trend rank for trending, recency for new,
-        # shuffled for random) and have no sort bar — keep that order as-is.
+        # No-sort views arrive in a meaningful server/raw order (trend rank for
+        # trending, recency for new, shuffled for random, live-listener rank
+        # for now_listening) and have no sort bar — keep that order as-is.
         if self._current_view in self._NO_SORT_VIEWS:
             return list(self._stations_raw)
-        prefs = self._settings["sort"].get(self._current_view, {"field": "name", "ascending": True})
+        prefs = self._settings["sort"].get(self._current_view, self._default_sort_pref(self._current_view))
         field = prefs["field"]
         ascending = prefs["ascending"]
 
         def sort_key(s: dict):
+            if field == "last_listened":
+                # recent_uuids is most-recent-first; negate the index so higher
+                # (more recent) sorts last ascending / first descending, matching
+                # how the other numeric fields treat "descending" as "biggest first".
+                try:
+                    return -self._recent_uuids.index(s.get("stationuuid", ""))
+                except ValueError:
+                    return -len(self._recent_uuids)
+            if field == "time_listened":
+                return self._listening_stats.total_seconds(s.get("stationuuid", ""))
             v = s.get(field, "")
             return v.strip().lower() if isinstance(v, str) else (v or 0)
 
         return sorted(self._stations_raw, key=sort_key, reverse=not ascending)
 
+    def _sort_field_items(self, view: str) -> list[tuple[str, str]]:
+        # "Last listened" / "Time listened" are offered in every sorted view —
+        # the listened-time figure is shown on every row, so sorting by it is
+        # meaningful anywhere. History additionally drops the catalogue-search
+        # fields (country/votes/language) that don't mean much for a personal,
+        # already-curated list.
+        if view == "recent":
+            return [
+                (self.tr("Name"),          "name"),
+                (self.tr("Codec"),         "codec"),
+                (self.tr("Bitrate"),       "bitrate"),
+                (self.tr("Last listened"), "last_listened"),
+                (self.tr("Time listened"), "time_listened"),
+            ]
+        return [
+            (self.tr("Name"),          "name"),
+            (self.tr("Country"),       "country"),
+            (self.tr("Bitrate"),       "bitrate"),
+            (self.tr("Votes"),         "votes"),
+            (self.tr("Language"),      "language"),
+            (self.tr("Codec"),         "codec"),
+            (self.tr("Last listened"), "last_listened"),
+            (self.tr("Time listened"), "time_listened"),
+        ]
+
+    @staticmethod
+    def _default_sort_pref(view: str) -> dict:
+        # Falls back for users whose saved settings predate a given view's sort
+        # entry (e.g. History gaining a sort bar) — preserves that view's old,
+        # pre-sort ordering instead of jumping to an arbitrary alphabetical one.
+        if view == "recent":
+            return {"field": "last_listened", "ascending": False}
+        return {"field": "name", "ascending": True}
+
     def _load_sort_controls(self, view: str):
-        prefs = self._settings["sort"].get(view, {"field": "name", "ascending": True})
+        prefs = self._settings["sort"].get(view, self._default_sort_pref(view))
+        self._sort_field.blockSignals(True)
+        self._sort_field.clear()
+        for label, key in self._sort_field_items(view):
+            self._sort_field.addItem(label, key)
         keys = [self._sort_field.itemData(i) for i in range(self._sort_field.count())]
         field_idx = keys.index(prefs["field"]) if prefs["field"] in keys else 0
-        self._sort_descending = not prefs["ascending"]
-        self._sort_field.blockSignals(True)
         self._sort_field.setCurrentIndex(field_idx)
         self._sort_field.blockSignals(False)
+        self._sort_descending = not prefs["ascending"]
         self._sort_dir.setText("↓" if self._sort_descending else "↑")
 
     def _on_sort_dir_clicked(self):
@@ -836,7 +877,7 @@ class StationListWidget(QWidget):
         if self._limit_overlay.isVisible():
             QTimer.singleShot(0, self._show_limit_overlay)
 
-    _NO_SORT_VIEWS = {"recent", "new", "random", "trending", "now_listening"}
+    _NO_SORT_VIEWS = {"new", "random", "trending", "now_listening"}
 
     def set_view(self, view: str, fav_uuids: set[str], recent_uuids: list[str], label_filter: str | None = None):
         self._current_view = view
