@@ -47,7 +47,7 @@ Inspired by [Shortwave](https://github.com/maunalinux/shortwave), with a native 
 - System tray icon with play/stop context menu and middle-click toggle
 - MPRIS2 support (media keys, KDE media player widget)
 - Song change notifications
-- Breeze light/dark theme support, following the system palette
+- Breeze light/dark theme support, following the system palette — and on Omarchy, automatically matches the active Omarchy theme colors
 - Persistent volume, favourites, and recent history
 
 ## Keyboard Shortcuts

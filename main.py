@@ -26,6 +26,7 @@ from data.listening_stats import ListeningStatsManager
 from data.settings import Settings
 from tray.tray_icon import SystemTrayIcon
 from ui.main_window import MainWindow
+from ui.omarchy_theme import apply as apply_omarchy_theme
 
 _INSTANCE_KEY = "dyedfox-radio-instance"
 
@@ -72,6 +73,8 @@ def main():
     app.setApplicationName("Dyedfox Radio")
     app.setDesktopFileName("dyedfox-radio")
     app.setQuitOnLastWindowClosed(False)
+
+    _omarchy_theme = apply_omarchy_theme(app)  # no-op on KDE; kept alive for app lifetime
 
     _translations_dir = Path(__file__).parent / "translations"
     _translator = QTranslator(app)
