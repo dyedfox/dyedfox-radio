@@ -8,6 +8,7 @@ from PyQt6.QtCore import Qt, QUrl, pyqtSignal
 from PyQt6.QtGui import QIcon, QPalette, QPixmap, QDesktopServices
 
 from data.listening_stats import format_duration
+from ui.omarchy_theme import is_omarchy
 
 _NO_LOGO_PATH = str(Path(__file__).parent.parent / "assets" / "icons" / "no_logo-256x256.png")
 _default_logo: QPixmap | None = None
@@ -232,6 +233,8 @@ class InfoPanel(QWidget):
 
         sep = QFrame()
         sep.setFrameShape(QFrame.Shape.HLine)
+        if is_omarchy():
+            sep.setForegroundRole(QPalette.ColorRole.Mid)
         layout.addWidget(sep)
 
         self._now_playing_text = ""
@@ -456,6 +459,14 @@ class InfoPanel(QWidget):
     @staticmethod
     def _muted_label() -> QLabel:
         label = QLabel()
+        if is_omarchy():
+            # A color copied into the label's own local QPalette (the KDE
+            # path below) is baked in once and never follows a live Omarchy
+            # theme switch. A palette(...) stylesheet ref is refreshed by
+            # OmarchyThemeManager on every reload (ui/omarchy_theme.py) and
+            # also picks up its better-contrast PlaceholderText mapping.
+            label.setStyleSheet("color: palette(placeholder-text);")
+            return label
         p = label.palette()
         p.setColor(
             QPalette.ColorRole.WindowText,

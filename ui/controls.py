@@ -2,6 +2,8 @@ from PyQt6.QtWidgets import QWidget, QHBoxLayout, QPushButton, QSlider
 from PyQt6.QtCore import Qt, pyqtSignal
 from PyQt6.QtGui import QIcon
 
+from ui.omarchy_theme import is_omarchy, on_theme_changed, tinted_icon
+
 
 class ControlBar(QWidget):
     playback_toggled = pyqtSignal()
@@ -16,7 +18,7 @@ class ControlBar(QWidget):
         layout.setContentsMargins(12, 4, 12, 4)
         layout.setSpacing(8)
 
-        self._play_stop_btn = QPushButton(QIcon.fromTheme("media-playback-stop"), self.tr("Stop"))
+        self._play_stop_btn = QPushButton()
         self._play_stop_btn.setFlat(True)
         self._play_stop_btn.clicked.connect(self.playback_toggled)
         layout.addWidget(self._play_stop_btn)
@@ -38,15 +40,19 @@ class ControlBar(QWidget):
         self._slider.valueChanged.connect(self.volume_changed)
         layout.addWidget(self._slider)
 
+        self.set_playing(False)
         self._update_mute_icon(False)
+        on_theme_changed(lambda: self._update_mute_icon(self._mute_btn.isChecked()))
 
     def set_playing(self, playing: bool):
-        if playing:
-            self._play_stop_btn.setIcon(QIcon.fromTheme("media-playback-stop"))
-            self._play_stop_btn.setText(self.tr("Stop"))
-        else:
-            self._play_stop_btn.setIcon(QIcon.fromTheme("media-playback-start"))
-            self._play_stop_btn.setText(self.tr("Play"))
+        icon = QIcon.fromTheme("media-playback-stop" if playing else "media-playback-start")
+        label = self.tr("Stop") if playing else self.tr("Play")
+        if icon.isNull():
+            # Not every icon theme ships these names (e.g. Yaru); fall back to
+            # a glyph rather than leaving the button with no icon at all.
+            label = f"{'⏹' if playing else '▶'} {label}"
+        self._play_stop_btn.setIcon(icon)
+        self._play_stop_btn.setText(label)
 
     def set_volume_slider(self, value: int):
         self._slider.blockSignals(True)
@@ -61,7 +67,17 @@ class ControlBar(QWidget):
 
     def _update_mute_icon(self, muted: bool):
         name = "audio-volume-muted" if muted else "audio-volume-medium"
-        self._mute_btn.setIcon(QIcon.fromTheme(name))
+        # This icon is plain monochrome with no meaningful color of its own,
+        # so on Omarchy it's safe (and necessary — see tinted_icon) to
+        # recolor it to match the theme instead of the system icon theme's
+        # fixed, often near-invisible-on-dark-backgrounds gray.
+        icon = tinted_icon(name) if is_omarchy() else QIcon.fromTheme(name)
+        if icon.isNull():
+            self._mute_btn.setText("🔇" if muted else "🔊")
+            self._mute_btn.setIcon(QIcon())
+        else:
+            self._mute_btn.setText("")
+            self._mute_btn.setIcon(icon)
 
     @property
     def volume(self) -> int:

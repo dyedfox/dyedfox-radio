@@ -6,7 +6,7 @@ from PyQt6.QtWidgets import (
 from pathlib import Path
 import subprocess
 from PyQt6.QtCore import Qt, QSize, QEvent, QThreadPool, QTimer
-from PyQt6.QtGui import QIcon, QShortcut, QKeySequence, QPixmap
+from PyQt6.QtGui import QIcon, QShortcut, QKeySequence, QPixmap, QPalette
 
 _NOTIF_ICON_PATH = Path.home() / ".config" / "dyedfox-radio" / "notif_icon.png"
 _ART_NOTIF_ICON_PATH = Path.home() / ".config" / "dyedfox-radio" / "notif_art.png"
@@ -22,6 +22,7 @@ from ui.settings_dialog import SettingsDialog
 from ui.about_dialog import AboutDialog
 from ui.notifier import DBusNotifier
 from ui.add_station_dialog import AddStationDialog
+from ui.omarchy_theme import is_omarchy
 from player.backend import GStreamerBackend
 from api.radio_browser import RadioBrowserClient
 from data.favourites import FavouritesManager, RecentManager, new_cache, trending_cache, random_cache, now_listening_cache
@@ -119,6 +120,12 @@ class MainWindow(QMainWindow):
     def _sep(self, vertical=False) -> QFrame:
         sep = QFrame()
         sep.setFrameShape(QFrame.Shape.VLine if vertical else QFrame.Shape.HLine)
+        if is_omarchy():
+            # A plain-shadow QFrame line paints with the WindowText role, which
+            # under the Omarchy palette is the bright theme foreground — far too
+            # loud for a divider. KDE's Breeze palette picks a muted WindowText
+            # already, so this is left alone there.
+            sep.setForegroundRole(QPalette.ColorRole.Mid)
         return sep
 
     def _setup_ui(self):
@@ -199,11 +206,19 @@ class MainWindow(QMainWindow):
             lbl.setStyleSheet(_sec_style)
             return lbl
 
-        def _nav_btn(label: str, view: str, icon: str) -> QPushButton:
+        def _nav_btn(label: str, view: str, icon: str, fallback: str) -> QPushButton:
             btn = QPushButton(label)
             btn.setFlat(True)
             btn.setCheckable(True)
-            btn.setIcon(QIcon.fromTheme(icon))
+            themed_icon = QIcon.fromTheme(icon)
+            if themed_icon.isNull():
+                # Some of these icon names (starred, office-chart-bar,
+                # view-process-users...) aren't standard freedesktop names and
+                # plenty of icon themes don't ship them; fall back to a glyph
+                # rather than leaving the row unmarked.
+                btn.setText(f"{fallback}  {label}")
+            else:
+                btn.setIcon(themed_icon)
             btn.setIconSize(QSize(16, 16))
             btn.setStyleSheet(_nav_style)
             btn.clicked.connect(lambda _, v=view: self._switch_view(v))
@@ -212,7 +227,7 @@ class MainWindow(QMainWindow):
 
         # --- LIBRARY ---
         layout.addWidget(_section(self.tr("LIBRARY")))
-        layout.addWidget(_nav_btn(self.tr("All stations"), "all",        "network-wireless"))
+        layout.addWidget(_nav_btn(self.tr("All stations"), "all",        "network-wireless", "📡"))
         # Favourites carries a disclosure arrow that folds its label sub-menu
         # away; the arrow is a separate button so clicking the row still
         # navigates rather than collapsing.
@@ -220,7 +235,7 @@ class MainWindow(QMainWindow):
         fav_row_layout = QHBoxLayout(fav_row)
         fav_row_layout.setContentsMargins(0, 0, 0, 0)
         fav_row_layout.setSpacing(0)
-        fav_row_layout.addWidget(_nav_btn(self.tr("Favourites"), "favourites", "emblem-favorite"), 1)
+        fav_row_layout.addWidget(_nav_btn(self.tr("Favourites"), "favourites", "emblem-favorite", "❤"), 1)
 
         self._labels_toggle = QToolButton()
         self._labels_toggle.setAutoRaise(True)
@@ -238,15 +253,15 @@ class MainWindow(QMainWindow):
         self._label_nav_layout.setSpacing(2)
         layout.addWidget(self._label_nav)
 
-        layout.addWidget(_nav_btn(self.tr("Custom"),       "custom",     "document-edit"))
-        layout.addWidget(_nav_btn(self.tr("History"), "recent", "document-open-recent"))
+        layout.addWidget(_nav_btn(self.tr("Custom"),       "custom",     "document-edit", "✏"))
+        layout.addWidget(_nav_btn(self.tr("History"), "recent", "document-open-recent", "🕐"))
 
         # --- DISCOVER ---
         layout.addWidget(_section(self.tr("DISCOVER")))
-        layout.addWidget(_nav_btn(self.tr("New"),           "new",           "starred"))
-        layout.addWidget(_nav_btn(self.tr("Random"),        "random",        "media-playlist-shuffle"))
-        layout.addWidget(_nav_btn(self.tr("Trending"),      "trending",      "office-chart-bar"))
-        layout.addWidget(_nav_btn(self.tr("Now Listening"), "now_listening", "view-process-users"))
+        layout.addWidget(_nav_btn(self.tr("New"),           "new",           "starred", "✨"))
+        layout.addWidget(_nav_btn(self.tr("Random"),        "random",        "media-playlist-shuffle", "🔀"))
+        layout.addWidget(_nav_btn(self.tr("Trending"),      "trending",      "office-chart-bar", "📈"))
+        layout.addWidget(_nav_btn(self.tr("Now Listening"), "now_listening", "view-process-users", "🎧"))
 
         self._nav_btns["all"].setChecked(True)
 
