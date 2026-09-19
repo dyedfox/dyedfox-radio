@@ -1,8 +1,8 @@
 # Dyedfox Radio
 
-Desktop internet radio player for KDE Plasma, powered by [radio-browser.info](https://www.radio-browser.info/).
+Desktop internet radio player for KDE Plasma / Omarchy 4, powered by [radio-browser.info](https://www.radio-browser.info/).
 
-Inspired by [Shortwave](https://github.com/maunalinux/shortwave), with a native KDE look using PyQt6.
+Inspired by [Shortwave](https://github.com/maunalinux/shortwave), with a native KDE / Omarchy look using PyQt6.
 
 ## Contents
 
