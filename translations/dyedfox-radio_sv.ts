@@ -96,60 +96,84 @@ Drivs av radio-browser.info.</translation>
 </context><context>
     <name>ControlBar</name>
     <message>
-        <location filename="../ui/controls.py" line="46" />
-        <location filename="../ui/controls.py" line="19" />
-        <source>Stop</source>
-        <translation>Stoppa</translation>
+        <location filename="../ui/controls.py" line="37" />
+        <source>Audio output</source>
+        <translation>Ljudutgång</translation>
     </message>
     <message>
-        <location filename="../ui/controls.py" line="30" />
+        <location filename="../ui/controls.py" line="47" />
         <source>Mute</source>
         <translation>Tysta</translation>
     </message>
     <message>
-        <location filename="../ui/controls.py" line="49" />
+        <location filename="../ui/controls.py" line="66" />
+        <source>Stop</source>
+        <translation>Stoppa</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="66" />
         <source>Play</source>
         <translation>Spela upp</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="113" />
+        <source>System default</source>
+        <translation>Systemstandard</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="118" />
+        <source>No other outputs found</source>
+        <translation>Inga andra utgångar hittades</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="122" />
+        <source>{0} (unavailable)</source>
+        <translation>{0} (inte tillgänglig)</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="125" />
+        <source>Audio output: {0}</source>
+        <translation>Ljudutgång: {0}</translation>
     </message>
 </context><context>
     <name>InfoPanel</name>
     <message>
-        <location filename="../ui/info_panel.py" line="156" />
+        <location filename="../ui/info_panel.py" line="157" />
         <source>Click to enlarge (right-click the image to save)</source>
         <translation>Klicka för att förstora (högerklicka på bilden för att spara)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="179" />
+        <location filename="../ui/info_panel.py" line="180" />
         <source>Copy station name</source>
         <translation>Kopiera stationsnamn</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="196" />
+        <location filename="../ui/info_panel.py" line="197" />
         <source>Open station website</source>
         <translation>Öppna stationens webbplats</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="210" />
+        <location filename="../ui/info_panel.py" line="211" />
         <source>Open on radio-browser.info</source>
         <translation>Öppna på radio-browser.info</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="245" />
+        <location filename="../ui/info_panel.py" line="248" />
         <source>Copy song info</source>
         <translation>Kopiera låtinformation</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="376" />
+        <location filename="../ui/info_panel.py" line="379" />
         <source>Show station logo</source>
         <translation>Visa stationslogotyp</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="381" />
+        <location filename="../ui/info_panel.py" line="384" />
         <source>Show album art</source>
         <translation>Visa skivomslag</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="413" />
+        <location filename="../ui/info_panel.py" line="416" />
         <source>Listened: {0}</source>
         <translation>Lyssnat: {0}</translation>
     </message>
@@ -160,118 +184,124 @@ Drivs av radio-browser.info.</translation>
 </context><context>
     <name>MainWindow</name>
     <message>
-        <location filename="../ui/main_window.py" line="214" />
+        <location filename="../ui/main_window.py" line="229" />
         <source>LIBRARY</source>
         <translation>BIBLIOTEK</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="215" />
+        <location filename="../ui/main_window.py" line="230" />
         <source>All stations</source>
         <translation>Alla stationer</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="223" />
+        <location filename="../ui/main_window.py" line="238" />
         <source>Favourites</source>
         <translation>Favoriter</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="241" />
+        <location filename="../ui/main_window.py" line="256" />
         <source>Custom</source>
         <translation>Anpassade</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="242" />
+        <location filename="../ui/main_window.py" line="257" />
         <source>History</source>
         <translation>Historik</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="245" />
+        <location filename="../ui/main_window.py" line="260" />
         <source>DISCOVER</source>
         <translation>UPPTÄCK</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="246" />
+        <location filename="../ui/main_window.py" line="261" />
         <source>New</source>
         <translation>Nya</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="247" />
+        <location filename="../ui/main_window.py" line="262" />
         <source>Random</source>
         <translation>Slumpmässiga</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="248" />
+        <location filename="../ui/main_window.py" line="263" />
         <source>Trending</source>
         <translation>Populära</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="249" />
+        <location filename="../ui/main_window.py" line="264" />
         <source>Now Listening</source>
         <translation>Lyssnas på nu</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="270" />
+        <location filename="../ui/main_window.py" line="285" />
         <source>Settings</source>
         <translation>Inställningar</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="279" />
+        <location filename="../ui/main_window.py" line="294" />
         <source>About</source>
         <translation>Om</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="320" />
+        <location filename="../ui/main_window.py" line="335" />
         <source>Hide labels</source>
         <translation>Dölj etiketter</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="320" />
+        <location filename="../ui/main_window.py" line="335" />
         <source>Show labels</source>
         <translation>Visa etiketter</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="520" />
-        <location filename="../ui/main_window.py" line="397" />
+        <location filename="../ui/main_window.py" line="777" />
+        <location filename="../ui/main_window.py" line="389" />
+        <source>System default</source>
+        <translation>Systemstandard</translation>
+    </message>
+    <message>
+        <location filename="../ui/main_window.py" line="549" />
+        <location filename="../ui/main_window.py" line="424" />
         <source>Could not load stations — check your connection</source>
         <translation>Det gick inte att läsa in stationer — kontrollera din anslutning</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="466" />
+        <location filename="../ui/main_window.py" line="495" />
         <source>Could not load favourites — check your connection</source>
         <translation>Det gick inte att läsa in favoriter — kontrollera din anslutning</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="486" />
+        <location filename="../ui/main_window.py" line="515" />
         <source>Could not load history — check your connection</source>
         <translation>Det gick inte att läsa in historik — kontrollera din anslutning</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="504" />
+        <location filename="../ui/main_window.py" line="533" />
         <source>Could not load new stations — check your connection</source>
         <translation>Det gick inte att läsa in nya stationer — kontrollera din anslutning</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="536" />
+        <location filename="../ui/main_window.py" line="565" />
         <source>Could not load trending stations — check your connection</source>
         <translation>Det gick inte att läsa in populära stationer — kontrollera din anslutning</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="552" />
+        <location filename="../ui/main_window.py" line="581" />
         <source>Could not load now listening stations — check your connection</source>
         <translation>Det gick inte att läsa in stationer som lyssnas på nu — kontrollera din anslutning</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="713" />
+        <location filename="../ui/main_window.py" line="742" />
         <source>Could not connect to {0}. The stream may be down or unavailable.</source>
         <translation>Det gick inte att ansluta till {0}. Strömmen kan vara otillgänglig.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="936" />
+        <location filename="../ui/main_window.py" line="979" />
         <source>Delete station</source>
         <translation>Ta bort station</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="937" />
+        <location filename="../ui/main_window.py" line="980" />
         <source>Delete “{0}” from your custom stations?</source>
         <translation>Ta bort ”{0}” från dina anpassade stationer?</translation>
     </message>
@@ -296,165 +326,190 @@ Drivs av radio-browser.info.</translation>
 </context><context>
     <name>SettingsDialog</name>
     <message>
-        <location filename="../ui/settings_dialog.py" line="20" />
+        <location filename="../ui/settings_dialog.py" line="22" />
         <source>Settings</source>
         <translation>Inställningar</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="28" />
+        <location filename="../ui/settings_dialog.py" line="30" />
         <source>Startup</source>
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="31" />
+        <location filename="../ui/settings_dialog.py" line="33" />
         <source>Start minimized to tray</source>
         <translation>Starta minimerad i aktivitetsfältet</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="35" />
+        <location filename="../ui/settings_dialog.py" line="37" />
         <source>Autoplay last station</source>
         <translation>Spela automatiskt upp senaste stationen</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="39" />
+        <location filename="../ui/settings_dialog.py" line="41" />
         <source>Startup options take effect on next launch.</source>
         <translation>Startalternativ träder i kraft vid nästa start.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="46" />
+        <location filename="../ui/settings_dialog.py" line="48" />
+        <source>Audio output</source>
+        <translation>Ljudutgång</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="53" />
+        <source>System default</source>
+        <translation>Systemstandard</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="59" />
+        <source>{0} (unavailable)</source>
+        <translation>{0} (inte tillgänglig)</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="61" />
+        <source>Output device:</source>
+        <translation>Utgångsenhet:</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="63" />
+        <source>Also available from the headphones button next to the volume slider.</source>
+        <translation>Finns även via hörlursknappen bredvid volymreglaget.</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="71" />
         <source>Stations</source>
         <translation>Stationer</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="52" />
+        <location filename="../ui/settings_dialog.py" line="77" />
         <source>{0} stations</source>
         <translation>{0} stationer</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="55" />
+        <location filename="../ui/settings_dialog.py" line="80" />
         <source>Top stations to load:</source>
         <translation>Antal toppstationer att läsa in:</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="57" />
+        <location filename="../ui/settings_dialog.py" line="82" />
         <source>Higher values slow down initial load and search. Prefer using search and filters over increasing this limit.</source>
         <translation>Högre värden gör den första inläsningen och sökningen långsammare. Använd hellre sökning och filter än att höja denna gräns.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="65" />
+        <location filename="../ui/settings_dialog.py" line="90" />
         <source>Notifications</source>
         <translation>Aviseringar</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="68" />
+        <location filename="../ui/settings_dialog.py" line="93" />
         <source>Show song change notifications</source>
         <translation>Visa aviseringar vid låtbyte</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="75" />
+        <location filename="../ui/settings_dialog.py" line="100" />
         <source>Now playing</source>
         <translation>Spelas nu</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="78" />
+        <location filename="../ui/settings_dialog.py" line="103" />
         <source>Show album art for the current song</source>
         <translation>Visa skivomslag för den aktuella låten</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="82" />
+        <location filename="../ui/settings_dialog.py" line="107" />
         <source>Cover art is looked up from Deezer using the song title. Falls back to the station logo when no match is found.</source>
         <translation>Omslaget slås upp på Deezer utifrån låttiteln. Om ingen matchning hittas visas stationens logotyp.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="172" />
-        <location filename="../ui/settings_dialog.py" line="91" />
+        <location filename="../ui/settings_dialog.py" line="199" />
+        <location filename="../ui/settings_dialog.py" line="116" />
         <source>Listening time</source>
         <translation>Lyssningstid</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="94" />
+        <location filename="../ui/settings_dialog.py" line="119" />
         <source>Time listened is tracked per station and shown in the info panel and History.</source>
         <translation>Lyssningstiden spåras per station och visas i infopanelen och i historiken.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="100" />
+        <location filename="../ui/settings_dialog.py" line="125" />
         <source>Clear all listening time…</source>
         <translation>Rensa all lyssningstid…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="207" />
-        <location filename="../ui/settings_dialog.py" line="203" />
-        <location filename="../ui/settings_dialog.py" line="188" />
-        <location filename="../ui/settings_dialog.py" line="186" />
-        <location filename="../ui/settings_dialog.py" line="110" />
+        <location filename="../ui/settings_dialog.py" line="234" />
+        <location filename="../ui/settings_dialog.py" line="230" />
+        <location filename="../ui/settings_dialog.py" line="215" />
+        <location filename="../ui/settings_dialog.py" line="213" />
+        <location filename="../ui/settings_dialog.py" line="135" />
         <source>Backup</source>
         <translation>Säkerhetskopia</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="113" />
+        <location filename="../ui/settings_dialog.py" line="138" />
         <source>Back up and restore your favourites, labels, custom stations, history, listening time, and settings.</source>
         <translation>Säkerhetskopiera och återställ dina favoriter, etiketter, anpassade stationer, historik, lyssningstid och inställningar.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="119" />
+        <location filename="../ui/settings_dialog.py" line="144" />
         <source>Export…</source>
         <translation>Exportera…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="121" />
+        <location filename="../ui/settings_dialog.py" line="146" />
         <source>Import…</source>
         <translation>Importera…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="164" />
+        <location filename="../ui/settings_dialog.py" line="191" />
         <source>Clear all listening time</source>
         <translation>Rensa all lyssningstid</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="165" />
+        <location filename="../ui/settings_dialog.py" line="192" />
         <source>Clear all listening time? This cannot be undone.</source>
         <translation>Rensa all lyssningstid? Detta kan inte ångras.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="172" />
+        <location filename="../ui/settings_dialog.py" line="199" />
         <source>All listening time cleared.</source>
         <translation>All lyssningstid har rensats.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="178" />
+        <location filename="../ui/settings_dialog.py" line="205" />
         <source>Export backup</source>
         <translation>Exportera säkerhetskopia</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="195" />
-        <location filename="../ui/settings_dialog.py" line="180" />
+        <location filename="../ui/settings_dialog.py" line="222" />
+        <location filename="../ui/settings_dialog.py" line="207" />
         <source>Zip files (*.zip)</source>
         <translation>ZIP-filer (*.zip)</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="186" />
+        <location filename="../ui/settings_dialog.py" line="213" />
         <source>Backup exported successfully.</source>
         <translation>Säkerhetskopian exporterades.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="188" />
+        <location filename="../ui/settings_dialog.py" line="215" />
         <source>Export failed: {0}</source>
         <translation>Exporten misslyckades: {0}</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="193" />
+        <location filename="../ui/settings_dialog.py" line="220" />
         <source>Import backup</source>
         <translation>Importera säkerhetskopia</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="204" />
+        <location filename="../ui/settings_dialog.py" line="231" />
         <source>Restored: {0}.
 Restart the app to apply changes.</source>
         <translation>Återställd: {0}.
 Starta om appen för att tillämpa ändringarna.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="207" />
+        <location filename="../ui/settings_dialog.py" line="234" />
         <source>Import failed: {0}</source>
         <translation>Importen misslyckades: {0}</translation>
     </message>
@@ -658,23 +713,23 @@ Starta om appen för att tillämpa ändringarna.</translation>
 </context><context>
     <name>_ImagePopup</name>
     <message>
-        <location filename="../ui/info_panel.py" line="88" />
+        <location filename="../ui/info_panel.py" line="89" />
         <source>Save image as…</source>
         <translation>Spara bild som…</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="109" />
-        <location filename="../ui/info_panel.py" line="97" />
+        <location filename="../ui/info_panel.py" line="110" />
+        <location filename="../ui/info_panel.py" line="98" />
         <source>Save image</source>
         <translation>Spara bild</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="98" />
+        <location filename="../ui/info_panel.py" line="99" />
         <source>PNG image (*.png);;JPEG image (*.jpg *.jpeg)</source>
         <translation>PNG-bild (*.png);;JPEG-bild (*.jpg *.jpeg)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="109" />
+        <location filename="../ui/info_panel.py" line="110" />
         <source>Could not save the image.</source>
         <translation>Det gick inte att spara bilden.</translation>
     </message>

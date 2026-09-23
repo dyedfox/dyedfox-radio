@@ -372,6 +372,8 @@ class MainWindow(QMainWindow):
         self._controls.playback_toggled.connect(self._on_playback_toggled)
         self._controls.volume_changed.connect(self._on_volume_changed)
         self._controls.mute_toggled.connect(self._on_mute_toggled)
+        self._controls.output_menu_requested.connect(self._on_output_menu_requested)
+        self._controls.output_device_selected.connect(self._on_output_device_selected)
 
         self._info_panel.favourite_toggled.connect(self._on_favourite_toggled)
 
@@ -383,6 +385,16 @@ class MainWindow(QMainWindow):
         vol = self._settings["volume"]
         self._controls.set_volume_slider(vol)
         self._backend.set_volume(vol)
+
+        self._controls.set_output_tooltip(self.tr("System default"))
+        saved = self._settings["audio_device"]
+        if saved:
+            # Only route to the saved device if it's plugged in; otherwise play
+            # through the default but keep the preference for next time.
+            devices = dict(self._backend.list_output_devices())
+            if saved in devices:
+                self._backend.set_output_device(saved)
+                self._controls.set_output_tooltip(devices[saved])
 
     def load_top_stations(self, autoplay_uuid: str = ""):
         self._station_list.start_loading()
@@ -421,8 +433,10 @@ class MainWindow(QMainWindow):
         self._mpris = mpris
 
     def _open_settings(self):
-        dlg = SettingsDialog(self._settings, self._listening_stats, self)
+        dlg = SettingsDialog(self._settings, self._listening_stats,
+                             self._backend.list_output_devices(), self)
         dlg.listening_cleared.connect(self._on_listening_cleared)
+        dlg.output_device_selected.connect(self._on_output_device_selected)
         dlg.exec()
         enabled = self._settings["show_album_art"]
         self._info_panel.set_album_art_enabled(enabled)
@@ -747,6 +761,20 @@ class MainWindow(QMainWindow):
         self._controls.set_muted(muted)
         if self._tray:
             self._tray.set_muted(muted)
+
+    def _on_output_menu_requested(self):
+        current = self._settings["audio_device"]
+        self._controls.set_output_devices(self._backend.list_output_devices(), current)
+
+    def _on_output_device_selected(self, device_id: str):
+        devices = dict(self._backend.list_output_devices())
+        self._settings["audio_device"] = device_id
+        self._settings.save()
+        if device_id and device_id not in devices:
+            # Picked the "(unavailable)" entry: nothing to switch to yet.
+            return
+        self._backend.set_output_device(device_id)
+        self._controls.set_output_tooltip(devices.get(device_id) or self.tr("System default"))
 
     def set_muted(self, muted: bool):
         self._backend.set_muted(muted)
