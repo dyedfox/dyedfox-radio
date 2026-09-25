@@ -8,6 +8,7 @@ DEFAULTS: dict = {
     "start_minimized": False,
     "autoplay_last": False,
     "volume": 80,
+    "audio_device": "",
     "station_limit": 100,
     "notifications": True,
     "show_album_art": True,

@@ -96,60 +96,84 @@ Amb la tecnologia de radio-browser.info.</translation>
 </context><context>
     <name>ControlBar</name>
     <message>
-        <location filename="../ui/controls.py" line="46" />
-        <location filename="../ui/controls.py" line="19" />
-        <source>Stop</source>
-        <translation>Atura</translation>
+        <location filename="../ui/controls.py" line="37" />
+        <source>Audio output</source>
+        <translation>Sortida d'àudio</translation>
     </message>
     <message>
-        <location filename="../ui/controls.py" line="30" />
+        <location filename="../ui/controls.py" line="47" />
         <source>Mute</source>
         <translation>Silencia</translation>
     </message>
     <message>
-        <location filename="../ui/controls.py" line="49" />
+        <location filename="../ui/controls.py" line="66" />
+        <source>Stop</source>
+        <translation>Atura</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="66" />
         <source>Play</source>
         <translation>Reprodueix</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="113" />
+        <source>System default</source>
+        <translation>Predeterminat del sistema</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="118" />
+        <source>No other outputs found</source>
+        <translation>No s'han trobat altres sortides</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="122" />
+        <source>{0} (unavailable)</source>
+        <translation>{0} (no disponible)</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="125" />
+        <source>Audio output: {0}</source>
+        <translation>Sortida d'àudio: {0}</translation>
     </message>
 </context><context>
     <name>InfoPanel</name>
     <message>
-        <location filename="../ui/info_panel.py" line="156" />
+        <location filename="../ui/info_panel.py" line="157" />
         <source>Click to enlarge (right-click the image to save)</source>
         <translation>Feu clic per ampliar (feu clic dret sobre la imatge per desar-la)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="179" />
+        <location filename="../ui/info_panel.py" line="180" />
         <source>Copy station name</source>
         <translation>Copia el nom de l’emissora</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="196" />
+        <location filename="../ui/info_panel.py" line="197" />
         <source>Open station website</source>
         <translation>Obre el lloc web de l’emissora</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="210" />
+        <location filename="../ui/info_panel.py" line="211" />
         <source>Open on radio-browser.info</source>
         <translation>Obre a radio-browser.info</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="245" />
+        <location filename="../ui/info_panel.py" line="248" />
         <source>Copy song info</source>
         <translation>Copia la informació de la cançó</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="376" />
+        <location filename="../ui/info_panel.py" line="379" />
         <source>Show station logo</source>
         <translation>Mostra el logotip de l’emissora</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="381" />
+        <location filename="../ui/info_panel.py" line="384" />
         <source>Show album art</source>
         <translation>Mostra la caràtula de l’àlbum</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="413" />
+        <location filename="../ui/info_panel.py" line="416" />
         <source>Listened: {0}</source>
         <translation>Escoltat: {0}</translation>
     </message>
@@ -160,118 +184,124 @@ Amb la tecnologia de radio-browser.info.</translation>
 </context><context>
     <name>MainWindow</name>
     <message>
-        <location filename="../ui/main_window.py" line="214" />
+        <location filename="../ui/main_window.py" line="229" />
         <source>LIBRARY</source>
         <translation>BIBLIOTECA</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="215" />
+        <location filename="../ui/main_window.py" line="230" />
         <source>All stations</source>
         <translation>Totes les emissores</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="223" />
+        <location filename="../ui/main_window.py" line="238" />
         <source>Favourites</source>
         <translation>Preferides</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="241" />
+        <location filename="../ui/main_window.py" line="256" />
         <source>Custom</source>
         <translation>Personalitzades</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="242" />
+        <location filename="../ui/main_window.py" line="257" />
         <source>History</source>
         <translation>Historial</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="245" />
+        <location filename="../ui/main_window.py" line="260" />
         <source>DISCOVER</source>
         <translation>DESCOBREIX</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="246" />
+        <location filename="../ui/main_window.py" line="261" />
         <source>New</source>
         <translation>Noves</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="247" />
+        <location filename="../ui/main_window.py" line="262" />
         <source>Random</source>
         <translation>Aleatòries</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="248" />
+        <location filename="../ui/main_window.py" line="263" />
         <source>Trending</source>
         <translation>Tendències</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="249" />
+        <location filename="../ui/main_window.py" line="264" />
         <source>Now Listening</source>
         <translation>S’està escoltant ara</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="270" />
+        <location filename="../ui/main_window.py" line="285" />
         <source>Settings</source>
         <translation>Configuració</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="279" />
+        <location filename="../ui/main_window.py" line="294" />
         <source>About</source>
         <translation>Quant a</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="320" />
+        <location filename="../ui/main_window.py" line="335" />
         <source>Hide labels</source>
         <translation>Amaga les etiquetes</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="320" />
+        <location filename="../ui/main_window.py" line="335" />
         <source>Show labels</source>
         <translation>Mostra les etiquetes</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="520" />
-        <location filename="../ui/main_window.py" line="397" />
+        <location filename="../ui/main_window.py" line="777" />
+        <location filename="../ui/main_window.py" line="389" />
+        <source>System default</source>
+        <translation>Predeterminat del sistema</translation>
+    </message>
+    <message>
+        <location filename="../ui/main_window.py" line="549" />
+        <location filename="../ui/main_window.py" line="424" />
         <source>Could not load stations — check your connection</source>
         <translation>No s’han pogut carregar les emissores — comproveu la connexió</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="466" />
+        <location filename="../ui/main_window.py" line="495" />
         <source>Could not load favourites — check your connection</source>
         <translation>No s’han pogut carregar les preferides — comproveu la connexió</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="486" />
+        <location filename="../ui/main_window.py" line="515" />
         <source>Could not load history — check your connection</source>
         <translation>No s’ha pogut carregar l’historial — comproveu la connexió</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="504" />
+        <location filename="../ui/main_window.py" line="533" />
         <source>Could not load new stations — check your connection</source>
         <translation>No s’han pogut carregar les noves emissores — comproveu la connexió</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="536" />
+        <location filename="../ui/main_window.py" line="565" />
         <source>Could not load trending stations — check your connection</source>
         <translation>No s’han pogut carregar les emissores en tendència — comproveu la connexió</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="552" />
+        <location filename="../ui/main_window.py" line="581" />
         <source>Could not load now listening stations — check your connection</source>
         <translation>No s’han pogut carregar les emissores que s’escolten ara — comproveu la connexió</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="713" />
+        <location filename="../ui/main_window.py" line="742" />
         <source>Could not connect to {0}. The stream may be down or unavailable.</source>
         <translation>No s’ha pogut connectar amb {0}. És possible que el flux no estigui disponible.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="936" />
+        <location filename="../ui/main_window.py" line="979" />
         <source>Delete station</source>
         <translation>Suprimeix l’emissora</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="937" />
+        <location filename="../ui/main_window.py" line="980" />
         <source>Delete “{0}” from your custom stations?</source>
         <translation>Voleu suprimir «{0}» de les vostres emissores personalitzades?</translation>
     </message>
@@ -296,165 +326,190 @@ Amb la tecnologia de radio-browser.info.</translation>
 </context><context>
     <name>SettingsDialog</name>
     <message>
-        <location filename="../ui/settings_dialog.py" line="20" />
+        <location filename="../ui/settings_dialog.py" line="22" />
         <source>Settings</source>
         <translation>Configuració</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="28" />
+        <location filename="../ui/settings_dialog.py" line="30" />
         <source>Startup</source>
         <translation>Inici</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="31" />
+        <location filename="../ui/settings_dialog.py" line="33" />
         <source>Start minimized to tray</source>
         <translation>Inicia minimitzat a la safata del sistema</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="35" />
+        <location filename="../ui/settings_dialog.py" line="37" />
         <source>Autoplay last station</source>
         <translation>Reprodueix automàticament l’última emissora</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="39" />
+        <location filename="../ui/settings_dialog.py" line="41" />
         <source>Startup options take effect on next launch.</source>
         <translation>Les opcions d’inici tindran efecte en el pròxim inici.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="46" />
+        <location filename="../ui/settings_dialog.py" line="48" />
+        <source>Audio output</source>
+        <translation>Sortida d'àudio</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="53" />
+        <source>System default</source>
+        <translation>Predeterminat del sistema</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="59" />
+        <source>{0} (unavailable)</source>
+        <translation>{0} (no disponible)</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="61" />
+        <source>Output device:</source>
+        <translation>Dispositiu de sortida:</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="63" />
+        <source>Also available from the headphones button next to the volume slider.</source>
+        <translation>També disponible des del botó dels auriculars al costat del control de volum.</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="71" />
         <source>Stations</source>
         <translation>Emissores</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="52" />
+        <location filename="../ui/settings_dialog.py" line="77" />
         <source>{0} stations</source>
         <translation>{0} emissores</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="55" />
+        <location filename="../ui/settings_dialog.py" line="80" />
         <source>Top stations to load:</source>
         <translation>Nombre d’emissores destacades a carregar:</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="57" />
+        <location filename="../ui/settings_dialog.py" line="82" />
         <source>Higher values slow down initial load and search. Prefer using search and filters over increasing this limit.</source>
         <translation>Els valors més alts alenteixen la càrrega inicial i la cerca. És preferible utilitzar la cerca i els filtres abans que augmentar aquest límit.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="65" />
+        <location filename="../ui/settings_dialog.py" line="90" />
         <source>Notifications</source>
         <translation>Notificacions</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="68" />
+        <location filename="../ui/settings_dialog.py" line="93" />
         <source>Show song change notifications</source>
         <translation>Mostra notificacions de canvi de cançó</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="75" />
+        <location filename="../ui/settings_dialog.py" line="100" />
         <source>Now playing</source>
         <translation>S’està reproduint</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="78" />
+        <location filename="../ui/settings_dialog.py" line="103" />
         <source>Show album art for the current song</source>
         <translation>Mostra la caràtula de l’àlbum de la cançó actual</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="82" />
+        <location filename="../ui/settings_dialog.py" line="107" />
         <source>Cover art is looked up from Deezer using the song title. Falls back to the station logo when no match is found.</source>
         <translation>La caràtula es cerca a Deezer amb el títol de la cançó. Si no es troba cap coincidència, es mostra el logotip de l’emissora.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="172" />
-        <location filename="../ui/settings_dialog.py" line="91" />
+        <location filename="../ui/settings_dialog.py" line="199" />
+        <location filename="../ui/settings_dialog.py" line="116" />
         <source>Listening time</source>
         <translation>Temps d’escolta</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="94" />
+        <location filename="../ui/settings_dialog.py" line="119" />
         <source>Time listened is tracked per station and shown in the info panel and History.</source>
         <translation>El temps d’escolta es registra per emissora i es mostra al plafó d’informació i a l’historial.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="100" />
+        <location filename="../ui/settings_dialog.py" line="125" />
         <source>Clear all listening time…</source>
         <translation>Esborra tot el temps d’escolta…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="207" />
-        <location filename="../ui/settings_dialog.py" line="203" />
-        <location filename="../ui/settings_dialog.py" line="188" />
-        <location filename="../ui/settings_dialog.py" line="186" />
-        <location filename="../ui/settings_dialog.py" line="110" />
+        <location filename="../ui/settings_dialog.py" line="234" />
+        <location filename="../ui/settings_dialog.py" line="230" />
+        <location filename="../ui/settings_dialog.py" line="215" />
+        <location filename="../ui/settings_dialog.py" line="213" />
+        <location filename="../ui/settings_dialog.py" line="135" />
         <source>Backup</source>
         <translation>Còpia de seguretat</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="113" />
+        <location filename="../ui/settings_dialog.py" line="138" />
         <source>Back up and restore your favourites, labels, custom stations, history, listening time, and settings.</source>
         <translation>Feu còpies de seguretat i restaureu les vostres preferides, etiquetes, emissores personalitzades, historial, temps d’escolta i configuració.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="119" />
+        <location filename="../ui/settings_dialog.py" line="144" />
         <source>Export…</source>
         <translation>Exporta…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="121" />
+        <location filename="../ui/settings_dialog.py" line="146" />
         <source>Import…</source>
         <translation>Importa…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="164" />
+        <location filename="../ui/settings_dialog.py" line="191" />
         <source>Clear all listening time</source>
         <translation>Esborra tot el temps d’escolta</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="165" />
+        <location filename="../ui/settings_dialog.py" line="192" />
         <source>Clear all listening time? This cannot be undone.</source>
         <translation>Voleu esborrar tot el temps d’escolta? Aquesta acció no es pot desfer.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="172" />
+        <location filename="../ui/settings_dialog.py" line="199" />
         <source>All listening time cleared.</source>
         <translation>S’ha esborrat tot el temps d’escolta.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="178" />
+        <location filename="../ui/settings_dialog.py" line="205" />
         <source>Export backup</source>
         <translation>Exporta la còpia de seguretat</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="195" />
-        <location filename="../ui/settings_dialog.py" line="180" />
+        <location filename="../ui/settings_dialog.py" line="222" />
+        <location filename="../ui/settings_dialog.py" line="207" />
         <source>Zip files (*.zip)</source>
         <translation>Fitxers ZIP (*.zip)</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="186" />
+        <location filename="../ui/settings_dialog.py" line="213" />
         <source>Backup exported successfully.</source>
         <translation>La còpia de seguretat s’ha exportat correctament.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="188" />
+        <location filename="../ui/settings_dialog.py" line="215" />
         <source>Export failed: {0}</source>
         <translation>Ha fallat l’exportació: {0}</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="193" />
+        <location filename="../ui/settings_dialog.py" line="220" />
         <source>Import backup</source>
         <translation>Importa una còpia de seguretat</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="204" />
+        <location filename="../ui/settings_dialog.py" line="231" />
         <source>Restored: {0}.
 Restart the app to apply changes.</source>
         <translation>Restaurat: {0}.
 Reinicieu l’aplicació per aplicar els canvis.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="207" />
+        <location filename="../ui/settings_dialog.py" line="234" />
         <source>Import failed: {0}</source>
         <translation>Ha fallat la importació: {0}</translation>
     </message>
@@ -658,23 +713,23 @@ Reinicieu l’aplicació per aplicar els canvis.</translation>
 </context><context>
     <name>_ImagePopup</name>
     <message>
-        <location filename="../ui/info_panel.py" line="88" />
+        <location filename="../ui/info_panel.py" line="89" />
         <source>Save image as…</source>
         <translation>Anomena i desa la imatge…</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="109" />
-        <location filename="../ui/info_panel.py" line="97" />
+        <location filename="../ui/info_panel.py" line="110" />
+        <location filename="../ui/info_panel.py" line="98" />
         <source>Save image</source>
         <translation>Desa la imatge</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="98" />
+        <location filename="../ui/info_panel.py" line="99" />
         <source>PNG image (*.png);;JPEG image (*.jpg *.jpeg)</source>
         <translation>Imatge PNG (*.png);;Imatge JPEG (*.jpg *.jpeg)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="109" />
+        <location filename="../ui/info_panel.py" line="110" />
         <source>Could not save the image.</source>
         <translation>No s'ha pogut desar la imatge.</translation>
     </message>

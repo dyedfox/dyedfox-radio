@@ -49,6 +49,7 @@ Inspired by [Shortwave](https://github.com/maunalinux/shortwave), with a native 
 - Song change notifications
 - Breeze light/dark theme support, following the system palette — and on Omarchy, automatically matches the active Omarchy theme colors
 - Persistent volume, favourites, and recent history
+- Audio output device picker (headphones button in the control bar, or Settings → Audio output) — switch between speakers, headphones, USB or Bluetooth devices without leaving the app
 
 ## Keyboard Shortcuts
 
