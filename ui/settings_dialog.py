@@ -8,6 +8,7 @@ from pathlib import Path
 from data.settings import Settings
 from data.listening_stats import ListeningStatsManager
 from data import backup as _backup
+from ui import strings
 
 
 class SettingsDialog(QDialog):
@@ -45,18 +46,18 @@ class SettingsDialog(QDialog):
         layout.addWidget(startup)
 
         # --- Audio output ---
-        audio = QGroupBox(self.tr("Audio output"))
+        audio = QGroupBox(strings.audio_output())
         audio_layout = QFormLayout(audio)
         audio_layout.setFieldGrowthPolicy(QFormLayout.FieldGrowthPolicy.FieldsStayAtSizeHint)
 
         self._output = QComboBox()
-        self._output.addItem(self.tr("System default"), "")
+        self._output.addItem(strings.system_default(), "")
         for device_id, name in output_devices:
             self._output.addItem(name, device_id)
         saved = settings["audio_device"]
         if saved and self._output.findData(saved) < 0:
             # Saved device is unplugged: keep it selectable so saving doesn't drop it.
-            self._output.addItem(self.tr("{0} (unavailable)").format(saved), saved)
+            self._output.addItem(strings.unavailable(saved), saved)
         self._output.setCurrentIndex(max(0, self._output.findData(saved)))
         audio_layout.addRow(self.tr("Output device:"), self._output)
 

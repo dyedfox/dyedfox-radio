@@ -3,6 +3,7 @@ from PyQt6.QtCore import Qt, QEvent, QPointF, QRectF, pyqtSignal
 from PyQt6.QtGui import QIcon, QActionGroup, QColor, QPainter, QPen, QPixmap, QPalette
 
 from ui.omarchy_theme import is_omarchy, on_theme_changed, tinted_icon
+from ui import strings
 
 
 class ControlBar(QWidget):
@@ -34,7 +35,7 @@ class ControlBar(QWidget):
         self._output_btn.setFixedSize(24, 24)
         self._output_btn.setPopupMode(QToolButton.ToolButtonPopupMode.InstantPopup)
         self._output_btn.setStyleSheet("QToolButton::menu-indicator { image: none; }")
-        self._output_btn.setToolTip(self.tr("Audio output"))
+        self._output_btn.setToolTip(strings.audio_output())
         self._output_menu = QMenu(self._output_btn)
         self._output_menu.aboutToShow.connect(self.output_menu_requested)
         self._output_btn.setMenu(self._output_menu)
@@ -110,7 +111,7 @@ class ControlBar(QWidget):
             action.setActionGroup(group)
             action.triggered.connect(lambda _=False, d=device_id: self.output_device_selected.emit(d))
 
-        add("", self.tr("System default"))
+        add("", strings.system_default())
         self._output_menu.addSeparator()
         for device_id, name in devices:
             add(device_id, name)
@@ -119,7 +120,7 @@ class ControlBar(QWidget):
             none.setEnabled(False)
         if current and current not in {d for d, _ in devices}:
             # Saved device is unplugged: show it so the choice isn't silently lost.
-            add(current, self.tr("{0} (unavailable)").format(current))
+            add(current, strings.unavailable(current))
 
     def set_output_tooltip(self, name: str):
         self._output_btn.setToolTip(self.tr("Audio output: {0}").format(name))
