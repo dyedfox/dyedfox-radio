@@ -1,7 +1,8 @@
 from PyQt6.QtWidgets import QWidget, QHBoxLayout, QPushButton, QSlider, QMenu, QToolButton
-from PyQt6.QtCore import Qt, QEvent, QPointF, QRectF, pyqtSignal
-from PyQt6.QtGui import QIcon, QActionGroup, QColor, QPainter, QPen, QPixmap, QPalette
+from PyQt6.QtCore import Qt, pyqtSignal
+from PyQt6.QtGui import QIcon, QActionGroup
 
+from ui import glyphs
 from ui.omarchy_theme import is_omarchy, on_theme_changed, tinted_icon
 from ui import strings
 
@@ -60,10 +61,9 @@ class ControlBar(QWidget):
         self._update_mute_icon(False)
         self._update_output_icon()
         on_theme_changed(lambda: self._update_mute_icon(self._mute_btn.isChecked()))
-        on_theme_changed(self._update_output_icon)
 
     def set_playing(self, playing: bool):
-        icon = QIcon.fromTheme("media-playback-stop" if playing else "media-playback-start")
+        icon = glyphs.icon("media-playback-stop" if playing else "media-playback-start")
         label = self.tr("Stop") if playing else self.tr("Play")
         if icon.isNull():
             # Not every icon theme ships these names (e.g. Yaru); fall back to
@@ -85,11 +85,13 @@ class ControlBar(QWidget):
 
     def _update_mute_icon(self, muted: bool):
         name = "audio-volume-muted" if muted else "audio-volume-medium"
-        # This icon is plain monochrome with no meaningful color of its own,
-        # so on Omarchy it's safe (and necessary — see tinted_icon) to
-        # recolor it to match the theme instead of the system icon theme's
-        # fixed, often near-invisible-on-dark-backgrounds gray.
-        icon = tinted_icon(name) if is_omarchy() else QIcon.fromTheme(name)
+        icon = glyphs.glyph_icon(name)
+        if icon is None:
+            # This icon is plain monochrome with no meaningful color of its own,
+            # so on Omarchy it's safe (and necessary — see tinted_icon) to
+            # recolor it to match the theme instead of the system icon theme's
+            # fixed, often near-invisible-on-dark-backgrounds gray.
+            icon = tinted_icon(name) if is_omarchy() else QIcon.fromTheme(name)
         if icon.isNull():
             self._mute_btn.setText("🔇" if muted else "🔊")
             self._mute_btn.setIcon(QIcon())
@@ -125,49 +127,17 @@ class ControlBar(QWidget):
     def set_output_tooltip(self, name: str):
         self._output_btn.setToolTip(self.tr("Audio output: {0}").format(name))
 
-    def changeEvent(self, event):
-        if event.type() == QEvent.Type.PaletteChange:
-            self._update_output_icon()
-        super().changeEvent(event)
-
     def _update_output_icon(self):
-        # Drawn here instead of taken from the icon theme: theme icons have
-        # fixed colors that can vanish against a dark (or light) background,
-        # and not every theme has one. Painting it in the palette's button text
-        # color keeps it as readable as the button labels in any theme.
-        color = self.palette().color(QPalette.ColorRole.ButtonText)
-        self._output_btn.setIcon(_headphones_icon(color))
-        self._output_btn.setIconSize(self._output_btn.size() * 0.75)
-
-
-def _headphones_icon(color: QColor, size: int = 18) -> QIcon:
-    icon = QIcon()
-    for scale in (1, 2, 3):  # crisp on HiDPI screens too
-        pixmap = QPixmap(size * scale, size * scale)
-        pixmap.setDevicePixelRatio(scale)
-        pixmap.fill(Qt.GlobalColor.transparent)
-        p = QPainter(pixmap)
-        p.setRenderHint(QPainter.RenderHint.Antialiasing)
-        pen = QPen(color, size * 0.11)
-        pen.setCapStyle(Qt.PenCapStyle.RoundCap)
-        p.setPen(pen)
-        # Headband: top half of a circle, ending where the ear cups begin.
-        m = size * 0.14
-        band = QRectF(m, m, size - 2 * m, size - 2 * m)
-        p.drawArc(band, 0, 180 * 16)
-        for x in (band.left(), band.right()):
-            p.drawLine(QPointF(x, band.center().y()), QPointF(x, size * 0.62))
-        # Ear cups.
-        p.setPen(Qt.PenStyle.NoPen)
-        p.setBrush(color)
-        cup_w, cup_h = size * 0.26, size * 0.38
-        top = size - m * 0.6 - cup_h
-        r = size * 0.07
-        p.drawRoundedRect(QRectF(m * 0.55, top, cup_w, cup_h), r, r)
-        p.drawRoundedRect(QRectF(size - m * 0.55 - cup_w, top, cup_w, cup_h), r, r)
-        p.end()
-        icon.addPixmap(pixmap)
-    return icon
+        icon = glyphs.icon("audio-headphones")
+        if icon.isNull():
+            # Not every icon theme ships this name; fall back to a glyph as the
+            # other controls do rather than leaving the button blank.
+            self._output_btn.setText("🎧")
+            self._output_btn.setIcon(QIcon())
+        else:
+            self._output_btn.setText("")
+            self._output_btn.setIcon(icon)
+            self._output_btn.setIconSize(self._output_btn.size() * 0.75)
 
     @property
     def volume(self) -> int:

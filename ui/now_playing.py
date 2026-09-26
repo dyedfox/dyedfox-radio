@@ -1,6 +1,9 @@
 from PyQt6.QtWidgets import QWidget, QHBoxLayout, QLabel, QSizePolicy
-from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtGui import QIcon, QPalette
+from PyQt6.QtCore import Qt, QSize, pyqtSignal
+from PyQt6.QtGui import QPalette
+
+from ui import glyphs
+from ui.omarchy_theme import on_theme_changed
 
 
 class _ElidedLabel(QLabel):
@@ -41,12 +44,19 @@ class NowPlayingBar(QWidget):
         layout.setSpacing(8)
 
         self._icon = QLabel()
-        self._icon.setPixmap(QIcon.fromTheme("audio-x-generic").pixmap(20, 20))
         self._icon.setSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        self._update_icon()
+        on_theme_changed(self._update_icon)
         layout.addWidget(self._icon)
 
         self._label = _ElidedLabel(self.tr("Not playing"))
         layout.addWidget(self._label, 1)
+
+    def _update_icon(self):
+        # A QLabel pixmap is a snapshot, so on Omarchy it's redrawn whenever
+        # the theme changes to pick up the new glyph color.
+        icon = glyphs.icon("audio-x-generic")
+        self._icon.setPixmap(icon.pixmap(QSize(20, 20), self.devicePixelRatioF()))
 
     def set_clickable(self, enabled: bool):
         self._clickable = enabled

@@ -14,6 +14,7 @@ _NOTIFY_ART_TIMEOUT_MS = 9000  # backstop: release a held notification if a cove
 _SIDEBAR_MIN_W = 148  # narrowest the nav entries stay readable
 _SIDEBAR_MAX_W = 400
 
+from ui import glyphs
 from ui.station_list import StationListWidget
 from ui.info_panel import InfoPanel
 from ui.now_playing import NowPlayingBar
@@ -211,7 +212,7 @@ class MainWindow(QMainWindow):
             btn = QPushButton(label)
             btn.setFlat(True)
             btn.setCheckable(True)
-            themed_icon = QIcon.fromTheme(icon)
+            themed_icon = glyphs.icon(icon)
             if themed_icon.isNull():
                 # Some of these icon names (starred, office-chart-bar,
                 # view-process-users...) aren't standard freedesktop names and
@@ -286,7 +287,7 @@ class MainWindow(QMainWindow):
         self._settings_btn = QPushButton(self.tr("Settings"))
         self._settings_btn.setFlat(True)
         self._settings_btn.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self._settings_btn.setIcon(QIcon.fromTheme("preferences-system"))
+        self._settings_btn.setIcon(glyphs.icon("preferences-system"))
         self._settings_btn.setIconSize(QSize(16, 16))
         self._settings_btn.setStyleSheet("QPushButton { text-align: left; padding: 4px 8px; }")
         self._settings_btn.clicked.connect(self._open_settings)
@@ -295,7 +296,7 @@ class MainWindow(QMainWindow):
         self._about_btn = QPushButton(self.tr("About"))
         self._about_btn.setFlat(True)
         self._about_btn.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self._about_btn.setIcon(QIcon.fromTheme("help-about"))
+        self._about_btn.setIcon(glyphs.icon("help-about"))
         self._about_btn.setIconSize(QSize(16, 16))
         self._about_btn.setStyleSheet("QPushButton { text-align: left; padding: 4px 8px; }")
         self._about_btn.clicked.connect(self._open_about)

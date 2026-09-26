@@ -8,6 +8,7 @@ from PyQt6.QtCore import Qt, QUrl, pyqtSignal
 from PyQt6.QtGui import QIcon, QPalette, QPixmap, QDesktopServices
 
 from data.listening_stats import format_duration
+from ui import glyphs
 from ui.omarchy_theme import is_omarchy
 
 _NO_LOGO_PATH = str(Path(__file__).parent.parent / "assets" / "icons" / "no_logo-256x256.png")
@@ -86,7 +87,7 @@ class _ImagePopup(QDialog):
         if self._src.isNull():
             return
         menu = QMenu(self)
-        save = menu.addAction(QIcon.fromTheme("document-save"), self.tr("Save image as…"))
+        save = menu.addAction(glyphs.icon("document-save"), self.tr("Save image as…"))
         save.triggered.connect(self._save_image)
         menu.exec(event.globalPos())
 
@@ -197,7 +198,7 @@ class InfoPanel(QWidget):
         self._homepage_btn.setToolTip(self.tr("Open station website"))
         self._homepage_btn.setEnabled(False)
         self._homepage_btn.hide()
-        _home_icon = QIcon.fromTheme("go-home")
+        _home_icon = glyphs.icon("go-home")
         if _home_icon.isNull():
             self._homepage_btn.setText("🏠")
         else:
@@ -211,7 +212,7 @@ class InfoPanel(QWidget):
         self._info_btn.setToolTip(self.tr("Open on radio-browser.info"))
         self._info_btn.setEnabled(False)
         self._info_btn.hide()
-        _info_icon = QIcon.fromTheme("web-browser")
+        _info_icon = glyphs.icon("web-browser")
         if _info_icon.isNull():
             self._info_btn.setText("↗")
         else:
@@ -375,12 +376,12 @@ class InfoPanel(QWidget):
     def _update_art_toggle_icon(self):
         showing_art = self._prefer_art and self._art_pix is not None
         if showing_art:
-            icon = QIcon.fromTheme("view-media-album-cover")
+            icon = glyphs.icon("view-media-album-cover")
             fallback, tip = "🖼", self.tr("Show station logo")
         else:
-            icon = QIcon.fromTheme("radio")
+            icon = glyphs.icon("radio")
             if icon.isNull():
-                icon = QIcon.fromTheme("image-x-generic")
+                icon = glyphs.icon("image-x-generic")
             fallback, tip = "📻", self.tr("Show album art")
         if icon.isNull():
             self._art_toggle_btn.setText(fallback)
@@ -436,7 +437,7 @@ class InfoPanel(QWidget):
             self.favourite_toggled.emit(self._uuid, checked)
 
     def _update_heart(self, is_fav: bool):
-        icon = QIcon.fromTheme("emblem-favorite" if is_fav else "emblem-favorite-symbolic")
+        icon = glyphs.icon("emblem-favorite", "red") if is_fav else glyphs.icon("emblem-favorite-symbolic")
         if icon.isNull():
             self._fav_btn.setText("♥" if is_fav else "♡")
             self._fav_btn.setIcon(QIcon())
@@ -449,7 +450,7 @@ class InfoPanel(QWidget):
         btn = QPushButton()
         btn.setFlat(True)
         btn.setFixedSize(20, 20)
-        icon = QIcon.fromTheme("edit-copy")
+        icon = glyphs.icon("edit-copy")
         if icon.isNull():
             btn.setText("⧉")
         else:
