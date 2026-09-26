@@ -13,6 +13,7 @@ from PyQt6.QtGui import QIcon, QPalette, QPixmap, QPainter, QColor, QBrush
 from data.favourites import FavouritesManager
 from data.listening_stats import ListeningStatsManager, format_duration
 from data.settings import Settings
+from ui import strings
 
 _NO_LOGO_PATH = str(Path(__file__).parent.parent / "assets" / "icons" / "no_logo-256x256.png")
 _default_favicon: QPixmap | None = None
@@ -410,7 +411,7 @@ class StationRowWidget(QWidget):
             self.reset_listening_requested.emit(uuid)
 
     def _create_label(self, uuid: str):
-        text, ok = QInputDialog.getText(self, self.tr("New label"), self.tr("Label name:"))
+        text, ok = QInputDialog.getText(self, self.tr("New label"), strings.label_name())
         text = text.strip()
         if ok and text:
             self.label_toggled.emit(uuid, text, True)

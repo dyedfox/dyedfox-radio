@@ -55,6 +55,24 @@ class FavouritesManager:
                 self._labels.pop(uuid, None)
         self._save_labels()
 
+    def rename_label(self, old: str, new: str):
+        # Renaming onto an existing label merges the two.
+        for labels in self._labels.values():
+            if old in labels:
+                if new in labels:
+                    labels.remove(old)
+                else:
+                    labels[labels.index(old)] = new
+        self._save_labels()
+
+    def delete_label(self, label: str):
+        # Stations stay favourited; they only lose this label.
+        for uuid in [u for u, labels in self._labels.items() if label in labels]:
+            self._labels[uuid].remove(label)
+            if not self._labels[uuid]:
+                del self._labels[uuid]
+        self._save_labels()
+
     def all_labels(self) -> list[str]:
         names: set[str] = set()
         for labels in self._labels.values():

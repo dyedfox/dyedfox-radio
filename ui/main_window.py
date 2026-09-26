@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import (
     QMainWindow, QWidget, QHBoxLayout, QVBoxLayout,
     QPushButton, QFrame, QSystemTrayIcon, QApplication, QMessageBox,
-    QScrollArea, QToolButton, QSplitter,
+    QScrollArea, QToolButton, QSplitter, QMenu, QInputDialog,
 )
 from pathlib import Path
 import subprocess
@@ -23,6 +23,7 @@ from ui.about_dialog import AboutDialog
 from ui.notifier import DBusNotifier
 from ui.add_station_dialog import AddStationDialog
 from ui.omarchy_theme import is_omarchy
+from ui import strings
 from player.backend import GStreamerBackend
 from api.radio_browser import RadioBrowserClient
 from data.favourites import FavouritesManager, RecentManager, new_cache, trending_cache, random_cache, now_listening_cache
@@ -346,6 +347,10 @@ class MainWindow(QMainWindow):
             )
             btn.setChecked(view == self._current_view)
             btn.clicked.connect(lambda _, v=view: self._switch_view(v))
+            btn.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+            btn.customContextMenuRequested.connect(
+                lambda pos, l=label, b=btn: self._show_label_menu(l, b.mapToGlobal(pos))
+            )
             self._nav_btns[view] = btn
             self._label_nav_layout.addWidget(btn)
 
@@ -386,7 +391,7 @@ class MainWindow(QMainWindow):
         self._controls.set_volume_slider(vol)
         self._backend.set_volume(vol)
 
-        self._controls.set_output_tooltip(self.tr("System default"))
+        self._controls.set_output_tooltip(strings.system_default())
         saved = self._settings["audio_device"]
         if saved:
             # Only route to the saved device if it's plugged in; otherwise play
@@ -774,7 +779,7 @@ class MainWindow(QMainWindow):
             # Picked the "(unavailable)" entry: nothing to switch to yet.
             return
         self._backend.set_output_device(device_id)
-        self._controls.set_output_tooltip(devices.get(device_id) or self.tr("System default"))
+        self._controls.set_output_tooltip(devices.get(device_id) or strings.system_default())
 
     def set_muted(self, muted: bool):
         self._backend.set_muted(muted)
@@ -912,6 +917,47 @@ class MainWindow(QMainWindow):
             self._switch_view("favourites")
         elif self._current_view == "favourites" or active_label:
             self._station_list.refresh_filter()
+
+    def _show_label_menu(self, label: str, global_pos):
+        menu = QMenu(self)
+        menu.addAction(self.tr("Rename label…")).triggered.connect(lambda: self._rename_label(label))
+        menu.addAction(self.tr("Delete label…")).triggered.connect(lambda: self._delete_label(label))
+        menu.exec(global_pos)
+
+    def _rename_label(self, label: str):
+        text, ok = QInputDialog.getText(self, self.tr("Rename label"), strings.label_name(), text=label)
+        new = text.strip()
+        if not ok or not new or new == label:
+            return
+        if new in self._favourites.all_labels():
+            reply = QMessageBox.question(
+                self,
+                self.tr("Rename label"),
+                self.tr("A label named “{0}” already exists. Merge “{1}” into it?").format(new, label),
+                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                QMessageBox.StandardButton.No,
+            )
+            if reply != QMessageBox.StandardButton.Yes:
+                return
+        self._favourites.rename_label(label, new)
+        self._rebuild_label_nav()
+        if self._current_view == f"label:{label}":
+            self._switch_view(f"label:{new}")
+
+    def _delete_label(self, label: str):
+        reply = QMessageBox.question(
+            self,
+            self.tr("Delete label"),
+            self.tr("Delete the label “{0}”? Its stations stay in your favourites.").format(label),
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No,
+        )
+        if reply != QMessageBox.StandardButton.Yes:
+            return
+        self._favourites.delete_label(label)
+        self._rebuild_label_nav()
+        if self._current_view == f"label:{label}":
+            self._switch_view("favourites")
 
     def _on_search_params_changed(self, name: str, country: str, tag: str, language: str):
         if not name and not country and not tag and not language:
