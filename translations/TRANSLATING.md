@@ -19,6 +19,7 @@ Run `pylupdate6` from the project root to refresh the `.ts` files:
 pylupdate6 \
     ui/main_window.py ui/station_list.py ui/info_panel.py ui/about_dialog.py \
     ui/settings_dialog.py ui/controls.py ui/now_playing.py ui/add_station_dialog.py \
+    ui/strings.py \
     tray/tray_icon.py \
     -ts translations/dyedfox-radio_uk.ts
 ```

@@ -94,184 +94,242 @@ Powered by radio-browser.info.</source>
         <translation>Το URL ροής πρέπει να ξεκινά με http:// ή https://</translation>
     </message>
 </context><context>
-    <name>ControlBar</name>
+    <name>Common</name>
     <message>
-        <location filename="../ui/controls.py" line="46" />
-        <location filename="../ui/controls.py" line="19" />
-        <source>Stop</source>
-        <translation>Διακοπή</translation>
+        <location filename="../ui/strings.py" line="13" />
+        <source>Audio output</source>
+        <translation>Έξοδος ήχου</translation>
     </message>
     <message>
-        <location filename="../ui/controls.py" line="30" />
+        <location filename="../ui/strings.py" line="17" />
+        <source>System default</source>
+        <translation>Προεπιλογή συστήματος</translation>
+    </message>
+    <message>
+        <location filename="../ui/strings.py" line="21" />
+        <source>{0} (unavailable)</source>
+        <translation>{0} (μη διαθέσιμο)</translation>
+    </message>
+    <message>
+        <location filename="../ui/strings.py" line="25" />
+        <source>Label name:</source>
+        <translation>Όνομα ετικέτας:</translation>
+    </message>
+</context><context>
+    <name>ControlBar</name>
+    <message>
+        <location filename="../ui/controls.py" line="48" />
         <source>Mute</source>
         <translation>Σίγαση</translation>
     </message>
     <message>
-        <location filename="../ui/controls.py" line="49" />
+        <location filename="../ui/controls.py" line="67" />
+        <source>Stop</source>
+        <translation>Διακοπή</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="67" />
         <source>Play</source>
         <translation>Αναπαραγωγή</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="119" />
+        <source>No other outputs found</source>
+        <translation>Δεν βρέθηκαν άλλες έξοδοι</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="126" />
+        <source>Audio output: {0}</source>
+        <translation>Έξοδος ήχου: {0}</translation>
     </message>
 </context><context>
     <name>InfoPanel</name>
     <message>
-        <location filename="../ui/info_panel.py" line="156" />
+        <location filename="../ui/info_panel.py" line="157" />
         <source>Click to enlarge (right-click the image to save)</source>
         <translation>Κάντε κλικ για μεγέθυνση (δεξί κλικ στην εικόνα για αποθήκευση)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="179" />
+        <location filename="../ui/info_panel.py" line="180" />
         <source>Copy station name</source>
         <translation>Αντιγραφή ονόματος σταθμού</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="196" />
+        <location filename="../ui/info_panel.py" line="197" />
         <source>Open station website</source>
         <translation>Άνοιγμα ιστότοπου σταθμού</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="210" />
+        <location filename="../ui/info_panel.py" line="211" />
         <source>Open on radio-browser.info</source>
         <translation>Άνοιγμα στο radio-browser.info</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="245" />
+        <location filename="../ui/info_panel.py" line="248" />
         <source>Copy song info</source>
         <translation>Αντιγραφή πληροφοριών τραγουδιού</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="376" />
+        <location filename="../ui/info_panel.py" line="379" />
         <source>Show station logo</source>
         <translation>Εμφάνιση λογοτύπου σταθμού</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="381" />
+        <location filename="../ui/info_panel.py" line="384" />
         <source>Show album art</source>
         <translation>Εμφάνιση εξωφύλλου άλμπουμ</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="413" />
+        <location filename="../ui/info_panel.py" line="416" />
         <source>Listened: {0}</source>
         <translation>Ακούστηκε: {0}</translation>
-    </message>
-    <message>
-        <source>Click to enlarge</source>
-        <translation type="vanished">Κάντε κλικ για μεγέθυνση</translation>
     </message>
 </context><context>
     <name>MainWindow</name>
     <message>
-        <location filename="../ui/main_window.py" line="214" />
+        <location filename="../ui/main_window.py" line="230" />
         <source>LIBRARY</source>
         <translation>ΒΙΒΛΙΟΘΗΚΗ</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="215" />
+        <location filename="../ui/main_window.py" line="231" />
         <source>All stations</source>
         <translation>Όλοι οι σταθμοί</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="223" />
+        <location filename="../ui/main_window.py" line="239" />
         <source>Favourites</source>
         <translation>Αγαπημένα</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="241" />
+        <location filename="../ui/main_window.py" line="257" />
         <source>Custom</source>
         <translation>Προσαρμοσμένοι</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="242" />
+        <location filename="../ui/main_window.py" line="258" />
         <source>History</source>
         <translation>Ιστορικό</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="245" />
+        <location filename="../ui/main_window.py" line="261" />
         <source>DISCOVER</source>
         <translation>ΑΝΑΚΑΛΥΨΗ</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="246" />
+        <location filename="../ui/main_window.py" line="262" />
         <source>New</source>
         <translation>Νέοι</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="247" />
+        <location filename="../ui/main_window.py" line="263" />
         <source>Random</source>
         <translation>Τυχαίοι</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="248" />
+        <location filename="../ui/main_window.py" line="264" />
         <source>Trending</source>
         <translation>Δημοφιλή</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="249" />
+        <location filename="../ui/main_window.py" line="265" />
         <source>Now Listening</source>
         <translation>Ακούγονται τώρα</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="270" />
+        <location filename="../ui/main_window.py" line="286" />
         <source>Settings</source>
         <translation>Ρυθμίσεις</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="279" />
+        <location filename="../ui/main_window.py" line="295" />
         <source>About</source>
         <translation>Σχετικά</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="320" />
+        <location filename="../ui/main_window.py" line="336" />
         <source>Hide labels</source>
         <translation>Απόκρυψη ετικετών</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="320" />
+        <location filename="../ui/main_window.py" line="336" />
         <source>Show labels</source>
         <translation>Εμφάνιση ετικετών</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="520" />
-        <location filename="../ui/main_window.py" line="397" />
+        <location filename="../ui/main_window.py" line="554" />
+        <location filename="../ui/main_window.py" line="429" />
         <source>Could not load stations — check your connection</source>
         <translation>Δεν ήταν δυνατή η φόρτωση των σταθμών — ελέγξτε τη σύνδεσή σας</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="466" />
+        <location filename="../ui/main_window.py" line="500" />
         <source>Could not load favourites — check your connection</source>
         <translation>Δεν ήταν δυνατή η φόρτωση των αγαπημένων — ελέγξτε τη σύνδεσή σας</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="486" />
+        <location filename="../ui/main_window.py" line="520" />
         <source>Could not load history — check your connection</source>
         <translation>Δεν ήταν δυνατή η φόρτωση του ιστορικού — ελέγξτε τη σύνδεσή σας</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="504" />
+        <location filename="../ui/main_window.py" line="538" />
         <source>Could not load new stations — check your connection</source>
         <translation>Δεν ήταν δυνατή η φόρτωση των νέων σταθμών — ελέγξτε τη σύνδεσή σας</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="536" />
+        <location filename="../ui/main_window.py" line="570" />
         <source>Could not load trending stations — check your connection</source>
         <translation>Δεν ήταν δυνατή η φόρτωση των δημοφιλών σταθμών — ελέγξτε τη σύνδεσή σας</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="552" />
+        <location filename="../ui/main_window.py" line="586" />
         <source>Could not load now listening stations — check your connection</source>
         <translation>Δεν ήταν δυνατή η φόρτωση των σταθμών που ακούγονται τώρα — ελέγξτε τη σύνδεσή σας</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="713" />
+        <location filename="../ui/main_window.py" line="747" />
         <source>Could not connect to {0}. The stream may be down or unavailable.</source>
         <translation>Δεν ήταν δυνατή η σύνδεση με το {0}. Η ροή ενδέχεται να μην είναι διαθέσιμη.</translation>
     </message>
     <message>
+        <location filename="../ui/main_window.py" line="923" />
+        <source>Rename label…</source>
+        <translation>Μετονομασία ετικέτας…</translation>
+    </message>
+    <message>
+        <location filename="../ui/main_window.py" line="924" />
+        <source>Delete label…</source>
+        <translation>Διαγραφή ετικέτας…</translation>
+    </message>
+    <message>
+        <location filename="../ui/main_window.py" line="935" />
+        <location filename="../ui/main_window.py" line="928" />
+        <source>Rename label</source>
+        <translation>Μετονομασία ετικέτας</translation>
+    </message>
+    <message>
         <location filename="../ui/main_window.py" line="936" />
+        <source>A label named “{0}” already exists. Merge “{1}” into it?</source>
+        <translation>Υπάρχει ήδη ετικέτα με όνομα «{0}». Συγχώνευση της «{1}» σε αυτήν;</translation>
+    </message>
+    <message>
+        <location filename="../ui/main_window.py" line="950" />
+        <source>Delete label</source>
+        <translation>Διαγραφή ετικέτας</translation>
+    </message>
+    <message>
+        <location filename="../ui/main_window.py" line="951" />
+        <source>Delete the label “{0}”? Its stations stay in your favourites.</source>
+        <translation>Διαγραφή της ετικέτας «{0}»; Οι σταθμοί της παραμένουν στα αγαπημένα σας.</translation>
+    </message>
+    <message>
+        <location filename="../ui/main_window.py" line="1025" />
         <source>Delete station</source>
         <translation>Διαγραφή σταθμού</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="937" />
+        <location filename="../ui/main_window.py" line="1026" />
         <source>Delete “{0}” from your custom stations?</source>
         <translation>Διαγραφή του «{0}» από τους προσαρμοσμένους σταθμούς σας;</translation>
     </message>
@@ -296,336 +354,337 @@ Powered by radio-browser.info.</source>
 </context><context>
     <name>SettingsDialog</name>
     <message>
-        <location filename="../ui/settings_dialog.py" line="20" />
+        <location filename="../ui/settings_dialog.py" line="23" />
         <source>Settings</source>
         <translation>Ρυθμίσεις</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="28" />
+        <location filename="../ui/settings_dialog.py" line="31" />
         <source>Startup</source>
         <translation>Εκκίνηση</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="31" />
+        <location filename="../ui/settings_dialog.py" line="34" />
         <source>Start minimized to tray</source>
         <translation>Εκκίνηση ελαχιστοποιημένο στην περιοχή ειδοποιήσεων</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="35" />
+        <location filename="../ui/settings_dialog.py" line="38" />
         <source>Autoplay last station</source>
         <translation>Αυτόματη αναπαραγωγή τελευταίου σταθμού</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="39" />
+        <location filename="../ui/settings_dialog.py" line="42" />
         <source>Startup options take effect on next launch.</source>
         <translation>Οι επιλογές εκκίνησης τίθενται σε ισχύ κατά την επόμενη εκκίνηση.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="46" />
+        <location filename="../ui/settings_dialog.py" line="62" />
+        <source>Output device:</source>
+        <translation>Συσκευή εξόδου:</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="64" />
+        <source>Also available from the headphones button next to the volume slider.</source>
+        <translation>Διαθέσιμο επίσης από το κουμπί με τα ακουστικά δίπλα στο ρυθμιστικό έντασης.</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="72" />
         <source>Stations</source>
         <translation>Σταθμοί</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="52" />
+        <location filename="../ui/settings_dialog.py" line="78" />
         <source>{0} stations</source>
         <translation>{0} σταθμοί</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="55" />
+        <location filename="../ui/settings_dialog.py" line="81" />
         <source>Top stations to load:</source>
         <translation>Αριθμός κορυφαίων σταθμών προς φόρτωση:</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="57" />
+        <location filename="../ui/settings_dialog.py" line="83" />
         <source>Higher values slow down initial load and search. Prefer using search and filters over increasing this limit.</source>
         <translation>Οι υψηλότερες τιμές επιβραδύνουν την αρχική φόρτωση και την αναζήτηση. Προτιμήστε την αναζήτηση και τα φίλτρα αντί να αυξήσετε αυτό το όριο.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="65" />
+        <location filename="../ui/settings_dialog.py" line="91" />
         <source>Notifications</source>
         <translation>Ειδοποιήσεις</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="68" />
+        <location filename="../ui/settings_dialog.py" line="94" />
         <source>Show song change notifications</source>
         <translation>Εμφάνιση ειδοποιήσεων αλλαγής τραγουδιού</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="75" />
+        <location filename="../ui/settings_dialog.py" line="101" />
         <source>Now playing</source>
         <translation>Αναπαράγεται τώρα</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="78" />
+        <location filename="../ui/settings_dialog.py" line="104" />
         <source>Show album art for the current song</source>
         <translation>Εμφάνιση εξωφύλλου άλμπουμ για το τρέχον τραγούδι</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="82" />
+        <location filename="../ui/settings_dialog.py" line="108" />
         <source>Cover art is looked up from Deezer using the song title. Falls back to the station logo when no match is found.</source>
         <translation>Το εξώφυλλο αναζητείται στο Deezer με βάση τον τίτλο του τραγουδιού. Αν δεν βρεθεί αντιστοιχία, εμφανίζεται το λογότυπο του σταθμού.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="172" />
-        <location filename="../ui/settings_dialog.py" line="91" />
+        <location filename="../ui/settings_dialog.py" line="200" />
+        <location filename="../ui/settings_dialog.py" line="117" />
         <source>Listening time</source>
         <translation>Χρόνος ακρόασης</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="94" />
+        <location filename="../ui/settings_dialog.py" line="120" />
         <source>Time listened is tracked per station and shown in the info panel and History.</source>
         <translation>Ο χρόνος ακρόασης καταγράφεται ανά σταθμό και εμφανίζεται στον πίνακα πληροφοριών και στο ιστορικό.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="100" />
+        <location filename="../ui/settings_dialog.py" line="126" />
         <source>Clear all listening time…</source>
         <translation>Εκκαθάριση όλου του χρόνου ακρόασης…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="207" />
-        <location filename="../ui/settings_dialog.py" line="203" />
-        <location filename="../ui/settings_dialog.py" line="188" />
-        <location filename="../ui/settings_dialog.py" line="186" />
-        <location filename="../ui/settings_dialog.py" line="110" />
+        <location filename="../ui/settings_dialog.py" line="235" />
+        <location filename="../ui/settings_dialog.py" line="231" />
+        <location filename="../ui/settings_dialog.py" line="216" />
+        <location filename="../ui/settings_dialog.py" line="214" />
+        <location filename="../ui/settings_dialog.py" line="136" />
         <source>Backup</source>
         <translation>Αντίγραφο ασφαλείας</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="113" />
+        <location filename="../ui/settings_dialog.py" line="139" />
         <source>Back up and restore your favourites, labels, custom stations, history, listening time, and settings.</source>
         <translation>Δημιουργήστε αντίγραφα ασφαλείας και επαναφέρετε τα αγαπημένα, τις ετικέτες, τους προσαρμοσμένους σταθμούς, το ιστορικό, τον χρόνο ακρόασης και τις ρυθμίσεις σας.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="119" />
+        <location filename="../ui/settings_dialog.py" line="145" />
         <source>Export…</source>
         <translation>Εξαγωγή…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="121" />
+        <location filename="../ui/settings_dialog.py" line="147" />
         <source>Import…</source>
         <translation>Εισαγωγή…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="164" />
+        <location filename="../ui/settings_dialog.py" line="192" />
         <source>Clear all listening time</source>
         <translation>Εκκαθάριση όλου του χρόνου ακρόασης</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="165" />
+        <location filename="../ui/settings_dialog.py" line="193" />
         <source>Clear all listening time? This cannot be undone.</source>
         <translation>Εκκαθάριση όλου του χρόνου ακρόασης; Αυτό δεν μπορεί να αναιρεθεί.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="172" />
+        <location filename="../ui/settings_dialog.py" line="200" />
         <source>All listening time cleared.</source>
         <translation>Όλος ο χρόνος ακρόασης εκκαθαρίστηκε.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="178" />
+        <location filename="../ui/settings_dialog.py" line="206" />
         <source>Export backup</source>
         <translation>Εξαγωγή αντιγράφου ασφαλείας</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="195" />
-        <location filename="../ui/settings_dialog.py" line="180" />
+        <location filename="../ui/settings_dialog.py" line="223" />
+        <location filename="../ui/settings_dialog.py" line="208" />
         <source>Zip files (*.zip)</source>
         <translation>Αρχεία ZIP (*.zip)</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="186" />
+        <location filename="../ui/settings_dialog.py" line="214" />
         <source>Backup exported successfully.</source>
         <translation>Το αντίγραφο ασφαλείας εξήχθη με επιτυχία.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="188" />
+        <location filename="../ui/settings_dialog.py" line="216" />
         <source>Export failed: {0}</source>
         <translation>Η εξαγωγή απέτυχε: {0}</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="193" />
+        <location filename="../ui/settings_dialog.py" line="221" />
         <source>Import backup</source>
         <translation>Εισαγωγή αντιγράφου ασφαλείας</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="204" />
+        <location filename="../ui/settings_dialog.py" line="232" />
         <source>Restored: {0}.
 Restart the app to apply changes.</source>
         <translation>Έγινε επαναφορά: {0}.
 Επανεκκινήστε την εφαρμογή για να εφαρμοστούν οι αλλαγές.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="207" />
+        <location filename="../ui/settings_dialog.py" line="235" />
         <source>Import failed: {0}</source>
         <translation>Η εισαγωγή απέτυχε: {0}</translation>
-    </message>
-    <message>
-        <source>Back up and restore your favourites, custom stations, history, and settings.</source>
-        <translation type="vanished">Δημιουργήστε αντίγραφα ασφαλείας και επαναφέρετε τα αγαπημένα, τους προσαρμοσμένους σταθμούς, το ιστορικό και τις ρυθμίσεις σας.</translation>
     </message>
 </context><context>
     <name>StationListWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="492" />
+        <location filename="../ui/station_list.py" line="493" />
         <source>Search stations…</source>
         <translation>Αναζήτηση σταθμών…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="509" />
+        <location filename="../ui/station_list.py" line="510" />
         <source>Clear history</source>
         <translation>Εκκαθάριση ιστορικού</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="510" />
+        <location filename="../ui/station_list.py" line="511" />
         <source>Remove all stations from history</source>
         <translation>Κατάργηση όλων των σταθμών από το ιστορικό</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="519" />
+        <location filename="../ui/station_list.py" line="520" />
         <source>+ Add station</source>
         <translation>+ Προσθήκη σταθμού</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="520" />
+        <location filename="../ui/station_list.py" line="521" />
         <source>Add a custom station</source>
         <translation>Προσθήκη προσαρμοσμένου σταθμού</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="541" />
+        <location filename="../ui/station_list.py" line="542" />
         <source>Country…</source>
         <translation>Χώρα…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="545" />
+        <location filename="../ui/station_list.py" line="546" />
         <source>Genre / tag…</source>
         <translation>Είδος / ετικέτα…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="549" />
+        <location filename="../ui/station_list.py" line="550" />
         <source>Language…</source>
         <translation>Γλώσσα…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="556" />
+        <location filename="../ui/station_list.py" line="557" />
         <source>Toggle sort direction</source>
         <translation>Εναλλαγή κατεύθυνσης ταξινόμησης</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="572" />
+        <location filename="../ui/station_list.py" line="573" />
         <source>Result limit reached · narrow your search to see more</source>
         <translation>Συμπληρώθηκε το όριο αποτελεσμάτων · περιορίστε την αναζήτησή σας για να δείτε περισσότερα</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="587" />
+        <location filename="../ui/station_list.py" line="588" />
         <source>This may be a temporary server-side issue.</source>
         <translation>Ενδέχεται να πρόκειται για προσωρινό πρόβλημα από την πλευρά του διακομιστή.</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="593" />
+        <location filename="../ui/station_list.py" line="594" />
         <source>Retry</source>
         <translation>Επανάληψη</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="789" />
-        <location filename="../ui/station_list.py" line="782" />
+        <location filename="../ui/station_list.py" line="790" />
+        <location filename="../ui/station_list.py" line="783" />
         <source>Name</source>
         <translation>Όνομα</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="794" />
-        <location filename="../ui/station_list.py" line="783" />
+        <location filename="../ui/station_list.py" line="795" />
+        <location filename="../ui/station_list.py" line="784" />
         <source>Codec</source>
         <translation>Κωδικοποιητής</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="791" />
-        <location filename="../ui/station_list.py" line="784" />
+        <location filename="../ui/station_list.py" line="792" />
+        <location filename="../ui/station_list.py" line="785" />
         <source>Bitrate</source>
         <translation>Ρυθμός μετάδοσης</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="795" />
-        <location filename="../ui/station_list.py" line="785" />
+        <location filename="../ui/station_list.py" line="796" />
+        <location filename="../ui/station_list.py" line="786" />
         <source>Last listened</source>
         <translation>Τελευταία ακρόαση</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="796" />
-        <location filename="../ui/station_list.py" line="786" />
+        <location filename="../ui/station_list.py" line="797" />
+        <location filename="../ui/station_list.py" line="787" />
         <source>Time listened</source>
         <translation>Χρόνος ακρόασης</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="790" />
+        <location filename="../ui/station_list.py" line="791" />
         <source>Country</source>
         <translation>Χώρα</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="792" />
+        <location filename="../ui/station_list.py" line="793" />
         <source>Votes</source>
         <translation>Ψήφοι</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="793" />
+        <location filename="../ui/station_list.py" line="794" />
         <source>Language</source>
         <translation>Γλώσσα</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="1014" />
+        <location filename="../ui/station_list.py" line="1015" />
         <source>{0} stations</source>
         <translation>{0} σταθμοί</translation>
     </message>
 </context><context>
     <name>StationRowWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="272" />
+        <location filename="../ui/station_list.py" line="273" />
         <source>Delete station</source>
         <translation>Διαγραφή σταθμού</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="297" />
+        <location filename="../ui/station_list.py" line="298" />
         <source>Remove from history</source>
         <translation>Κατάργηση από το ιστορικό</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="314" />
+        <location filename="../ui/station_list.py" line="315" />
         <source>{0} listened</source>
         <translation>{0} ακούστηκε</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="378" />
+        <location filename="../ui/station_list.py" line="379" />
         <source>Favourite this station to add labels</source>
         <translation>Προσθέστε αυτόν τον σταθμό στα αγαπημένα για να προσθέσετε ετικέτες</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="384" />
+        <location filename="../ui/station_list.py" line="385" />
         <source>No labels yet</source>
         <translation>Δεν υπάρχουν ακόμη ετικέτες</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="391" />
+        <location filename="../ui/station_list.py" line="392" />
         <source>New label…</source>
         <translation>Νέα ετικέτα…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="406" />
-        <location filename="../ui/station_list.py" line="395" />
+        <location filename="../ui/station_list.py" line="407" />
+        <location filename="../ui/station_list.py" line="396" />
         <source>Reset time listened</source>
         <translation>Επαναφορά χρόνου ακρόασης</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="407" />
+        <location filename="../ui/station_list.py" line="408" />
         <source>Reset the listening time for “{0}”?</source>
         <translation>Επαναφορά του χρόνου ακρόασης για «{0}»;</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="413" />
+        <location filename="../ui/station_list.py" line="414" />
         <source>New label</source>
         <translation>Νέα ετικέτα</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="413" />
-        <source>Label name:</source>
-        <translation>Όνομα ετικέτας:</translation>
     </message>
 </context><context>
     <name>SystemTrayIcon</name>
@@ -658,23 +717,23 @@ Restart the app to apply changes.</source>
 </context><context>
     <name>_ImagePopup</name>
     <message>
-        <location filename="../ui/info_panel.py" line="88" />
+        <location filename="../ui/info_panel.py" line="89" />
         <source>Save image as…</source>
         <translation>Αποθήκευση εικόνας ως…</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="109" />
-        <location filename="../ui/info_panel.py" line="97" />
+        <location filename="../ui/info_panel.py" line="110" />
+        <location filename="../ui/info_panel.py" line="98" />
         <source>Save image</source>
         <translation>Αποθήκευση εικόνας</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="98" />
+        <location filename="../ui/info_panel.py" line="99" />
         <source>PNG image (*.png);;JPEG image (*.jpg *.jpeg)</source>
         <translation>Εικόνα PNG (*.png);;Εικόνα JPEG (*.jpg *.jpeg)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="109" />
+        <location filename="../ui/info_panel.py" line="110" />
         <source>Could not save the image.</source>
         <translation>Δεν ήταν δυνατή η αποθήκευση της εικόνας.</translation>
     </message>

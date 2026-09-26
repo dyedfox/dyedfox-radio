@@ -13,6 +13,7 @@ from PyQt6.QtGui import QIcon, QPalette, QPixmap, QPainter, QColor, QBrush
 from data.favourites import FavouritesManager
 from data.listening_stats import ListeningStatsManager, format_duration
 from data.settings import Settings
+from ui import glyphs, strings
 
 _NO_LOGO_PATH = str(Path(__file__).parent.parent / "assets" / "icons" / "no_logo-256x256.png")
 _default_favicon: QPixmap | None = None
@@ -259,7 +260,7 @@ class StationRowWidget(QWidget):
                 edit_btn = QPushButton()
                 edit_btn.setFlat(True)
                 edit_btn.setFixedSize(24, 24)
-                edit_icon = QIcon.fromTheme("document-edit")
+                edit_icon = glyphs.icon("document-edit")
                 if edit_icon.isNull():
                     edit_btn.setText("✎")
                 else:
@@ -270,7 +271,7 @@ class StationRowWidget(QWidget):
             del_btn.setFlat(True)
             del_btn.setFixedSize(24, 24)
             del_btn.setToolTip(self.tr("Delete station"))
-            icon = QIcon.fromTheme("edit-delete")
+            icon = glyphs.icon("edit-delete")
             if icon.isNull():
                 del_btn.setText("✕")
             else:
@@ -295,7 +296,7 @@ class StationRowWidget(QWidget):
                 remove_btn.setFlat(True)
                 remove_btn.setFixedSize(24, 24)
                 remove_btn.setToolTip(self.tr("Remove from history"))
-                rm_icon = QIcon.fromTheme("edit-delete")
+                rm_icon = glyphs.icon("edit-delete")
                 if rm_icon.isNull():
                     remove_btn.setText("✕")
                 else:
@@ -357,7 +358,7 @@ class StationRowWidget(QWidget):
     def _update_heart(self, is_fav: bool):
         if self._heart_btn is None:
             return
-        icon = QIcon.fromTheme("emblem-favorite" if is_fav else "emblem-favorite-symbolic")
+        icon = glyphs.icon("emblem-favorite", "red") if is_fav else glyphs.icon("emblem-favorite-symbolic")
         if icon.isNull():
             self._heart_btn.setText("♥" if is_fav else "♡")
             self._heart_btn.setIcon(QIcon())
@@ -410,7 +411,7 @@ class StationRowWidget(QWidget):
             self.reset_listening_requested.emit(uuid)
 
     def _create_label(self, uuid: str):
-        text, ok = QInputDialog.getText(self, self.tr("New label"), self.tr("Label name:"))
+        text, ok = QInputDialog.getText(self, self.tr("New label"), strings.label_name())
         text = text.strip()
         if ok and text:
             self.label_toggled.emit(uuid, text, True)
@@ -508,7 +509,7 @@ class StationListWidget(QWidget):
         # Shown only in the History view (see set_view); clears all recent items.
         self._clear_history_btn = QPushButton(self.tr("Clear history"))
         self._clear_history_btn.setToolTip(self.tr("Remove all stations from history"))
-        clear_icon = QIcon.fromTheme("edit-clear-history")
+        clear_icon = glyphs.icon("edit-clear-history")
         if not clear_icon.isNull():
             self._clear_history_btn.setIcon(clear_icon)
         self._clear_history_btn.clicked.connect(self.clear_history_requested)
@@ -518,7 +519,7 @@ class StationListWidget(QWidget):
         # Shown only in the Custom view (see set_view); opens the add-station dialog.
         self._add_station_btn = QPushButton(self.tr("+ Add station"))
         self._add_station_btn.setToolTip(self.tr("Add a custom station"))
-        add_icon = QIcon.fromTheme("list-add")
+        add_icon = glyphs.icon("list-add")
         if not add_icon.isNull():
             self._add_station_btn.setIcon(add_icon)
         self._add_station_btn.clicked.connect(self.add_station_requested)

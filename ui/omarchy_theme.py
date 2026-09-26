@@ -4,7 +4,7 @@ from pathlib import Path
 
 from PyQt6.QtCore import QFileSystemWatcher, QObject, QSize, Qt, QTimer, pyqtSignal
 from PyQt6.QtGui import QColor, QIcon, QPainter, QPalette, QPixmap
-from PyQt6.QtWidgets import QApplication
+from PyQt6.QtWidgets import QApplication, QProxyStyle, QStyle
 
 _STATE_DIR = Path.home() / ".local" / "state" / "omarchy" / "current"
 _COLORS_FILE = _STATE_DIR / "theme" / "colors.toml"
@@ -18,6 +18,7 @@ _DEFAULTS = {
     "muted": "#72696a",
     "light_foreground": "#c3b7b8",
     "accent": "#f38d70",
+    "red": "#e0686c",
 }
 
 _RELOAD_DEBOUNCE_MS = 400
@@ -110,6 +111,7 @@ class OmarchyThemeManager(QObject):
         colors = _load_colors()
         if colors is None:
             return
+        self.colors = colors
         self._app.setPalette(_build_palette(colors))
         self._refresh_stylesheets()
         self.theme_changed.emit()
@@ -127,6 +129,16 @@ class OmarchyThemeManager(QObject):
                 widget.setStyleSheet(sheet)
 
 
+class _OmarchyStyle(QProxyStyle):
+    """Fusion without stock icons on dialog buttons (OK, Cancel, Close...).
+    Omarchy's own UI uses plain text buttons; Breeze on KDE keeps its icons."""
+
+    def styleHint(self, hint, option=None, widget=None, returnData=None):
+        if hint == QStyle.StyleHint.SH_DialogButtonBox_ButtonsHaveIcons:
+            return 0
+        return super().styleHint(hint, option, widget, returnData)
+
+
 _manager: OmarchyThemeManager | None = None
 
 
@@ -134,7 +146,7 @@ def apply(app: QApplication) -> OmarchyThemeManager | None:
     global _manager
     if not is_omarchy():
         return None
-    app.setStyle("Fusion")
+    app.setStyle(_OmarchyStyle("Fusion"))
     _manager = OmarchyThemeManager(app)
     return _manager
 
@@ -143,6 +155,13 @@ def on_theme_changed(slot) -> None:
     """Subscribe to live Omarchy palette reloads; no-op outside Omarchy."""
     if _manager is not None:
         _manager.theme_changed.connect(slot)
+
+
+def theme_color(key: str) -> QColor:
+    """A named color from the active theme's colors.toml (e.g. "red"), falling
+    back to _DEFAULTS when the theme doesn't define it."""
+    colors = getattr(_manager, "colors", None) or {}
+    return QColor(colors.get(key, _DEFAULTS.get(key, "#808080")))
 
 
 def tinted_icon(name: str, size: QSize = QSize(20, 20)) -> QIcon:

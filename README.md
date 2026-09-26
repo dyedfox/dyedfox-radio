@@ -49,6 +49,7 @@ Inspired by [Shortwave](https://github.com/maunalinux/shortwave), with a native 
 - Song change notifications
 - Breeze light/dark theme support, following the system palette — and on Omarchy, automatically matches the active Omarchy theme colors
 - Persistent volume, favourites, and recent history
+- Audio output device picker (headphones button in the control bar, or Settings → Audio output) — switch between speakers, headphones, USB or Bluetooth devices without leaving the app
 
 ## Keyboard Shortcuts
 
@@ -197,7 +198,7 @@ sudo chmod 755 /usr/bin/dyedfox-radio
 
 ## Known quirks
 
-- **Bluetooth on cold start:** if you connect a Bluetooth device while playback is stopped, the next stream may start on your previous output — switch it in KDE's audio menu (tray → speaker icon) or simply restart the app. Streams already playing follow Bluetooth automatically. This is a side effect of defaulting to the PulseAudio output (`pulsesink`), which we prefer for reliable sound across distros that don't ship the native PipeWire GStreamer plugin.
+- **Bluetooth on cold start:** if you connect a Bluetooth device while playback is stopped, the next stream may start on your previous output — pick the device from the headphones button next to the volume slider (or Settings → Audio output), or simply restart the app. Streams already playing follow Bluetooth automatically. This is a side effect of defaulting to the PulseAudio output (`pulsesink`), which we prefer for reliable sound across distros that don't ship the native PipeWire GStreamer plugin.
 
 ## Localization
 

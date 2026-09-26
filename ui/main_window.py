@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import (
     QMainWindow, QWidget, QHBoxLayout, QVBoxLayout,
     QPushButton, QFrame, QSystemTrayIcon, QApplication, QMessageBox,
-    QScrollArea, QToolButton, QSplitter,
+    QScrollArea, QToolButton, QSplitter, QMenu, QInputDialog,
 )
 from pathlib import Path
 import subprocess
@@ -14,6 +14,7 @@ _NOTIFY_ART_TIMEOUT_MS = 9000  # backstop: release a held notification if a cove
 _SIDEBAR_MIN_W = 148  # narrowest the nav entries stay readable
 _SIDEBAR_MAX_W = 400
 
+from ui import glyphs
 from ui.station_list import StationListWidget
 from ui.info_panel import InfoPanel
 from ui.now_playing import NowPlayingBar
@@ -23,6 +24,7 @@ from ui.about_dialog import AboutDialog
 from ui.notifier import DBusNotifier
 from ui.add_station_dialog import AddStationDialog
 from ui.omarchy_theme import is_omarchy
+from ui import strings
 from player.backend import GStreamerBackend
 from api.radio_browser import RadioBrowserClient
 from data.favourites import FavouritesManager, RecentManager, new_cache, trending_cache, random_cache, now_listening_cache
@@ -210,7 +212,7 @@ class MainWindow(QMainWindow):
             btn = QPushButton(label)
             btn.setFlat(True)
             btn.setCheckable(True)
-            themed_icon = QIcon.fromTheme(icon)
+            themed_icon = glyphs.icon(icon)
             if themed_icon.isNull():
                 # Some of these icon names (starred, office-chart-bar,
                 # view-process-users...) aren't standard freedesktop names and
@@ -285,7 +287,7 @@ class MainWindow(QMainWindow):
         self._settings_btn = QPushButton(self.tr("Settings"))
         self._settings_btn.setFlat(True)
         self._settings_btn.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self._settings_btn.setIcon(QIcon.fromTheme("preferences-system"))
+        self._settings_btn.setIcon(glyphs.icon("preferences-system"))
         self._settings_btn.setIconSize(QSize(16, 16))
         self._settings_btn.setStyleSheet("QPushButton { text-align: left; padding: 4px 8px; }")
         self._settings_btn.clicked.connect(self._open_settings)
@@ -294,7 +296,7 @@ class MainWindow(QMainWindow):
         self._about_btn = QPushButton(self.tr("About"))
         self._about_btn.setFlat(True)
         self._about_btn.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        self._about_btn.setIcon(QIcon.fromTheme("help-about"))
+        self._about_btn.setIcon(glyphs.icon("help-about"))
         self._about_btn.setIconSize(QSize(16, 16))
         self._about_btn.setStyleSheet("QPushButton { text-align: left; padding: 4px 8px; }")
         self._about_btn.clicked.connect(self._open_about)
@@ -346,6 +348,10 @@ class MainWindow(QMainWindow):
             )
             btn.setChecked(view == self._current_view)
             btn.clicked.connect(lambda _, v=view: self._switch_view(v))
+            btn.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+            btn.customContextMenuRequested.connect(
+                lambda pos, l=label, b=btn: self._show_label_menu(l, b.mapToGlobal(pos))
+            )
             self._nav_btns[view] = btn
             self._label_nav_layout.addWidget(btn)
 
@@ -372,6 +378,8 @@ class MainWindow(QMainWindow):
         self._controls.playback_toggled.connect(self._on_playback_toggled)
         self._controls.volume_changed.connect(self._on_volume_changed)
         self._controls.mute_toggled.connect(self._on_mute_toggled)
+        self._controls.output_menu_requested.connect(self._on_output_menu_requested)
+        self._controls.output_device_selected.connect(self._on_output_device_selected)
 
         self._info_panel.favourite_toggled.connect(self._on_favourite_toggled)
 
@@ -383,6 +391,16 @@ class MainWindow(QMainWindow):
         vol = self._settings["volume"]
         self._controls.set_volume_slider(vol)
         self._backend.set_volume(vol)
+
+        self._controls.set_output_tooltip(strings.system_default())
+        saved = self._settings["audio_device"]
+        if saved:
+            # Only route to the saved device if it's plugged in; otherwise play
+            # through the default but keep the preference for next time.
+            devices = dict(self._backend.list_output_devices())
+            if saved in devices:
+                self._backend.set_output_device(saved)
+                self._controls.set_output_tooltip(devices[saved])
 
     def load_top_stations(self, autoplay_uuid: str = ""):
         self._station_list.start_loading()
@@ -421,8 +439,10 @@ class MainWindow(QMainWindow):
         self._mpris = mpris
 
     def _open_settings(self):
-        dlg = SettingsDialog(self._settings, self._listening_stats, self)
+        dlg = SettingsDialog(self._settings, self._listening_stats,
+                             self._backend.list_output_devices(), self)
         dlg.listening_cleared.connect(self._on_listening_cleared)
+        dlg.output_device_selected.connect(self._on_output_device_selected)
         dlg.exec()
         enabled = self._settings["show_album_art"]
         self._info_panel.set_album_art_enabled(enabled)
@@ -748,6 +768,20 @@ class MainWindow(QMainWindow):
         if self._tray:
             self._tray.set_muted(muted)
 
+    def _on_output_menu_requested(self):
+        current = self._settings["audio_device"]
+        self._controls.set_output_devices(self._backend.list_output_devices(), current)
+
+    def _on_output_device_selected(self, device_id: str):
+        devices = dict(self._backend.list_output_devices())
+        self._settings["audio_device"] = device_id
+        self._settings.save()
+        if device_id and device_id not in devices:
+            # Picked the "(unavailable)" entry: nothing to switch to yet.
+            return
+        self._backend.set_output_device(device_id)
+        self._controls.set_output_tooltip(devices.get(device_id) or strings.system_default())
+
     def set_muted(self, muted: bool):
         self._backend.set_muted(muted)
         self._controls.set_muted(muted)
@@ -884,6 +918,47 @@ class MainWindow(QMainWindow):
             self._switch_view("favourites")
         elif self._current_view == "favourites" or active_label:
             self._station_list.refresh_filter()
+
+    def _show_label_menu(self, label: str, global_pos):
+        menu = QMenu(self)
+        menu.addAction(self.tr("Rename label…")).triggered.connect(lambda: self._rename_label(label))
+        menu.addAction(self.tr("Delete label…")).triggered.connect(lambda: self._delete_label(label))
+        menu.exec(global_pos)
+
+    def _rename_label(self, label: str):
+        text, ok = QInputDialog.getText(self, self.tr("Rename label"), strings.label_name(), text=label)
+        new = text.strip()
+        if not ok or not new or new == label:
+            return
+        if new in self._favourites.all_labels():
+            reply = QMessageBox.question(
+                self,
+                self.tr("Rename label"),
+                self.tr("A label named “{0}” already exists. Merge “{1}” into it?").format(new, label),
+                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                QMessageBox.StandardButton.No,
+            )
+            if reply != QMessageBox.StandardButton.Yes:
+                return
+        self._favourites.rename_label(label, new)
+        self._rebuild_label_nav()
+        if self._current_view == f"label:{label}":
+            self._switch_view(f"label:{new}")
+
+    def _delete_label(self, label: str):
+        reply = QMessageBox.question(
+            self,
+            self.tr("Delete label"),
+            self.tr("Delete the label “{0}”? Its stations stay in your favourites.").format(label),
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No,
+        )
+        if reply != QMessageBox.StandardButton.Yes:
+            return
+        self._favourites.delete_label(label)
+        self._rebuild_label_nav()
+        if self._current_view == f"label:{label}":
+            self._switch_view("favourites")
 
     def _on_search_params_changed(self, name: str, country: str, tag: str, language: str):
         if not name and not country and not tag and not language:

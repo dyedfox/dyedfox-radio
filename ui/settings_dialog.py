@@ -8,12 +8,15 @@ from pathlib import Path
 from data.settings import Settings
 from data.listening_stats import ListeningStatsManager
 from data import backup as _backup
+from ui import strings
 
 
 class SettingsDialog(QDialog):
     listening_cleared = pyqtSignal()
+    output_device_selected = pyqtSignal(str)  # "" = system default
 
-    def __init__(self, settings: Settings, listening_stats: ListeningStatsManager, parent=None):
+    def __init__(self, settings: Settings, listening_stats: ListeningStatsManager,
+                 output_devices: list[tuple[str, str]], parent=None):
         super().__init__(parent)
         self._settings = settings
         self._listening_stats = listening_stats
@@ -41,6 +44,29 @@ class SettingsDialog(QDialog):
         startup_layout.addWidget(note)
 
         layout.addWidget(startup)
+
+        # --- Audio output ---
+        audio = QGroupBox(strings.audio_output())
+        audio_layout = QFormLayout(audio)
+        audio_layout.setFieldGrowthPolicy(QFormLayout.FieldGrowthPolicy.FieldsStayAtSizeHint)
+
+        self._output = QComboBox()
+        self._output.addItem(strings.system_default(), "")
+        for device_id, name in output_devices:
+            self._output.addItem(name, device_id)
+        saved = settings["audio_device"]
+        if saved and self._output.findData(saved) < 0:
+            # Saved device is unplugged: keep it selectable so saving doesn't drop it.
+            self._output.addItem(strings.unavailable(saved), saved)
+        self._output.setCurrentIndex(max(0, self._output.findData(saved)))
+        audio_layout.addRow(self.tr("Output device:"), self._output)
+
+        audio_note = QLabel(self.tr("Also available from the headphones button next to the volume slider."))
+        audio_note.setEnabled(False)
+        audio_note.setWordWrap(True)
+        audio_layout.addRow(audio_note)
+
+        layout.addWidget(audio)
 
         # --- Stations ---
         stations = QGroupBox(self.tr("Stations"))
@@ -156,6 +182,8 @@ class SettingsDialog(QDialog):
         self._settings["notifications"] = self._notifications.isChecked()
         self._settings["show_album_art"] = self._show_album_art.isChecked()
         self._settings.save()
+        if self._output.currentData() != self._settings["audio_device"]:
+            self.output_device_selected.emit(self._output.currentData())
         self.accept()
 
     def _on_clear_listening(self):

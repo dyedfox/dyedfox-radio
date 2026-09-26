@@ -94,184 +94,242 @@ Toetab radio-browser.info.</translation>
         <translation>Voo URL peab algama http:// või https://</translation>
     </message>
 </context><context>
-    <name>ControlBar</name>
+    <name>Common</name>
     <message>
-        <location filename="../ui/controls.py" line="46" />
-        <location filename="../ui/controls.py" line="19" />
-        <source>Stop</source>
-        <translation>Peata</translation>
+        <location filename="../ui/strings.py" line="13" />
+        <source>Audio output</source>
+        <translation>Heliväljund</translation>
     </message>
     <message>
-        <location filename="../ui/controls.py" line="30" />
+        <location filename="../ui/strings.py" line="17" />
+        <source>System default</source>
+        <translation>Süsteemi vaikeväärtus</translation>
+    </message>
+    <message>
+        <location filename="../ui/strings.py" line="21" />
+        <source>{0} (unavailable)</source>
+        <translation>{0} (pole saadaval)</translation>
+    </message>
+    <message>
+        <location filename="../ui/strings.py" line="25" />
+        <source>Label name:</source>
+        <translation>Sildi nimi:</translation>
+    </message>
+</context><context>
+    <name>ControlBar</name>
+    <message>
+        <location filename="../ui/controls.py" line="48" />
         <source>Mute</source>
         <translation>Vaigista</translation>
     </message>
     <message>
-        <location filename="../ui/controls.py" line="49" />
+        <location filename="../ui/controls.py" line="67" />
+        <source>Stop</source>
+        <translation>Peata</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="67" />
         <source>Play</source>
         <translation>Esita</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="119" />
+        <source>No other outputs found</source>
+        <translation>Muid väljundeid ei leitud</translation>
+    </message>
+    <message>
+        <location filename="../ui/controls.py" line="126" />
+        <source>Audio output: {0}</source>
+        <translation>Heliväljund: {0}</translation>
     </message>
 </context><context>
     <name>InfoPanel</name>
     <message>
-        <location filename="../ui/info_panel.py" line="156" />
+        <location filename="../ui/info_panel.py" line="157" />
         <source>Click to enlarge (right-click the image to save)</source>
         <translation>Klõpsa suurendamiseks (salvestamiseks tee pildil paremklõps)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="179" />
+        <location filename="../ui/info_panel.py" line="180" />
         <source>Copy station name</source>
         <translation>Kopeeri jaama nimi</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="196" />
+        <location filename="../ui/info_panel.py" line="197" />
         <source>Open station website</source>
         <translation>Ava jaama veebisait</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="210" />
+        <location filename="../ui/info_panel.py" line="211" />
         <source>Open on radio-browser.info</source>
         <translation>Ava saidil radio-browser.info</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="245" />
+        <location filename="../ui/info_panel.py" line="248" />
         <source>Copy song info</source>
         <translation>Kopeeri loo teave</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="376" />
+        <location filename="../ui/info_panel.py" line="379" />
         <source>Show station logo</source>
         <translation>Näita jaama logo</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="381" />
+        <location filename="../ui/info_panel.py" line="384" />
         <source>Show album art</source>
         <translation>Näita albumi kaanepilti</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="413" />
+        <location filename="../ui/info_panel.py" line="416" />
         <source>Listened: {0}</source>
         <translation>Kuulatud: {0}</translation>
-    </message>
-    <message>
-        <source>Click to enlarge</source>
-        <translation type="vanished">Klõpsake suurendamiseks</translation>
     </message>
 </context><context>
     <name>MainWindow</name>
     <message>
-        <location filename="../ui/main_window.py" line="214" />
+        <location filename="../ui/main_window.py" line="230" />
         <source>LIBRARY</source>
         <translation>TEEK</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="215" />
+        <location filename="../ui/main_window.py" line="231" />
         <source>All stations</source>
         <translation>Kõik jaamad</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="223" />
+        <location filename="../ui/main_window.py" line="239" />
         <source>Favourites</source>
         <translation>Lemmikud</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="241" />
+        <location filename="../ui/main_window.py" line="257" />
         <source>Custom</source>
         <translation>Kohandatud</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="242" />
+        <location filename="../ui/main_window.py" line="258" />
         <source>History</source>
         <translation>Ajalugu</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="245" />
+        <location filename="../ui/main_window.py" line="261" />
         <source>DISCOVER</source>
         <translation>AVASTA</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="246" />
+        <location filename="../ui/main_window.py" line="262" />
         <source>New</source>
         <translation>Uued</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="247" />
+        <location filename="../ui/main_window.py" line="263" />
         <source>Random</source>
         <translation>Juhuslikud</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="248" />
+        <location filename="../ui/main_window.py" line="264" />
         <source>Trending</source>
         <translation>Populaarsed</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="249" />
+        <location filename="../ui/main_window.py" line="265" />
         <source>Now Listening</source>
         <translation>Praegu kuulatakse</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="270" />
+        <location filename="../ui/main_window.py" line="286" />
         <source>Settings</source>
         <translation>Sätted</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="279" />
+        <location filename="../ui/main_window.py" line="295" />
         <source>About</source>
         <translation>Teave</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="320" />
+        <location filename="../ui/main_window.py" line="336" />
         <source>Hide labels</source>
         <translation>Peida sildid</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="320" />
+        <location filename="../ui/main_window.py" line="336" />
         <source>Show labels</source>
         <translation>Näita silte</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="520" />
-        <location filename="../ui/main_window.py" line="397" />
+        <location filename="../ui/main_window.py" line="554" />
+        <location filename="../ui/main_window.py" line="429" />
         <source>Could not load stations — check your connection</source>
         <translation>Jaamade laadimine ebaõnnestus — kontrollige ühendust</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="466" />
+        <location filename="../ui/main_window.py" line="500" />
         <source>Could not load favourites — check your connection</source>
         <translation>Lemmikute laadimine ebaõnnestus — kontrollige ühendust</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="486" />
+        <location filename="../ui/main_window.py" line="520" />
         <source>Could not load history — check your connection</source>
         <translation>Ajaloo laadimine ebaõnnestus — kontrollige ühendust</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="504" />
+        <location filename="../ui/main_window.py" line="538" />
         <source>Could not load new stations — check your connection</source>
         <translation>Uute jaamade laadimine ebaõnnestus — kontrollige ühendust</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="536" />
+        <location filename="../ui/main_window.py" line="570" />
         <source>Could not load trending stations — check your connection</source>
         <translation>Populaarsete jaamade laadimine ebaõnnestus — kontrollige ühendust</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="552" />
+        <location filename="../ui/main_window.py" line="586" />
         <source>Could not load now listening stations — check your connection</source>
         <translation>Praegu kuulatavate jaamade laadimine ebaõnnestus — kontrollige ühendust</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="713" />
+        <location filename="../ui/main_window.py" line="747" />
         <source>Could not connect to {0}. The stream may be down or unavailable.</source>
         <translation>Ühendus serveriga {0} ebaõnnestus. Voog võib olla kättesaamatu.</translation>
     </message>
     <message>
+        <location filename="../ui/main_window.py" line="923" />
+        <source>Rename label…</source>
+        <translation>Nimeta silt ümber…</translation>
+    </message>
+    <message>
+        <location filename="../ui/main_window.py" line="924" />
+        <source>Delete label…</source>
+        <translation>Kustuta silt…</translation>
+    </message>
+    <message>
+        <location filename="../ui/main_window.py" line="935" />
+        <location filename="../ui/main_window.py" line="928" />
+        <source>Rename label</source>
+        <translation>Nimeta silt ümber</translation>
+    </message>
+    <message>
         <location filename="../ui/main_window.py" line="936" />
+        <source>A label named “{0}” already exists. Merge “{1}” into it?</source>
+        <translation>Silt nimega „{0}“ on juba olemas. Kas liita „{1}“ sellega?</translation>
+    </message>
+    <message>
+        <location filename="../ui/main_window.py" line="950" />
+        <source>Delete label</source>
+        <translation>Kustuta silt</translation>
+    </message>
+    <message>
+        <location filename="../ui/main_window.py" line="951" />
+        <source>Delete the label “{0}”? Its stations stay in your favourites.</source>
+        <translation>Kas kustutada silt „{0}“? Selle jaamad jäävad teie lemmikutesse.</translation>
+    </message>
+    <message>
+        <location filename="../ui/main_window.py" line="1025" />
         <source>Delete station</source>
         <translation>Kustuta jaam</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="937" />
+        <location filename="../ui/main_window.py" line="1026" />
         <source>Delete “{0}” from your custom stations?</source>
         <translation>Kas kustutada „{0}“ teie kohandatud jaamade hulgast?</translation>
     </message>
@@ -296,336 +354,337 @@ Toetab radio-browser.info.</translation>
 </context><context>
     <name>SettingsDialog</name>
     <message>
-        <location filename="../ui/settings_dialog.py" line="20" />
+        <location filename="../ui/settings_dialog.py" line="23" />
         <source>Settings</source>
         <translation>Sätted</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="28" />
+        <location filename="../ui/settings_dialog.py" line="31" />
         <source>Startup</source>
         <translation>Käivitamine</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="31" />
+        <location filename="../ui/settings_dialog.py" line="34" />
         <source>Start minimized to tray</source>
         <translation>Käivita süsteemisalve minimeerituna</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="35" />
+        <location filename="../ui/settings_dialog.py" line="38" />
         <source>Autoplay last station</source>
         <translation>Esita automaatselt viimane jaam</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="39" />
+        <location filename="../ui/settings_dialog.py" line="42" />
         <source>Startup options take effect on next launch.</source>
         <translation>Käivitusvalikud rakenduvad järgmisel käivitamisel.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="46" />
+        <location filename="../ui/settings_dialog.py" line="62" />
+        <source>Output device:</source>
+        <translation>Väljundseade:</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="64" />
+        <source>Also available from the headphones button next to the volume slider.</source>
+        <translation>Saadaval ka helitugevuse liuguri kõrval olevast kõrvaklappide nupust.</translation>
+    </message>
+    <message>
+        <location filename="../ui/settings_dialog.py" line="72" />
         <source>Stations</source>
         <translation>Jaamad</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="52" />
+        <location filename="../ui/settings_dialog.py" line="78" />
         <source>{0} stations</source>
         <translation>{0} jaama</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="55" />
+        <location filename="../ui/settings_dialog.py" line="81" />
         <source>Top stations to load:</source>
         <translation>Laaditavate parimate jaamade arv:</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="57" />
+        <location filename="../ui/settings_dialog.py" line="83" />
         <source>Higher values slow down initial load and search. Prefer using search and filters over increasing this limit.</source>
         <translation>Suuremad väärtused aeglustavad esmast laadimist ja otsingut. Selle piiri tõstmise asemel kasutage pigem otsingut ja filtreid.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="65" />
+        <location filename="../ui/settings_dialog.py" line="91" />
         <source>Notifications</source>
         <translation>Teavitused</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="68" />
+        <location filename="../ui/settings_dialog.py" line="94" />
         <source>Show song change notifications</source>
         <translation>Näita teavitusi loo vahetumisel</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="75" />
+        <location filename="../ui/settings_dialog.py" line="101" />
         <source>Now playing</source>
         <translation>Praegu mängib</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="78" />
+        <location filename="../ui/settings_dialog.py" line="104" />
         <source>Show album art for the current song</source>
         <translation>Näita praeguse loo albumi kaanepilti</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="82" />
+        <location filename="../ui/settings_dialog.py" line="108" />
         <source>Cover art is looked up from Deezer using the song title. Falls back to the station logo when no match is found.</source>
         <translation>Kaanepilti otsitakse Deezerist loo pealkirja järgi. Kui vastet ei leita, kuvatakse jaama logo.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="172" />
-        <location filename="../ui/settings_dialog.py" line="91" />
+        <location filename="../ui/settings_dialog.py" line="200" />
+        <location filename="../ui/settings_dialog.py" line="117" />
         <source>Listening time</source>
         <translation>Kuulamisaeg</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="94" />
+        <location filename="../ui/settings_dialog.py" line="120" />
         <source>Time listened is tracked per station and shown in the info panel and History.</source>
         <translation>Kuulamisaega jälgitakse iga jaama kohta ning kuvatakse teabepaneelil ja ajaloos.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="100" />
+        <location filename="../ui/settings_dialog.py" line="126" />
         <source>Clear all listening time…</source>
         <translation>Tühjenda kogu kuulamisaeg…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="207" />
-        <location filename="../ui/settings_dialog.py" line="203" />
-        <location filename="../ui/settings_dialog.py" line="188" />
-        <location filename="../ui/settings_dialog.py" line="186" />
-        <location filename="../ui/settings_dialog.py" line="110" />
+        <location filename="../ui/settings_dialog.py" line="235" />
+        <location filename="../ui/settings_dialog.py" line="231" />
+        <location filename="../ui/settings_dialog.py" line="216" />
+        <location filename="../ui/settings_dialog.py" line="214" />
+        <location filename="../ui/settings_dialog.py" line="136" />
         <source>Backup</source>
         <translation>Varundus</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="113" />
+        <location filename="../ui/settings_dialog.py" line="139" />
         <source>Back up and restore your favourites, labels, custom stations, history, listening time, and settings.</source>
         <translation>Varundage ja taastage oma lemmikud, sildid, kohandatud jaamad, ajalugu, kuulamisaeg ja sätted.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="119" />
+        <location filename="../ui/settings_dialog.py" line="145" />
         <source>Export…</source>
         <translation>Ekspordi…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="121" />
+        <location filename="../ui/settings_dialog.py" line="147" />
         <source>Import…</source>
         <translation>Impordi…</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="164" />
+        <location filename="../ui/settings_dialog.py" line="192" />
         <source>Clear all listening time</source>
         <translation>Tühjenda kogu kuulamisaeg</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="165" />
+        <location filename="../ui/settings_dialog.py" line="193" />
         <source>Clear all listening time? This cannot be undone.</source>
         <translation>Kas tühjendada kogu kuulamisaeg? Seda ei saa tagasi võtta.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="172" />
+        <location filename="../ui/settings_dialog.py" line="200" />
         <source>All listening time cleared.</source>
         <translation>Kogu kuulamisaeg on tühjendatud.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="178" />
+        <location filename="../ui/settings_dialog.py" line="206" />
         <source>Export backup</source>
         <translation>Ekspordi varukoopia</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="195" />
-        <location filename="../ui/settings_dialog.py" line="180" />
+        <location filename="../ui/settings_dialog.py" line="223" />
+        <location filename="../ui/settings_dialog.py" line="208" />
         <source>Zip files (*.zip)</source>
         <translation>ZIP-failid (*.zip)</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="186" />
+        <location filename="../ui/settings_dialog.py" line="214" />
         <source>Backup exported successfully.</source>
         <translation>Varukoopia eksporditi edukalt.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="188" />
+        <location filename="../ui/settings_dialog.py" line="216" />
         <source>Export failed: {0}</source>
         <translation>Eksport ebaõnnestus: {0}</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="193" />
+        <location filename="../ui/settings_dialog.py" line="221" />
         <source>Import backup</source>
         <translation>Impordi varukoopia</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="204" />
+        <location filename="../ui/settings_dialog.py" line="232" />
         <source>Restored: {0}.
 Restart the app to apply changes.</source>
         <translation>Taastatud: {0}.
 Muudatuste rakendamiseks taaskäivitage rakendus.</translation>
     </message>
     <message>
-        <location filename="../ui/settings_dialog.py" line="207" />
+        <location filename="../ui/settings_dialog.py" line="235" />
         <source>Import failed: {0}</source>
         <translation>Import ebaõnnestus: {0}</translation>
-    </message>
-    <message>
-        <source>Back up and restore your favourites, custom stations, history, and settings.</source>
-        <translation type="vanished">Varundage ja taastage oma lemmikud, kohandatud jaamad, ajalugu ja sätted.</translation>
     </message>
 </context><context>
     <name>StationListWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="492" />
+        <location filename="../ui/station_list.py" line="493" />
         <source>Search stations…</source>
         <translation>Otsi jaamu…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="509" />
+        <location filename="../ui/station_list.py" line="510" />
         <source>Clear history</source>
         <translation>Tühjenda ajalugu</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="510" />
+        <location filename="../ui/station_list.py" line="511" />
         <source>Remove all stations from history</source>
         <translation>Eemalda kõik jaamad ajaloost</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="519" />
+        <location filename="../ui/station_list.py" line="520" />
         <source>+ Add station</source>
         <translation>+ Lisa jaam</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="520" />
+        <location filename="../ui/station_list.py" line="521" />
         <source>Add a custom station</source>
         <translation>Lisa kohandatud jaam</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="541" />
+        <location filename="../ui/station_list.py" line="542" />
         <source>Country…</source>
         <translation>Riik…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="545" />
+        <location filename="../ui/station_list.py" line="546" />
         <source>Genre / tag…</source>
         <translation>Žanr / silt…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="549" />
+        <location filename="../ui/station_list.py" line="550" />
         <source>Language…</source>
         <translation>Keel…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="556" />
+        <location filename="../ui/station_list.py" line="557" />
         <source>Toggle sort direction</source>
         <translation>Lülita sortimissuunda</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="572" />
+        <location filename="../ui/station_list.py" line="573" />
         <source>Result limit reached · narrow your search to see more</source>
         <translation>Tulemuste piir saavutatud · kitsendage otsingut, et näha rohkem</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="587" />
+        <location filename="../ui/station_list.py" line="588" />
         <source>This may be a temporary server-side issue.</source>
         <translation>See võib olla ajutine serveripoolne probleem.</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="593" />
+        <location filename="../ui/station_list.py" line="594" />
         <source>Retry</source>
         <translation>Proovi uuesti</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="789" />
-        <location filename="../ui/station_list.py" line="782" />
+        <location filename="../ui/station_list.py" line="790" />
+        <location filename="../ui/station_list.py" line="783" />
         <source>Name</source>
         <translation>Nimi</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="794" />
-        <location filename="../ui/station_list.py" line="783" />
+        <location filename="../ui/station_list.py" line="795" />
+        <location filename="../ui/station_list.py" line="784" />
         <source>Codec</source>
         <translation>Koodek</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="791" />
-        <location filename="../ui/station_list.py" line="784" />
+        <location filename="../ui/station_list.py" line="792" />
+        <location filename="../ui/station_list.py" line="785" />
         <source>Bitrate</source>
         <translation>Bitikiirus</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="795" />
-        <location filename="../ui/station_list.py" line="785" />
+        <location filename="../ui/station_list.py" line="796" />
+        <location filename="../ui/station_list.py" line="786" />
         <source>Last listened</source>
         <translation>Viimati kuulatud</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="796" />
-        <location filename="../ui/station_list.py" line="786" />
+        <location filename="../ui/station_list.py" line="797" />
+        <location filename="../ui/station_list.py" line="787" />
         <source>Time listened</source>
         <translation>Kuulamisaeg</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="790" />
+        <location filename="../ui/station_list.py" line="791" />
         <source>Country</source>
         <translation>Riik</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="792" />
+        <location filename="../ui/station_list.py" line="793" />
         <source>Votes</source>
         <translation>Hääled</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="793" />
+        <location filename="../ui/station_list.py" line="794" />
         <source>Language</source>
         <translation>Keel</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="1014" />
+        <location filename="../ui/station_list.py" line="1015" />
         <source>{0} stations</source>
         <translation>{0} jaama</translation>
     </message>
 </context><context>
     <name>StationRowWidget</name>
     <message>
-        <location filename="../ui/station_list.py" line="272" />
+        <location filename="../ui/station_list.py" line="273" />
         <source>Delete station</source>
         <translation>Kustuta jaam</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="297" />
+        <location filename="../ui/station_list.py" line="298" />
         <source>Remove from history</source>
         <translation>Eemalda ajaloost</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="314" />
+        <location filename="../ui/station_list.py" line="315" />
         <source>{0} listened</source>
         <translation>{0} kuulatud</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="378" />
+        <location filename="../ui/station_list.py" line="379" />
         <source>Favourite this station to add labels</source>
         <translation>Lisa see jaam lemmikutesse, et lisada silte</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="384" />
+        <location filename="../ui/station_list.py" line="385" />
         <source>No labels yet</source>
         <translation>Silte pole veel</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="391" />
+        <location filename="../ui/station_list.py" line="392" />
         <source>New label…</source>
         <translation>Uus silt…</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="406" />
-        <location filename="../ui/station_list.py" line="395" />
+        <location filename="../ui/station_list.py" line="407" />
+        <location filename="../ui/station_list.py" line="396" />
         <source>Reset time listened</source>
         <translation>Lähtesta kuulamisaeg</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="407" />
+        <location filename="../ui/station_list.py" line="408" />
         <source>Reset the listening time for “{0}”?</source>
         <translation>Kas lähtestada „{0}“ kuulamisaeg?</translation>
     </message>
     <message>
-        <location filename="../ui/station_list.py" line="413" />
+        <location filename="../ui/station_list.py" line="414" />
         <source>New label</source>
         <translation>Uus silt</translation>
-    </message>
-    <message>
-        <location filename="../ui/station_list.py" line="413" />
-        <source>Label name:</source>
-        <translation>Sildi nimi:</translation>
     </message>
 </context><context>
     <name>SystemTrayIcon</name>
@@ -658,23 +717,23 @@ Muudatuste rakendamiseks taaskäivitage rakendus.</translation>
 </context><context>
     <name>_ImagePopup</name>
     <message>
-        <location filename="../ui/info_panel.py" line="88" />
+        <location filename="../ui/info_panel.py" line="89" />
         <source>Save image as…</source>
         <translation>Salvesta pilt kui…</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="109" />
-        <location filename="../ui/info_panel.py" line="97" />
+        <location filename="../ui/info_panel.py" line="110" />
+        <location filename="../ui/info_panel.py" line="98" />
         <source>Save image</source>
         <translation>Salvesta pilt</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="98" />
+        <location filename="../ui/info_panel.py" line="99" />
         <source>PNG image (*.png);;JPEG image (*.jpg *.jpeg)</source>
         <translation>PNG-pilt (*.png);;JPEG-pilt (*.jpg *.jpeg)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="109" />
+        <location filename="../ui/info_panel.py" line="110" />
         <source>Could not save the image.</source>
         <translation>Pildi salvestamine ebaõnnestus.</translation>
     </message>
