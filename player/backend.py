@@ -53,6 +53,13 @@ class GStreamerBackend(QObject):
             )
 
         self._audio_sink = audio_sink
+
+        # Start unmuted explicitly. Left at the default, the sink lets the
+        # sound server restore the app's last stream mute (WirePlumber saves
+        # it per app), so after quitting while muted the stream came back
+        # silent while the mute button showed unmuted.
+        self._player.set_property("mute", False)
+
         self._device_monitor: Gst.DeviceMonitor | None = None
         # Output device requested by the user ("" = system default); applied on
         # the worker thread since it needs the pipeline torn down (see below).

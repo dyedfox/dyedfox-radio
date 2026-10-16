@@ -1,5 +1,5 @@
 {
-  description = "Dyedfox Radio - Desktop internet radio player for KDE Plasma";
+  description = "Dyedfox Radio - Desktop internet radio player";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
