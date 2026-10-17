@@ -87,6 +87,32 @@ def _build_palette(colors: dict) -> QPalette:
     return pal
 
 
+def _scrollbar_qss(palette: QPalette) -> str:
+    """Pill scrollbars like Omarchy's own apps (Qt Quick's in the shell and
+    Omaroll, CSS in Strata): a thin rounded handle in a translucent text
+    color, widening on hover, with no arrow buttons and no visible track.
+    Built from the palette so it follows live theme switches."""
+    fg = palette.color(QPalette.ColorRole.WindowText)
+    accent = palette.color(QPalette.ColorRole.Highlight)
+
+    def rgba(c: QColor, alpha: float) -> str:
+        return f"rgba({c.red()}, {c.green()}, {c.blue()}, {alpha})"
+
+    return f"""
+        QScrollBar:vertical {{ background: transparent; width: 12px; margin: 2px 0; }}
+        QScrollBar:horizontal {{ background: transparent; height: 12px; margin: 0 2px; }}
+        QScrollBar::handle {{ background: {rgba(fg, 0.28)}; border-radius: 3px; }}
+        QScrollBar::handle:vertical {{ min-height: 32px; margin: 0 3px; }}
+        QScrollBar::handle:horizontal {{ min-width: 32px; margin: 3px 0; }}
+        QScrollBar::handle:hover {{ background: {rgba(fg, 0.45)}; border-radius: 4px; }}
+        QScrollBar::handle:vertical:hover {{ margin: 0 2px; }}
+        QScrollBar::handle:horizontal:hover {{ margin: 2px 0; }}
+        QScrollBar::handle:pressed {{ background: {rgba(accent, 0.85)}; border-radius: 4px; }}
+        QScrollBar::add-line, QScrollBar::sub-line {{ width: 0; height: 0; border: none; background: none; }}
+        QScrollBar::add-page, QScrollBar::sub-page {{ background: transparent; }}
+    """
+
+
 class OmarchyThemeManager(QObject):
     theme_changed = pyqtSignal()
 
@@ -112,7 +138,9 @@ class OmarchyThemeManager(QObject):
         if colors is None:
             return
         self.colors = colors
-        self._app.setPalette(_build_palette(colors))
+        palette = _build_palette(colors)
+        self._app.setPalette(palette)
+        self._app.setStyleSheet(_scrollbar_qss(palette))
         self._refresh_stylesheets()
         self.theme_changed.emit()
 

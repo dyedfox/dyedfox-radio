@@ -118,7 +118,7 @@ A radio-browser.info szolgáltatással.</translation>
 </context><context>
     <name>ControlBar</name>
     <message>
-        <location filename="../ui/controls.py" line="48" />
+        <location filename="../ui/controls.py" line="49" />
         <source>Mute</source>
         <translation>Némítás</translation>
     </message>
@@ -133,223 +133,228 @@ A radio-browser.info szolgáltatással.</translation>
         <translation>Lejátszás</translation>
     </message>
     <message>
-        <location filename="../ui/controls.py" line="119" />
+        <location filename="../ui/controls.py" line="121" />
         <source>No other outputs found</source>
         <translation>Nem található más kimenet</translation>
     </message>
     <message>
-        <location filename="../ui/controls.py" line="126" />
+        <location filename="../ui/controls.py" line="128" />
         <source>Audio output: {0}</source>
         <translation>Hangkimenet: {0}</translation>
     </message>
 </context><context>
     <name>InfoPanel</name>
     <message>
-        <location filename="../ui/info_panel.py" line="157" />
+        <location filename="../ui/info_panel.py" line="159" />
         <source>Click to enlarge (right-click the image to save)</source>
         <translation>Kattintson a nagyításhoz (a mentéshez kattintson jobb gombbal a képre)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="180" />
+        <location filename="../ui/info_panel.py" line="182" />
         <source>Copy station name</source>
         <translation>Állomásnév másolása</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="197" />
+        <location filename="../ui/info_panel.py" line="199" />
         <source>Open station website</source>
         <translation>Az állomás webhelyének megnyitása</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="211" />
+        <location filename="../ui/info_panel.py" line="213" />
         <source>Open on radio-browser.info</source>
         <translation>Megnyitás a radio-browser.info oldalon</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="248" />
+        <location filename="../ui/info_panel.py" line="246" />
         <source>Copy song info</source>
         <translation>Száminformációk másolása</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="379" />
+        <location filename="../ui/info_panel.py" line="377" />
         <source>Show station logo</source>
         <translation>Állomás logójának megjelenítése</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="384" />
+        <location filename="../ui/info_panel.py" line="382" />
         <source>Show album art</source>
         <translation>Albumborító megjelenítése</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="416" />
+        <location filename="../ui/info_panel.py" line="414" />
         <source>Listened: {0}</source>
         <translation>Meghallgatva: {0}</translation>
     </message>
 </context><context>
     <name>MainWindow</name>
     <message>
-        <location filename="../ui/main_window.py" line="230" />
+        <location filename="../ui/main_window.py" line="223" />
         <source>LIBRARY</source>
         <translation>KÖNYVTÁR</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="231" />
+        <location filename="../ui/main_window.py" line="224" />
         <source>All stations</source>
         <translation>Összes állomás</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="239" />
+        <location filename="../ui/main_window.py" line="232" />
         <source>Favourites</source>
         <translation>Kedvencek</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="257" />
+        <location filename="../ui/main_window.py" line="250" />
         <source>Custom</source>
         <translation>Egyéni</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="258" />
+        <location filename="../ui/main_window.py" line="251" />
         <source>History</source>
         <translation>Előzmények</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="261" />
+        <location filename="../ui/main_window.py" line="254" />
         <source>DISCOVER</source>
         <translation>FELFEDEZÉS</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="262" />
+        <location filename="../ui/main_window.py" line="255" />
         <source>New</source>
         <translation>Újak</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="263" />
+        <location filename="../ui/main_window.py" line="256" />
         <source>Random</source>
         <translation>Véletlenszerű</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="264" />
+        <location filename="../ui/main_window.py" line="257" />
         <source>Trending</source>
         <translation>Felkapott</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="265" />
+        <location filename="../ui/main_window.py" line="258" />
         <source>Now Listening</source>
         <translation>Most hallgatják</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="286" />
+        <location filename="../ui/main_window.py" line="279" />
         <source>Settings</source>
         <translation>Beállítások</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="295" />
+        <location filename="../ui/main_window.py" line="288" />
         <source>About</source>
         <translation>Névjegy</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="336" />
+        <location filename="../ui/main_window.py" line="329" />
         <source>Hide labels</source>
         <translation>Címkék elrejtése</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="336" />
+        <location filename="../ui/main_window.py" line="329" />
         <source>Show labels</source>
         <translation>Címkék megjelenítése</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="554" />
-        <location filename="../ui/main_window.py" line="429" />
+        <location filename="../ui/main_window.py" line="548" />
+        <location filename="../ui/main_window.py" line="423" />
         <source>Could not load stations — check your connection</source>
         <translation>Nem sikerült betölteni az állomásokat — ellenőrizze a kapcsolatot</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="500" />
+        <location filename="../ui/main_window.py" line="494" />
         <source>Could not load favourites — check your connection</source>
         <translation>Nem sikerült betölteni a kedvenceket — ellenőrizze a kapcsolatot</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="520" />
+        <location filename="../ui/main_window.py" line="514" />
         <source>Could not load history — check your connection</source>
         <translation>Nem sikerült betölteni az előzményeket — ellenőrizze a kapcsolatot</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="538" />
+        <location filename="../ui/main_window.py" line="532" />
         <source>Could not load new stations — check your connection</source>
         <translation>Nem sikerült betölteni az új állomásokat — ellenőrizze a kapcsolatot</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="570" />
+        <location filename="../ui/main_window.py" line="564" />
         <source>Could not load trending stations — check your connection</source>
         <translation>Nem sikerült betölteni a felkapott állomásokat — ellenőrizze a kapcsolatot</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="586" />
+        <location filename="../ui/main_window.py" line="580" />
         <source>Could not load now listening stations — check your connection</source>
         <translation>Nem sikerült betölteni a most hallgatott állomásokat — ellenőrizze a kapcsolatot</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="747" />
+        <location filename="../ui/main_window.py" line="741" />
         <source>Could not connect to {0}. The stream may be down or unavailable.</source>
         <translation>Nem sikerült csatlakozni a következőhöz: {0}. Az adatfolyam nem érhető el.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="923" />
+        <location filename="../ui/main_window.py" line="928" />
         <source>Rename label…</source>
         <translation>Címke átnevezése…</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="924" />
+        <location filename="../ui/main_window.py" line="929" />
         <source>Delete label…</source>
         <translation>Címke törlése…</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="935" />
-        <location filename="../ui/main_window.py" line="928" />
+        <location filename="../ui/main_window.py" line="940" />
+        <location filename="../ui/main_window.py" line="933" />
         <source>Rename label</source>
         <translation>Címke átnevezése</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="936" />
+        <location filename="../ui/main_window.py" line="941" />
         <source>A label named “{0}” already exists. Merge “{1}” into it?</source>
         <translation>Már létezik „{0}” nevű címke. Összevonja vele a(z) „{1}” címkét?</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="950" />
+        <location filename="../ui/main_window.py" line="955" />
         <source>Delete label</source>
         <translation>Címke törlése</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="951" />
+        <location filename="../ui/main_window.py" line="956" />
         <source>Delete the label “{0}”? Its stations stay in your favourites.</source>
         <translation>Törli a(z) „{0}” címkét? Az állomásai a kedvencek között maradnak.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="1025" />
+        <location filename="../ui/main_window.py" line="1030" />
         <source>Delete station</source>
         <translation>Állomás törlése</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="1026" />
+        <location filename="../ui/main_window.py" line="1031" />
         <source>Delete “{0}” from your custom stations?</source>
         <translation>Törli a(z) „{0}” állomást az egyéni állomások közül?</translation>
     </message>
 </context><context>
     <name>NowPlayingBar</name>
     <message>
-        <location filename="../ui/now_playing.py" line="85" />
-        <location filename="../ui/now_playing.py" line="48" />
+        <location filename="../ui/now_playing.py" line="104" />
+        <location filename="../ui/now_playing.py" line="53" />
         <source>Not playing</source>
         <translation>Nincs lejátszás</translation>
     </message>
     <message>
-        <location filename="../ui/now_playing.py" line="74" />
+        <location filename="../ui/now_playing.py" line="86" />
         <source>Stream unavailable</source>
         <translation>Az adatfolyam nem érhető el</translation>
     </message>
     <message>
-        <location filename="../ui/now_playing.py" line="78" />
+        <location filename="../ui/now_playing.py" line="90" />
         <source>Reconnecting…</source>
         <translation>Újracsatlakozás…</translation>
+    </message>
+    <message>
+        <location filename="../ui/now_playing.py" line="100" />
+        <source>Buffering…</source>
+        <translation>Pufferelés…</translation>
     </message>
 </context><context>
     <name>SettingsDialog</name>
@@ -717,23 +722,23 @@ A módosítások alkalmazásához indítsa újra az alkalmazást.</translation>
 </context><context>
     <name>_ImagePopup</name>
     <message>
-        <location filename="../ui/info_panel.py" line="89" />
+        <location filename="../ui/info_panel.py" line="91" />
         <source>Save image as…</source>
         <translation>Kép mentése másként…</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="110" />
-        <location filename="../ui/info_panel.py" line="98" />
+        <location filename="../ui/info_panel.py" line="112" />
+        <location filename="../ui/info_panel.py" line="100" />
         <source>Save image</source>
         <translation>Kép mentése</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="99" />
+        <location filename="../ui/info_panel.py" line="101" />
         <source>PNG image (*.png);;JPEG image (*.jpg *.jpeg)</source>
         <translation>PNG-kép (*.png);;JPEG-kép (*.jpg *.jpeg)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="110" />
+        <location filename="../ui/info_panel.py" line="112" />
         <source>Could not save the image.</source>
         <translation>A képet nem sikerült menteni.</translation>
     </message>

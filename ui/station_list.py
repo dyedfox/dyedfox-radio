@@ -416,9 +416,12 @@ class StationRowWidget(QWidget):
         if ok and text:
             self.label_toggled.emit(uuid, text, True)
 
+    def request_play(self):
+        self.play_requested.emit(self._station)
+
     def mousePressEvent(self, event):
         if event.button() == Qt.MouseButton.LeftButton:
-            self.play_requested.emit(self._station)
+            self.request_play()
         super().mousePressEvent(event)
 
 
@@ -567,6 +570,10 @@ class StationListWidget(QWidget):
         self._list = QListWidget()
         self._list.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self._list.setSpacing(0)
+        # Arrow keys already move through the list; Enter plays the current
+        # station like a click does. Not via the list's activated signal: on
+        # KDE that also fires on a single click, so a click would play twice.
+        self._list.installEventFilter(self)
         layout.addWidget(self._list)
 
         self._limit_overlay = _LimitOverlay(
@@ -939,6 +946,16 @@ class StationListWidget(QWidget):
             self._row_widgets[uuid].update_favourite(is_fav)
         if self._current_view == "favourites":
             self._apply_filter()
+
+    def eventFilter(self, obj, event):
+        if (obj is self._list and event.type() == QEvent.Type.KeyPress
+                and event.key() in (Qt.Key.Key_Return, Qt.Key.Key_Enter)):
+            item = self._list.currentItem()
+            row = self._list.itemWidget(item) if item is not None and not item.isHidden() else None
+            if isinstance(row, StationRowWidget):
+                row.request_play()
+                return True
+        return super().eventFilter(obj, event)
 
     def _on_row_play(self, station: dict, item: QListWidgetItem):
         self._list.setCurrentItem(item)

@@ -1,7 +1,7 @@
 import re
 from pathlib import Path
 from PyQt6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QLabel, QFrame, QPushButton, QApplication,
+    QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, QApplication,
     QDialog, QMenu, QFileDialog, QMessageBox,
 )
 from PyQt6.QtCore import Qt, QUrl, pyqtSignal
@@ -9,6 +9,7 @@ from PyQt6.QtGui import QIcon, QPalette, QPixmap, QDesktopServices
 
 from data.listening_stats import format_duration
 from ui import glyphs
+from ui.divider import Divider
 from ui.omarchy_theme import is_omarchy
 
 _NO_LOGO_PATH = str(Path(__file__).parent.parent / "assets" / "icons" / "no_logo-256x256.png")
@@ -232,11 +233,7 @@ class InfoPanel(QWidget):
         btn_row.addStretch()
         layout.addLayout(btn_row)
 
-        sep = QFrame()
-        sep.setFrameShape(QFrame.Shape.HLine)
-        if is_omarchy():
-            sep.setForegroundRole(QPalette.ColorRole.Mid)
-        layout.addWidget(sep)
+        layout.addWidget(Divider())
 
         self._now_playing_text = ""
         now_row = QHBoxLayout()

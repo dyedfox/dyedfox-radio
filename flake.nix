@@ -74,6 +74,7 @@
               cp dyedfox-radio.desktop $out/share/applications/
               cp assets/icons/dyedfox-radio.png $out/share/icons/hicolor/256x256/apps/
               cp assets/icons/dyedfox-radio-tray.svg $out/share/icons/hicolor/scalable/apps/
+              cp assets/icons/dyedfox-radio-symbolic.svg $out/share/icons/hicolor/scalable/apps/
               cp LICENSE $out/share/licenses/dyedfox-radio/
 
               echo "#!${pkgs.python3.interpreter}" > $out/bin/dyedfox-radio

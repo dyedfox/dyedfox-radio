@@ -118,7 +118,7 @@ Amb la tecnologia de radio-browser.info.</translation>
 </context><context>
     <name>ControlBar</name>
     <message>
-        <location filename="../ui/controls.py" line="48" />
+        <location filename="../ui/controls.py" line="49" />
         <source>Mute</source>
         <translation>Silencia</translation>
     </message>
@@ -133,223 +133,228 @@ Amb la tecnologia de radio-browser.info.</translation>
         <translation>Reprodueix</translation>
     </message>
     <message>
-        <location filename="../ui/controls.py" line="119" />
+        <location filename="../ui/controls.py" line="121" />
         <source>No other outputs found</source>
         <translation>No s'han trobat altres sortides</translation>
     </message>
     <message>
-        <location filename="../ui/controls.py" line="126" />
+        <location filename="../ui/controls.py" line="128" />
         <source>Audio output: {0}</source>
         <translation>Sortida d'àudio: {0}</translation>
     </message>
 </context><context>
     <name>InfoPanel</name>
     <message>
-        <location filename="../ui/info_panel.py" line="157" />
+        <location filename="../ui/info_panel.py" line="159" />
         <source>Click to enlarge (right-click the image to save)</source>
         <translation>Feu clic per ampliar (feu clic dret sobre la imatge per desar-la)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="180" />
+        <location filename="../ui/info_panel.py" line="182" />
         <source>Copy station name</source>
         <translation>Copia el nom de l’emissora</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="197" />
+        <location filename="../ui/info_panel.py" line="199" />
         <source>Open station website</source>
         <translation>Obre el lloc web de l’emissora</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="211" />
+        <location filename="../ui/info_panel.py" line="213" />
         <source>Open on radio-browser.info</source>
         <translation>Obre a radio-browser.info</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="248" />
+        <location filename="../ui/info_panel.py" line="246" />
         <source>Copy song info</source>
         <translation>Copia la informació de la cançó</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="379" />
+        <location filename="../ui/info_panel.py" line="377" />
         <source>Show station logo</source>
         <translation>Mostra el logotip de l’emissora</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="384" />
+        <location filename="../ui/info_panel.py" line="382" />
         <source>Show album art</source>
         <translation>Mostra la caràtula de l’àlbum</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="416" />
+        <location filename="../ui/info_panel.py" line="414" />
         <source>Listened: {0}</source>
         <translation>Escoltat: {0}</translation>
     </message>
 </context><context>
     <name>MainWindow</name>
     <message>
-        <location filename="../ui/main_window.py" line="230" />
+        <location filename="../ui/main_window.py" line="223" />
         <source>LIBRARY</source>
         <translation>BIBLIOTECA</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="231" />
+        <location filename="../ui/main_window.py" line="224" />
         <source>All stations</source>
         <translation>Totes les emissores</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="239" />
+        <location filename="../ui/main_window.py" line="232" />
         <source>Favourites</source>
         <translation>Preferides</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="257" />
+        <location filename="../ui/main_window.py" line="250" />
         <source>Custom</source>
         <translation>Personalitzades</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="258" />
+        <location filename="../ui/main_window.py" line="251" />
         <source>History</source>
         <translation>Historial</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="261" />
+        <location filename="../ui/main_window.py" line="254" />
         <source>DISCOVER</source>
         <translation>DESCOBREIX</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="262" />
+        <location filename="../ui/main_window.py" line="255" />
         <source>New</source>
         <translation>Noves</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="263" />
+        <location filename="../ui/main_window.py" line="256" />
         <source>Random</source>
         <translation>Aleatòries</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="264" />
+        <location filename="../ui/main_window.py" line="257" />
         <source>Trending</source>
         <translation>Tendències</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="265" />
+        <location filename="../ui/main_window.py" line="258" />
         <source>Now Listening</source>
         <translation>S’està escoltant ara</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="286" />
+        <location filename="../ui/main_window.py" line="279" />
         <source>Settings</source>
         <translation>Configuració</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="295" />
+        <location filename="../ui/main_window.py" line="288" />
         <source>About</source>
         <translation>Quant a</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="336" />
+        <location filename="../ui/main_window.py" line="329" />
         <source>Hide labels</source>
         <translation>Amaga les etiquetes</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="336" />
+        <location filename="../ui/main_window.py" line="329" />
         <source>Show labels</source>
         <translation>Mostra les etiquetes</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="554" />
-        <location filename="../ui/main_window.py" line="429" />
+        <location filename="../ui/main_window.py" line="548" />
+        <location filename="../ui/main_window.py" line="423" />
         <source>Could not load stations — check your connection</source>
         <translation>No s’han pogut carregar les emissores — comproveu la connexió</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="500" />
+        <location filename="../ui/main_window.py" line="494" />
         <source>Could not load favourites — check your connection</source>
         <translation>No s’han pogut carregar les preferides — comproveu la connexió</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="520" />
+        <location filename="../ui/main_window.py" line="514" />
         <source>Could not load history — check your connection</source>
         <translation>No s’ha pogut carregar l’historial — comproveu la connexió</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="538" />
+        <location filename="../ui/main_window.py" line="532" />
         <source>Could not load new stations — check your connection</source>
         <translation>No s’han pogut carregar les noves emissores — comproveu la connexió</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="570" />
+        <location filename="../ui/main_window.py" line="564" />
         <source>Could not load trending stations — check your connection</source>
         <translation>No s’han pogut carregar les emissores en tendència — comproveu la connexió</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="586" />
+        <location filename="../ui/main_window.py" line="580" />
         <source>Could not load now listening stations — check your connection</source>
         <translation>No s’han pogut carregar les emissores que s’escolten ara — comproveu la connexió</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="747" />
+        <location filename="../ui/main_window.py" line="741" />
         <source>Could not connect to {0}. The stream may be down or unavailable.</source>
         <translation>No s’ha pogut connectar amb {0}. És possible que el flux no estigui disponible.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="923" />
+        <location filename="../ui/main_window.py" line="928" />
         <source>Rename label…</source>
         <translation>Canvia el nom de l’etiqueta…</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="924" />
+        <location filename="../ui/main_window.py" line="929" />
         <source>Delete label…</source>
         <translation>Suprimeix l’etiqueta…</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="935" />
-        <location filename="../ui/main_window.py" line="928" />
+        <location filename="../ui/main_window.py" line="940" />
+        <location filename="../ui/main_window.py" line="933" />
         <source>Rename label</source>
         <translation>Canvia el nom de l’etiqueta</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="936" />
+        <location filename="../ui/main_window.py" line="941" />
         <source>A label named “{0}” already exists. Merge “{1}” into it?</source>
         <translation>Ja existeix una etiqueta anomenada «{0}». Voleu fusionar-hi «{1}»?</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="950" />
+        <location filename="../ui/main_window.py" line="955" />
         <source>Delete label</source>
         <translation>Suprimeix l’etiqueta</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="951" />
+        <location filename="../ui/main_window.py" line="956" />
         <source>Delete the label “{0}”? Its stations stay in your favourites.</source>
         <translation>Voleu suprimir l’etiqueta «{0}»? Les seves emissores es mantenen a les preferides.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="1025" />
+        <location filename="../ui/main_window.py" line="1030" />
         <source>Delete station</source>
         <translation>Suprimeix l’emissora</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="1026" />
+        <location filename="../ui/main_window.py" line="1031" />
         <source>Delete “{0}” from your custom stations?</source>
         <translation>Voleu suprimir «{0}» de les vostres emissores personalitzades?</translation>
     </message>
 </context><context>
     <name>NowPlayingBar</name>
     <message>
-        <location filename="../ui/now_playing.py" line="85" />
-        <location filename="../ui/now_playing.py" line="48" />
+        <location filename="../ui/now_playing.py" line="104" />
+        <location filename="../ui/now_playing.py" line="53" />
         <source>Not playing</source>
         <translation>No s’està reproduint</translation>
     </message>
     <message>
-        <location filename="../ui/now_playing.py" line="74" />
+        <location filename="../ui/now_playing.py" line="86" />
         <source>Stream unavailable</source>
         <translation>Flux no disponible</translation>
     </message>
     <message>
-        <location filename="../ui/now_playing.py" line="78" />
+        <location filename="../ui/now_playing.py" line="90" />
         <source>Reconnecting…</source>
         <translation>S’està tornant a connectar…</translation>
+    </message>
+    <message>
+        <location filename="../ui/now_playing.py" line="100" />
+        <source>Buffering…</source>
+        <translation>S’està carregant la memòria intermèdia…</translation>
     </message>
 </context><context>
     <name>SettingsDialog</name>
@@ -717,23 +722,23 @@ Reinicieu l’aplicació per aplicar els canvis.</translation>
 </context><context>
     <name>_ImagePopup</name>
     <message>
-        <location filename="../ui/info_panel.py" line="89" />
+        <location filename="../ui/info_panel.py" line="91" />
         <source>Save image as…</source>
         <translation>Anomena i desa la imatge…</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="110" />
-        <location filename="../ui/info_panel.py" line="98" />
+        <location filename="../ui/info_panel.py" line="112" />
+        <location filename="../ui/info_panel.py" line="100" />
         <source>Save image</source>
         <translation>Desa la imatge</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="99" />
+        <location filename="../ui/info_panel.py" line="101" />
         <source>PNG image (*.png);;JPEG image (*.jpg *.jpeg)</source>
         <translation>Imatge PNG (*.png);;Imatge JPEG (*.jpg *.jpeg)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="110" />
+        <location filename="../ui/info_panel.py" line="112" />
         <source>Could not save the image.</source>
         <translation>No s'ha pogut desar la imatge.</translation>
     </message>

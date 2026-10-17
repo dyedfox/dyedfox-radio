@@ -118,7 +118,7 @@ Využívá radio-browser.info.</translation>
 </context><context>
     <name>ControlBar</name>
     <message>
-        <location filename="../ui/controls.py" line="48" />
+        <location filename="../ui/controls.py" line="49" />
         <source>Mute</source>
         <translation>Ztlumit</translation>
     </message>
@@ -133,223 +133,228 @@ Využívá radio-browser.info.</translation>
         <translation>Přehrát</translation>
     </message>
     <message>
-        <location filename="../ui/controls.py" line="119" />
+        <location filename="../ui/controls.py" line="121" />
         <source>No other outputs found</source>
         <translation>Nebyly nalezeny žádné další výstupy</translation>
     </message>
     <message>
-        <location filename="../ui/controls.py" line="126" />
+        <location filename="../ui/controls.py" line="128" />
         <source>Audio output: {0}</source>
         <translation>Zvukový výstup: {0}</translation>
     </message>
 </context><context>
     <name>InfoPanel</name>
     <message>
-        <location filename="../ui/info_panel.py" line="157" />
+        <location filename="../ui/info_panel.py" line="159" />
         <source>Click to enlarge (right-click the image to save)</source>
         <translation>Klepnutím zvětšíte (klepnutím pravým tlačítkem obrázek uložíte)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="180" />
+        <location filename="../ui/info_panel.py" line="182" />
         <source>Copy station name</source>
         <translation>Kopírovat název stanice</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="197" />
+        <location filename="../ui/info_panel.py" line="199" />
         <source>Open station website</source>
         <translation>Otevřít web stanice</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="211" />
+        <location filename="../ui/info_panel.py" line="213" />
         <source>Open on radio-browser.info</source>
         <translation>Otevřít na radio-browser.info</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="248" />
+        <location filename="../ui/info_panel.py" line="246" />
         <source>Copy song info</source>
         <translation>Kopírovat informace o skladbě</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="379" />
+        <location filename="../ui/info_panel.py" line="377" />
         <source>Show station logo</source>
         <translation>Zobrazit logo stanice</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="384" />
+        <location filename="../ui/info_panel.py" line="382" />
         <source>Show album art</source>
         <translation>Zobrazit obal alba</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="416" />
+        <location filename="../ui/info_panel.py" line="414" />
         <source>Listened: {0}</source>
         <translation>Posloucháno: {0}</translation>
     </message>
 </context><context>
     <name>MainWindow</name>
     <message>
-        <location filename="../ui/main_window.py" line="230" />
+        <location filename="../ui/main_window.py" line="223" />
         <source>LIBRARY</source>
         <translation>KNIHOVNA</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="231" />
+        <location filename="../ui/main_window.py" line="224" />
         <source>All stations</source>
         <translation>Všechny stanice</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="239" />
+        <location filename="../ui/main_window.py" line="232" />
         <source>Favourites</source>
         <translation>Oblíbené</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="257" />
+        <location filename="../ui/main_window.py" line="250" />
         <source>Custom</source>
         <translation>Vlastní</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="258" />
+        <location filename="../ui/main_window.py" line="251" />
         <source>History</source>
         <translation>Historie</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="261" />
+        <location filename="../ui/main_window.py" line="254" />
         <source>DISCOVER</source>
         <translation>OBJEVOVAT</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="262" />
+        <location filename="../ui/main_window.py" line="255" />
         <source>New</source>
         <translation>Nové</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="263" />
+        <location filename="../ui/main_window.py" line="256" />
         <source>Random</source>
         <translation>Náhodné</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="264" />
+        <location filename="../ui/main_window.py" line="257" />
         <source>Trending</source>
         <translation>Trendy</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="265" />
+        <location filename="../ui/main_window.py" line="258" />
         <source>Now Listening</source>
         <translation>Právě se poslouchá</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="286" />
+        <location filename="../ui/main_window.py" line="279" />
         <source>Settings</source>
         <translation>Nastavení</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="295" />
+        <location filename="../ui/main_window.py" line="288" />
         <source>About</source>
         <translation>O aplikaci</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="336" />
+        <location filename="../ui/main_window.py" line="329" />
         <source>Hide labels</source>
         <translation>Skrýt štítky</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="336" />
+        <location filename="../ui/main_window.py" line="329" />
         <source>Show labels</source>
         <translation>Zobrazit štítky</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="554" />
-        <location filename="../ui/main_window.py" line="429" />
+        <location filename="../ui/main_window.py" line="548" />
+        <location filename="../ui/main_window.py" line="423" />
         <source>Could not load stations — check your connection</source>
         <translation>Nepodařilo se načíst stanice — zkontrolujte připojení</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="500" />
+        <location filename="../ui/main_window.py" line="494" />
         <source>Could not load favourites — check your connection</source>
         <translation>Nepodařilo se načíst oblíbené — zkontrolujte připojení</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="520" />
+        <location filename="../ui/main_window.py" line="514" />
         <source>Could not load history — check your connection</source>
         <translation>Nepodařilo se načíst historii — zkontrolujte připojení</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="538" />
+        <location filename="../ui/main_window.py" line="532" />
         <source>Could not load new stations — check your connection</source>
         <translation>Nepodařilo se načíst nové stanice — zkontrolujte připojení</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="570" />
+        <location filename="../ui/main_window.py" line="564" />
         <source>Could not load trending stations — check your connection</source>
         <translation>Nepodařilo se načíst trendující stanice — zkontrolujte připojení</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="586" />
+        <location filename="../ui/main_window.py" line="580" />
         <source>Could not load now listening stations — check your connection</source>
         <translation>Nepodařilo se načíst právě poslouchané stanice — zkontrolujte připojení</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="747" />
+        <location filename="../ui/main_window.py" line="741" />
         <source>Could not connect to {0}. The stream may be down or unavailable.</source>
         <translation>Nepodařilo se připojit k {0}. Stream může být nedostupný.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="923" />
+        <location filename="../ui/main_window.py" line="928" />
         <source>Rename label…</source>
         <translation>Přejmenovat štítek…</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="924" />
+        <location filename="../ui/main_window.py" line="929" />
         <source>Delete label…</source>
         <translation>Odstranit štítek…</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="935" />
-        <location filename="../ui/main_window.py" line="928" />
+        <location filename="../ui/main_window.py" line="940" />
+        <location filename="../ui/main_window.py" line="933" />
         <source>Rename label</source>
         <translation>Přejmenovat štítek</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="936" />
+        <location filename="../ui/main_window.py" line="941" />
         <source>A label named “{0}” already exists. Merge “{1}” into it?</source>
         <translation>Štítek „{0}“ již existuje. Sloučit s ním „{1}“?</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="950" />
+        <location filename="../ui/main_window.py" line="955" />
         <source>Delete label</source>
         <translation>Odstranit štítek</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="951" />
+        <location filename="../ui/main_window.py" line="956" />
         <source>Delete the label “{0}”? Its stations stay in your favourites.</source>
         <translation>Odstranit štítek „{0}“? Jeho stanice zůstanou v oblíbených.</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="1025" />
+        <location filename="../ui/main_window.py" line="1030" />
         <source>Delete station</source>
         <translation>Odstranit stanici</translation>
     </message>
     <message>
-        <location filename="../ui/main_window.py" line="1026" />
+        <location filename="../ui/main_window.py" line="1031" />
         <source>Delete “{0}” from your custom stations?</source>
         <translation>Odstranit „{0}“ z vašich vlastních stanic?</translation>
     </message>
 </context><context>
     <name>NowPlayingBar</name>
     <message>
-        <location filename="../ui/now_playing.py" line="85" />
-        <location filename="../ui/now_playing.py" line="48" />
+        <location filename="../ui/now_playing.py" line="104" />
+        <location filename="../ui/now_playing.py" line="53" />
         <source>Not playing</source>
         <translation>Nepřehrává se</translation>
     </message>
     <message>
-        <location filename="../ui/now_playing.py" line="74" />
+        <location filename="../ui/now_playing.py" line="86" />
         <source>Stream unavailable</source>
         <translation>Stream není dostupný</translation>
     </message>
     <message>
-        <location filename="../ui/now_playing.py" line="78" />
+        <location filename="../ui/now_playing.py" line="90" />
         <source>Reconnecting…</source>
         <translation>Opětovné připojování…</translation>
+    </message>
+    <message>
+        <location filename="../ui/now_playing.py" line="100" />
+        <source>Buffering…</source>
+        <translation>Načítání do vyrovnávací paměti…</translation>
     </message>
 </context><context>
     <name>SettingsDialog</name>
@@ -717,23 +722,23 @@ Restartujte aplikaci pro použití změn.</translation>
 </context><context>
     <name>_ImagePopup</name>
     <message>
-        <location filename="../ui/info_panel.py" line="89" />
+        <location filename="../ui/info_panel.py" line="91" />
         <source>Save image as…</source>
         <translation>Uložit obrázek jako…</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="110" />
-        <location filename="../ui/info_panel.py" line="98" />
+        <location filename="../ui/info_panel.py" line="112" />
+        <location filename="../ui/info_panel.py" line="100" />
         <source>Save image</source>
         <translation>Uložit obrázek</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="99" />
+        <location filename="../ui/info_panel.py" line="101" />
         <source>PNG image (*.png);;JPEG image (*.jpg *.jpeg)</source>
         <translation>Obrázek PNG (*.png);;Obrázek JPEG (*.jpg *.jpeg)</translation>
     </message>
     <message>
-        <location filename="../ui/info_panel.py" line="110" />
+        <location filename="../ui/info_panel.py" line="112" />
         <source>Could not save the image.</source>
         <translation>Obrázek se nepodařilo uložit.</translation>
     </message>

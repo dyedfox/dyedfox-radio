@@ -2,13 +2,28 @@ from pathlib import Path
 from PyQt6.QtWidgets import QSystemTrayIcon, QMenu, QApplication
 from PyQt6.QtGui import QIcon
 
+from ui.omarchy_theme import is_omarchy
+
 _ICON      = str(Path(__file__).parent.parent / "assets" / "icons" / "dyedfox-radio.png")
 _ICON_TRAY = str(Path(__file__).parent.parent / "assets" / "icons" / "dyedfox-radio-tray.svg")
 
 
+def _tray_icon() -> QIcon:
+    # Omarchy's bar recolors tray icons named *-symbolic to its own foreground
+    # (live, with theme switches), but only when the icon is sent by name, which
+    # Qt does for theme icons. So on Omarchy use the installed line-art icon;
+    # if it isn't installed (running from source), or elsewhere, keep the
+    # bundled full-color one.
+    if is_omarchy():
+        icon = QIcon.fromTheme("dyedfox-radio-symbolic")
+        if not icon.isNull():
+            return icon
+    return QIcon(_ICON_TRAY)
+
+
 class SystemTrayIcon(QSystemTrayIcon):
     def __init__(self, window, backend, parent=None):
-        super().__init__(QIcon(_ICON_TRAY), parent)
+        super().__init__(_tray_icon(), parent)
         self._window = window
         self._backend = backend
         self._build_menu()

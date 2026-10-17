@@ -132,6 +132,10 @@ if _DBUS_OK:
                     "CanSeek": dbus.Boolean(False),
                     "CanControl": dbus.Boolean(True),
                     "Metadata": self._metadata,
+                    # Required by the spec as int64 (µs). A live stream has no
+                    # position, but without it Get() fell back to a string,
+                    # which shells like Omarchy's failed to parse.
+                    "Position": dbus.Int64(0),
                     "Volume": dbus.Double(1.0),
                     "Rate": dbus.Double(1.0),
                     "MinimumRate": dbus.Double(1.0),
