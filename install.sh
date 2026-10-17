@@ -7,6 +7,7 @@ DEST_BIN=/usr/bin/$APP
 DEST_DESKTOP=/usr/share/applications/$APP.desktop
 DEST_ICON_PNG=/usr/share/icons/hicolor/256x256/apps/$APP.png
 DEST_ICON_SVG=/usr/share/icons/hicolor/scalable/apps/$APP-tray.svg
+DEST_ICON_SYMBOLIC=/usr/share/icons/hicolor/scalable/apps/$APP-symbolic.svg
 DEST_LICENSE=/usr/share/licenses/$APP/LICENSE
 
 SRC_DIR="$(cd "$(dirname "$0")" && pwd)"
@@ -24,7 +25,7 @@ check_cmd() { command -v "$1" &>/dev/null; }
 if [[ "${1:-}" == "uninstall" ]]; then
     echo "Uninstalling $APP..."
     sudo rm -rf "$DEST_LIB"
-    sudo rm -f  "$DEST_BIN" "$DEST_DESKTOP" "$DEST_ICON_PNG" "$DEST_ICON_SVG"
+    sudo rm -f  "$DEST_BIN" "$DEST_DESKTOP" "$DEST_ICON_PNG" "$DEST_ICON_SVG" "$DEST_ICON_SYMBOLIC"
     sudo rm -rf "/usr/share/licenses/$APP"
     check_cmd update-desktop-database && sudo update-desktop-database /usr/share/applications 2>/dev/null || true
     check_cmd gtk-update-icon-cache   && sudo gtk-update-icon-cache -f /usr/share/icons/hicolor 2>/dev/null || true
@@ -121,6 +122,7 @@ done
 info "Installing icons..."
 sudo install -Dm644 "$SRC_DIR/assets/icons/$APP.png"      "$DEST_ICON_PNG"
 sudo install -Dm644 "$SRC_DIR/assets/icons/$APP-tray.svg" "$DEST_ICON_SVG"
+sudo install -Dm644 "$SRC_DIR/assets/icons/$APP-symbolic.svg" "$DEST_ICON_SYMBOLIC"
 
 info "Installing desktop entry..."
 sudo install -Dm644 "$SRC_DIR/$APP.desktop" "$DEST_DESKTOP"

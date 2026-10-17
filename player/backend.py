@@ -1,4 +1,5 @@
 import threading
+import time
 
 import gi
 gi.require_version('Gst', '1.0')
@@ -13,6 +14,7 @@ class GStreamerBackend(QObject):
     playback_started = pyqtSignal()
     playback_stopped = pyqtSignal()
     reconnecting = pyqtSignal(int)  # attempt number (1-based)
+    buffering = pyqtSignal(bool)    # True while paused to refill after a stall
 
     # Backoff schedule (ms) for automatic reconnection after a dropped stream.
     # Indexed by the current attempt; the final value is reused once exhausted.
@@ -22,6 +24,18 @@ class GStreamerBackend(QObject):
     # clear the retry counter. Guards against a station that connects then drops
     # immediately, which would otherwise reconnect forever.
     _STABLE_AFTER_MS = 10000
+    # Network buffer. GStreamer's default holds only 2s, which a VPN or flaky
+    # Wi-Fi can outlast; stations still start at once, whatever the server's
+    # initial burst holds, so this costs no startup delay.
+    _BUFFER_DURATION_S = 8
+    # Buffering % (of _BUFFER_DURATION_S) at which a nearly drained buffer
+    # pauses playback, and at which it resumes once refilled (~4s of audio).
+    _BUFFER_PAUSE_BELOW = 10
+    _BUFFER_RESUME_AT = 50
+    # Stall detection waits this long after a stream starts: while the audio
+    # sink fills its own buffer at startup, the level dips briefly (to ~9%
+    # in testing), which isn't a stall.
+    _BUFFER_SETTLE_S = 3
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -59,6 +73,7 @@ class GStreamerBackend(QObject):
         # it per app), so after quitting while muted the stream came back
         # silent while the mute button showed unmuted.
         self._player.set_property("mute", False)
+        self._player.set_property("buffer-duration", self._BUFFER_DURATION_S * Gst.SECOND)
 
         self._device_monitor: Gst.DeviceMonitor | None = None
         # Output device requested by the user ("" = system default); applied on
@@ -72,6 +87,9 @@ class GStreamerBackend(QObject):
         self._playing = False
         self._retry_count = 0
         self._reconnecting = False
+        self._buffer_armed = False
+        self._buffer_paused = False
+        self._buffer_arm_after: float | None = None  # monotonic time, set on STREAM_START
 
         # Pipeline state changes block: set_state(NULL) joins the streaming
         # thread, which can stall for seconds on a slow/half-open network socket.
@@ -165,6 +183,8 @@ class GStreamerBackend(QObject):
                 self._player.set_state(Gst.State.PLAYING)
             elif action == "resume":
                 self._player.set_state(Gst.State.PLAYING)
+            elif action == "pause":
+                self._player.set_state(Gst.State.PAUSED)
             elif action == "stop":
                 self._player.set_state(Gst.State.NULL)
 
@@ -173,6 +193,7 @@ class GStreamerBackend(QObject):
         self._stable_timer.stop()
         self._retry_count = 0
         self._reconnecting = False
+        self._reset_buffering()
         self._playing = True
         self._last_url = url
         self._submit("play", url)
@@ -188,6 +209,7 @@ class GStreamerBackend(QObject):
         self._retry_count = 0
         self._reconnecting = False
         self._playing = False
+        self._reset_buffering()
         self._submit("stop")
         self.playback_stopped.emit()
 
@@ -260,6 +282,7 @@ class GStreamerBackend(QObject):
         if device_id == self._output_device:
             return
         self._output_device = device_id
+        self._reset_buffering()  # the pipeline restarts from NULL
         with self._cmd_lock:
             self._pending_device = device_id
             self._cmd_event.set()
@@ -331,12 +354,46 @@ class GStreamerBackend(QObject):
         if not self._last_url:
             return
         # Teardown + restart happens on the worker thread (see _worker_loop).
+        self._reset_buffering()
         self._submit("play", self._last_url)
         # Retry counter resets only once playback has been stable for a while
         # (see _mark_stable), not the moment we connect.
 
     def _mark_stable(self):
         self._retry_count = 0
+
+    def _reset_buffering(self):
+        was_paused = self._buffer_paused
+        self._buffer_armed = False
+        self._buffer_paused = False
+        self._buffer_arm_after = None
+        if was_paused:
+            self.buffering.emit(False)
+
+    def _on_buffering(self, percent: int):
+        # A live stream arrives at exactly real-time speed, so once a network
+        # stall drains the buffer it never refills while playing: playback
+        # then rides on packet arrival and every hiccup is audible stutter.
+        # Pausing when it's nearly empty lets it refill, trading one short gap
+        # for steady playback. The initial fill isn't waited for (stations
+        # start at once, and some servers' burst never reaches 100%), so this
+        # only arms once the stream has settled and the buffer is past the
+        # pause mark.
+        if not self._playing:
+            return
+        if not self._buffer_armed:
+            settled = self._buffer_arm_after is not None and time.monotonic() >= self._buffer_arm_after
+            self._buffer_armed = settled and percent >= self._BUFFER_PAUSE_BELOW
+            return
+        if not self._buffer_paused and percent < self._BUFFER_PAUSE_BELOW:
+            self._buffer_paused = True
+            print(f"dyedfox-radio: buffer low ({percent}%), pausing to refill", flush=True)
+            self._submit("pause")
+            self.buffering.emit(True)
+        elif self._buffer_paused and percent >= self._BUFFER_RESUME_AT:
+            self._buffer_paused = False
+            self._submit("resume")
+            self.buffering.emit(False)
 
     def _poll_bus(self):
         while True:
@@ -351,10 +408,13 @@ class GStreamerBackend(QObject):
                 # dropout, not a real end, so reconnect rather than going silent.
                 self._handle_disconnect("Stream ended")
             elif msg.type == Gst.MessageType.STREAM_START:
+                self._buffer_arm_after = time.monotonic() + self._BUFFER_SETTLE_S
                 if self._reconnecting:
                     self._reconnecting = False
                     self.playback_started.emit()
                 self._stable_timer.start(self._STABLE_AFTER_MS)
+            elif msg.type == Gst.MessageType.BUFFERING:
+                self._on_buffering(msg.parse_buffering())
             elif msg.type == Gst.MessageType.TAG:
                 tags = msg.parse_tag()
                 ok, title = tags.get_string(Gst.TAG_TITLE)

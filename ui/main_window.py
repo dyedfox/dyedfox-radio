@@ -6,7 +6,7 @@ from PyQt6.QtWidgets import (
 from pathlib import Path
 import subprocess
 from PyQt6.QtCore import Qt, QSize, QEvent, QThreadPool, QTimer
-from PyQt6.QtGui import QIcon, QShortcut, QKeySequence, QPixmap, QPalette
+from PyQt6.QtGui import QIcon, QShortcut, QKeySequence, QPixmap
 
 _NOTIF_ICON_PATH = Path.home() / ".config" / "dyedfox-radio" / "notif_icon.png"
 _ART_NOTIF_ICON_PATH = Path.home() / ".config" / "dyedfox-radio" / "notif_art.png"
@@ -15,6 +15,7 @@ _SIDEBAR_MIN_W = 148  # narrowest the nav entries stay readable
 _SIDEBAR_MAX_W = 400
 
 from ui import glyphs
+from ui.divider import Divider
 from ui.station_list import StationListWidget
 from ui.info_panel import InfoPanel
 from ui.now_playing import NowPlayingBar
@@ -23,7 +24,6 @@ from ui.settings_dialog import SettingsDialog
 from ui.about_dialog import AboutDialog
 from ui.notifier import DBusNotifier
 from ui.add_station_dialog import AddStationDialog
-from ui.omarchy_theme import is_omarchy
 from ui import strings
 from player.backend import GStreamerBackend
 from api.radio_browser import RadioBrowserClient
@@ -119,16 +119,8 @@ class MainWindow(QMainWindow):
         self._apply_settings()
         self._setup_shortcuts()
 
-    def _sep(self, vertical=False) -> QFrame:
-        sep = QFrame()
-        sep.setFrameShape(QFrame.Shape.VLine if vertical else QFrame.Shape.HLine)
-        if is_omarchy():
-            # A plain-shadow QFrame line paints with the WindowText role, which
-            # under the Omarchy palette is the bright theme foreground — far too
-            # loud for a divider. KDE's Breeze palette picks a muted WindowText
-            # already, so this is left alone there.
-            sep.setForegroundRole(QPalette.ColorRole.Mid)
-        return sep
+    def _sep(self, vertical=False) -> Divider:
+        return Divider(vertical)
 
     def _setup_ui(self):
         root = QWidget()
@@ -361,6 +353,7 @@ class MainWindow(QMainWindow):
         self._backend.playback_stopped.connect(self._on_stopped)
         self._backend.playback_started.connect(self._on_started)
         self._backend.reconnecting.connect(self._on_reconnecting)
+        self._backend.buffering.connect(self._on_buffering)
 
         self._station_list.station_play_requested.connect(self._on_station_play)
         self._station_list.favourite_toggled.connect(self._on_favourite_toggled)
@@ -801,6 +794,17 @@ class MainWindow(QMainWindow):
         self._now_playing.set_reconnecting(attempt)
         self._controls.set_playing(False)
         self._station_list.mark_stopped()
+
+    def _on_buffering(self, active: bool):
+        # No audio plays while the buffer refills, so pause accrual as for a
+        # reconnect; resume it only if playback is still on (Stop or a station
+        # switch also ends a refill pause).
+        if active:
+            self._listening_stats.stop()
+        elif self._backend.is_playing and self._current_station:
+            self._listening_stats.start(self._current_station.get("stationuuid", ""))
+        self._update_listening_time_display()
+        self._now_playing.set_buffering(active)
 
     def _on_started(self):
         if self._current_station:

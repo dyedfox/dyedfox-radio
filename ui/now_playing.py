@@ -37,6 +37,7 @@ class NowPlayingBar(QWidget):
         self.setFixedHeight(36)
         self._station = ""
         self._song = ""
+        self._buffering = False
         self._clickable = False
 
         layout = QHBoxLayout(self)
@@ -70,6 +71,7 @@ class NowPlayingBar(QWidget):
     def set_station(self, name: str):
         self._station = name
         self._song = ""
+        self._buffering = False
         self._update()
 
     def set_song(self, title: str):
@@ -88,8 +90,15 @@ class NowPlayingBar(QWidget):
         self._song = self.tr("Reconnecting…")
         self._update()
 
+    def set_buffering(self, active: bool):
+        # Shown in place of the song title without replacing it: a refill
+        # pause lasts seconds, while the next ICY title may be minutes away.
+        self._buffering = active
+        self._update()
+
     def _update(self):
-        if self._song:
-            self._label.setText(f"{self._station}  —  {self._song}")
+        song = self.tr("Buffering…") if self._buffering else self._song
+        if song:
+            self._label.setText(f"{self._station}  —  {song}")
         else:
             self._label.setText(self._station or self.tr("Not playing"))
